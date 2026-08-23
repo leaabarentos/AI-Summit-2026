@@ -32,11 +32,9 @@
     font-size:16px; line-height:1.62;
   }
   h1,h2,h3,h4{ font-family:'Avenir Next','Avenir','Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:700; text-wrap:balance; color:var(--ink); margin:0; }
-  .label-cap{ font-size:11px; letter-spacing:0.11em; text-transform:uppercase; font-weight:700; }
   a{ color:var(--green-700); }
   .wrap{ max-width:920px; margin:0 auto; padding:0 28px 120px; }
 
-  /* top bar */
   .top-bar{ background:var(--green-950); border-bottom:3px solid var(--amber-ink); }
   .top-bar-inner{ max-width:920px; margin:0 auto; padding:12px 28px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
   .top-bar-label{ color:#dfeee3; font-size:13px; font-weight:700; letter-spacing:0.02em; }
@@ -46,13 +44,12 @@
   .top-btn:hover{ background:#144a30; }
   @media print{ .top-bar{ display:none; } }
 
-  /* cover */
   .cover{ background:var(--green-950); color:#eef5ee; padding:56px 28px 40px; }
   .cover-inner{ max-width:920px; margin:0 auto; }
   .cover-top{ display:grid; grid-template-columns:1fr 260px; gap:36px; align-items:start; }
   @media (max-width:700px){ .cover-top{ grid-template-columns:1fr; } }
   .cover-text{ display:flex; flex-direction:column; gap:16px; padding-top:4px; }
-  .cover-eyebrow{ font-family:'Avenir Next','Avenir','Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12.5px; letter-spacing:0.11em; text-transform:uppercase; color:#bcd9c4; font-weight:700; }
+  .cover-eyebrow{ font-size:12.5px; letter-spacing:0.11em; text-transform:uppercase; color:#bcd9c4; font-weight:700; }
   .cover h1{ color:#fbfdf9; font-size:clamp(32px,4.8vw,50px); line-height:1.06; }
   .cover-sub{ font-size:17.5px; color:#cfe4d2; max-width:520px; }
   .cover-figure{ border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 8px rgba(0,0,0,0.25), 0 16px 36px rgba(0,0,0,0.3); border:1px solid #1c5138; justify-self:end; width:100%; max-width:260px; }
@@ -71,9 +68,11 @@
   .tldr{ background:var(--green-100); border:1px solid color-mix(in srgb, var(--green-700) 25%, transparent); border-radius:14px; padding:24px 26px; }
   .tldr h2{ font-size:21px; color:var(--green-900); }
   .tldr .sub{ font-size:13.5px; color:var(--ink-soft); margin-top:4px; }
-  .tldr ol{ margin:16px 0 0; padding-left:22px; }
-  .tldr li{ margin-bottom:12px; font-size:15.3px; }
-  .tldr li strong{ color:var(--green-900); }
+  .tldr-list{ margin:18px 0 0; display:flex; flex-direction:column; gap:14px; }
+  .tldr-item{ display:grid; grid-template-columns:30px 1fr; gap:12px; }
+  .tldr-item .n{ font-weight:700; color:var(--green-700); font-size:15px; }
+  .tldr-item .h{ font-weight:700; color:var(--green-900); display:block; font-size:15.3px; }
+  .tldr-item .d{ color:var(--ink-soft); font-size:14px; margin-top:2px; }
 
   .notice{ background:var(--amber-100); border:1px solid color-mix(in srgb, var(--amber-ink) 25%, transparent); border-radius:var(--radius); padding:18px 20px; font-size:14.5px; color:var(--amber-ink); }
   .notice strong{ color:var(--amber-ink); }
@@ -112,7 +111,7 @@
   .pillar-tag b{ font-size:10.5px; letter-spacing:0.07em; text-transform:uppercase; margin-right:6px; }
   .takeaway{ margin-top:12px; border-left:3px solid var(--green-600); background:var(--green-50); padding:12px 16px; border-radius:0 8px 8px 0; font-size:14.3px; line-height:1.55; }
   .takeaway .label-tag{ color:var(--green-700); margin-top:0; }
-  .takeaway b{ color:var(--green-900); }
+  .takeaway .ref{ display:inline-block; margin-top:6px; font-size:12px; color:var(--green-700); font-weight:700; }
   .session-note{ margin-top:12px; font-size:12.8px; color:var(--ink-faint); font-style:italic; }
   .session.compact .session-body{ grid-template-columns:1fr; }
 
@@ -168,7 +167,7 @@
       <div class="cover-text">
         <div class="cover-eyebrow">Summit report · De La Salle-College of Saint Benilde</div>
         <h1>AI Summit Seoul 2026</h1>
-        <p class="cover-sub">A plain-language record of talks, panels, and expo highlights from AI Summit Seoul (AIS26) — reconstructed from live-translation captures and on-site photos, mapped to Vision 2030 and a proposed ownership model for turning it into action.</p>
+        <p class="cover-sub">My notes from AI Summit Seoul (AIS26) as an attendee — reconstructed from live-translation captures and on-site photos, mapped to Vision 2030 and a proposed ownership model for turning it into action.</p>
       </div>
       <figure class="cover-figure">
         <img src="images/cover.jpg" alt="Ballroom at AI Summit Seoul, main stage screen reading AIS26 AI Summit Seoul">
@@ -187,15 +186,20 @@
 
 <section id="tldr">
   <div class="tldr">
-    <h2>If you only have 5 minutes</h2>
-    <p class="sub">The five ideas that came up again and again, in plain language.</p>
-    <ol>
-      <li><strong>Most AI pilots never make it to real use — and it's rarely the AI's fault.</strong> Roughly 80% of AI projects never reach full production. The real blockers were messy data, tools bolted onto old workflows, and no senior person willing to approve scaling something up.</li>
-      <li><strong>Picking the AI model is the easy part now.</strong> Every major AI company (Anthropic, OpenAI, Microsoft, AWS) is now selling hands-on help to actually deploy AI inside a company, not just software access.</li>
-      <li><strong>Robots and physical AI need a stricter safety rule than chatbots.</strong> A chatbot's wrong answer is annoying; a robot's wrong action can hurt someone. The clearest rule offered: let AI act on its own only where a mistake can be undone.</li>
-      <li><strong>Good results always traced back to good data — not a fancier model.</strong> Storage, database, and AI companies all said the same thing in different words: organize your data first, or nothing built on top of it works reliably.</li>
-      <li><strong>The workforce most comfortable with AI is also the newest.</strong> Roughly 30% of the global office workforce is now Gen Z — training built only for senior staff will miss where AI habits are actually forming.</li>
-    </ol>
+    <h2>10 things I took away as an attendee</h2>
+    <p class="sub">This is the plain version — no jargon. Every session below eventually circles back to one of these.</p>
+    <div class="tldr-list">
+      <div class="tldr-item"><div class="n">01</div><div><span class="h">Data is the bottleneck, not the model.</span><div class="d">The unglamorous work — cleaning, structuring, connecting — is where AI actually lives or dies.</div></div></div>
+      <div class="tldr-item"><div class="n">02</div><div><span class="h">PoC ≠ production.</span><div class="d">What works in testing often breaks at scale.</div></div></div>
+      <div class="tldr-item"><div class="n">03</div><div><span class="h">Building is easy.</span><div class="d">Scaling is the real work.</div></div></div>
+      <div class="tldr-item"><div class="n">04</div><div><span class="h">Tacit knowledge is the new gold.</span><div class="d">Capture the judgment calls before you can automate them.</div></div></div>
+      <div class="tldr-item"><div class="n">05</div><div><span class="h">Redesign process with the tech, not after it.</span></div></div>
+      <div class="tldr-item"><div class="n">06</div><div><span class="h">Adoption isn't a tech problem — it's a courage problem.</span><div class="d">Someone has to press the button.</div></div></div>
+      <div class="tldr-item"><div class="n">07</div><div><span class="h">Silos slow AI more than compute ever will.</span></div></div>
+      <div class="tldr-item"><div class="n">08</div><div><span class="h">AI agents are becoming coworkers.</span><div class="d">Start managing them like it.</div></div></div>
+      <div class="tldr-item"><div class="n">09</div><div><span class="h">Invest in the connectors, not just the AI.</span><div class="d">People + process are the missing link.</div></div></div>
+      <div class="tldr-item"><div class="n">10</div><div><span class="h">In every gold rush, the infrastructure wins.</span><div class="d">Bet on the picks and shovels.</div></div></div>
+    </div>
   </div>
 </section>
 
@@ -276,12 +280,12 @@
           <li>Called 2022's ChatGPT moment "the wrong turn": fluent, but the older, more controllable structure was thrown out along with the friction.</li>
           <li>Cited 2026 research: today's agents guess when a task is unclear (89% success with a clear task vs. 6.7% with a vague one).</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>The pattern here suggests the industry conflated "more fluent" with "more capable." The deliberate constraints older assistants had — a defined belief state, a repair mechanism — weren't limitations to be discarded; they were the parts that made a system auditable. For a school evaluating an AI advising or chatbot tool, this means a fluent demo should never substitute for asking how the system handles an ambiguous or out-of-scope request. Losing that structure isn't progress on every dimension — for a student-facing tool, it's exactly the dimension that matters most when something goes wrong.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Sitting through this, what stuck with me is that the old assistants could actually explain themselves and get fixed when they got something wrong. Today's AI just sounds confident — even when it's guessing. For any chatbot or advising tool we look at, that's the real question to ask a vendor: what does it do when it's not sure? A smooth demo won't show you that; you have to ask directly.</div>
       </div>
       <figure class="session-figure"><img src="images/pioneer.jpg" alt="Slide showing SRI Office Assistant agent architecture diagram from 1995"><figcaption>SRI's 1995 "Office Assistant" — presented as the direct ancestor of today's AI agents.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>Fluency isn't the same as reliability. Before adopting any AI assistant for advising, admissions, or student services, Benilde should require vendors to show how the system escalates or refuses an out-of-scope request, not just how well it answers a scripted demo question. This is a <b>Future Ready</b> test: the tools worth trusting with real student interactions are the ones with a visible, checkable control layer, not simply the ones that sound the most impressive in a pitch. It's a habit worth building into procurement now, before a tool is already embedded in daily operations.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Sounding smart isn't the same as being reliable. Before we put any AI assistant in front of students for advising or admissions, we should make the vendor show us what happens when a student asks something confusing or off-topic — not just watch a polished demo.</div>
   </article>
 
   <article class="session">
@@ -295,11 +299,11 @@
           <li>Demoed a workflow that detects an event, automatically picks the right satellites to look at it, and tracks it — shown live with a simulated Mount Pinatubo eruption.</li>
           <li>Framed the goal as "humans on the loop, not in the loop" — people set intent and check results; the system does the coordination.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>This model works because satellite tasking has cheap, reversible mistakes — a mis-pointed sensor just gets re-pointed — and a clear, measurable success condition. Those two conditions rarely hold in a school setting: a misrouted student inquiry or a wrongly flagged academic-integrity case is not something you simply "re-task" and try again. That's the exact caveat the Physical AI panel raises later that evening, and it's why "humans on the loop" works beautifully for infrastructure monitoring but needs real modification before touching anything involving a student's record or wellbeing.</div>
+        <div class="insight"><span class="label-tag">Insight</span>This works because if the system points a satellite the wrong way, you just point it again — no harm done. A school doesn't get that luxury: a misrouted student inquiry, or a wrongly flagged academic-integrity case, isn't something you just "try again." So "let AI coordinate, humans just check" only really works for the low-stakes stuff.</div>
       </div>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>"Set the goal, check the result" is a clean, <b>Future Ready</b> pattern worth borrowing for coordinating multiple administrative systems at once — for example, syncing enrollment, financial aid, and registrar data through one AI-assisted workflow. Benilde should extend this pattern only to processes where a wrong output is genuinely cheap to catch and undo, not to anything touching a student's academic or financial standing.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>This "set the goal, let it coordinate, check the result" pattern is worth borrowing — but only for tasks where a mistake is cheap to catch and fix, like syncing schedules between offices. Anything touching a student's record should stay more hands-on.</div>
   </article>
 
   <article class="session">
@@ -313,11 +317,11 @@
           <li>A Bank of Korea survey found 60–70% of Korean companies say they're adopting AI, but fewer than 10% report actual results.</li>
           <li>Gartner data: over half of enterprise AI projects get cancelled at the pilot stage.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>Three independent sources — Gartner, a national bank survey, and this speaker's own executive polling — landed on the same story: most organizations adopting AI cannot show it moved a real number. That's a useful gut-check for a school considering a large AI investment, since higher education faces the same incentive to announce adoption before proving impact. It should recalibrate how fast Benilde expects the Recruitment Chatbot or Advising Agent to show a measurable effect on enrollment, retention, or staff time — and argues for setting that expectation with the Board before launch, not after.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Three separate studies, same story: most companies using AI can't actually show it did anything for their numbers. That's my takeaway #2 in a nutshell — a working pilot and a working product are two different things. We should expect the same slow, unclear payoff from our own chatbot and advising pilots, and just say that plainly to the Board instead of overpromising.</div>
       </div>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Financial Growth · Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>"Everyone's using AI" and "AI is actually working here" are different claims, and conflating them is how institutions over-commit budget on adoption numbers alone. Every Benilde AI pilot should report a specific operational metric — hours saved per advisor, response time per inquiry, retention lift per cohort — before it's considered for wider rollout. That's a <b>Financial Growth</b> and <b>Future Ready</b> discipline borrowed directly from this session's warning.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Using AI and AI actually helping are two different claims. Every pilot we run should track one specific thing — hours saved, faster replies, more students staying enrolled — before we call it a win or spend more on it.<span class="ref">↳ Ties to takeaway #2: PoC ≠ production.</span></div>
   </article>
 
   <article class="session">
@@ -332,12 +336,12 @@
           <li>Explained "Loop Engineering": set a goal, let the agent try, have it check its own work, fix on failure, stop on success.</li>
           <li>Anthropic, OpenAI, AWS, and Microsoft have together committed over $9 billion to embedding their own staff inside customers' AI rollouts.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>Four fierce competitors converging on the identical "embed our engineers with the customer" business model, at the same time, is a strong signal the model layer itself has commoditized. For a school evaluating vendors, the real differentiator in any AI contract is no longer "whose model is smartest" but "who will actually sit with our IT and CET teams to make this work." That shifts negotiating leverage: Benilde should expect deployment support bundled into any platform contract as standard, since every major vendor now positions it that way.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Every big AI company is now doing the same thing: sending their own people to actually help clients set things up, not just selling the software. That told me picking an AI isn't the hard part anymore — getting it running properly is. When we talk to vendors, we should be asking what hands-on help comes with the contract, not just what the AI can do.</div>
       </div>
       <figure class="session-figure"><img src="images/harness.jpg" alt="Slide illustrating Harness Engineering as a three-panel comic"><figcaption>"Harness Engineering" — the missing layer between a prototype and enterprise-grade AI.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Global Partnership Engagement</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>Every major vendor now sells hands-on deployment help, not just model access — a <b>Global Partnership Engagement</b> detail directly worth negotiating into Benilde's Phase 2 platform contract. It's also proof picking a model was never the hard part of an EdTech rollout; the real work is the governance, training, and integration layer around it, which is exactly what CET and the Digital Transformation Office are being asked to own.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Ask every vendor what real setup help they'll give us — most of the big names now offer it. Building a demo is easy; getting it actually running for the whole school is the real work.<span class="ref">↳ Ties to takeaway #3: Building is easy. Scaling is the real work.</span></div>
   </article>
 
   <article class="session">
@@ -350,12 +354,12 @@
           <li>AI agent queries shifted from one predictable request per user to many unpredictable requests at once.</li>
           <li>OpenAI's daily logs compare to "500 Libraries of Congress a day"; Anthropic credited this tech in shipping Claude 4.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>This shift — from one predictable query per user to an agent firing off many unpredictable queries at once — is a capacity-planning cost most organizations, schools included, haven't priced into their infrastructure budgets. A single Advising Agent or chatbot serving hundreds of students concurrently can generate a query load an ordinary student-information database was never designed for. That hidden cost surfaces only once a pilot scales past its demo, which is exactly the surprise Benilde's IT team should stress-test for before a college-wide rollout, not after.</div>
+        <div class="insight"><span class="label-tag">Insight</span>An AI tool hits a database very differently than a normal app — lots of requests firing off at once, not one at a time. If a lot of students use our chatbot or advising tool together, our current systems could slow down or break in ways nobody tested for. That's a data problem before it's ever a model problem.</div>
       </div>
       <figure class="session-figure"><img src="images/clickhouse.jpg" alt="Slide with article cards about OpenAI and Anthropic using ClickHouse"><figcaption>ClickHouse's closing slide, citing use inside OpenAI's and Anthropic's own systems.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>AI agents need a database built for many unpredictable requests at once, not the steady, scheduled pattern most student information systems assume. This is a <b>Future Ready</b> requirement IT should validate — specifically, whether Benilde's data warehouse can handle concurrent agentic queries — before any platform decision is finalized in Phase 2.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Before we pick a platform, IT should check if our systems can actually handle a lot of students using an AI tool at the same time — not just one person testing it quietly.<span class="ref">↳ Ties to takeaway #1: Data is the bottleneck, not the model.</span></div>
   </article>
 
   <article class="session">
@@ -369,12 +373,12 @@
           <li>Three stages: can we build something useful → can we run it in production → does it create lasting value. Most stay stuck between the first two.</li>
           <li>85–95% of all AI data ultimately rests on ordinary hard drives, not premium chips.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>Framing data as "the most valuable asset" is self-serving coming from a storage vendor, but the underlying number is a useful corrective for any institution. AI cost conversations in education tend to fixate on which subscription tier to buy, when the more durable cost driver is where student and institutional data actually lives and how long it's retained. For Benilde, the true long-term cost of any AI initiative includes data storage, retention policy, and archival planning — not just the software license.</div>
+        <div class="insight"><span class="label-tag">Insight</span>It's easy to forget, but every AI tool has to keep its data somewhere, and that costs money for years, not just once. Yes, the speaker sells storage — but the point held up: most of what a school ends up paying for AI comes down to where the data lives and how long we keep it, not the flashy part.</div>
       </div>
-      <figure class="session-figure"><img src="images/seagate.jpg" alt="Slide reading: AI has made data the most valuable asset"><figcaption>Seagate's point: AI made the underlying data itself the scarce, valuable asset.</figcaption></figure>
+      <figure class="session-figure"><img src="images/seagate.jpg" alt="Slide reading: AI has made data the most valuable asset in the digital economy"><figcaption>Seagate's point: AI made the underlying data itself the scarce, valuable asset.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Financial Growth · Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>Every AI conversation eventually becomes a data-storage-and-governance conversation. Before approving further AI budget, Finance and IT should jointly confirm where Benilde's growing volume of student interaction data will actually live, and at what cost — a <b>Financial Growth</b> and <b>Future Ready</b> question easy to overlook until the bill arrives.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Before we spend more on AI, Finance and IT should figure out where all this student data will actually live, and what that costs us over time — not just the price tag on the AI tool itself.<span class="ref">↳ Ties to takeaway #10: infrastructure wins the gold rush.</span></div>
   </article>
 
   <article class="session">
@@ -384,12 +388,12 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>Roughly 30% of the global office workforce is now Gen Z, with higher entrepreneurial instincts than earlier generations.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>This is really a governance-mismatch warning dressed up as a workforce statistic: policies written by and for senior leadership may regulate the group least likely to be driving day-to-day AI usage. In a school, that group isn't the newest hires — it's the students themselves, already Gen Z and already AI-native before they enroll. Any AI policy Benilde writes for faculty and staff should assume the incoming student body has already formed AI habits well before arriving on campus, and design onboarding accordingly rather than starting from zero.</div>
+        <div class="insight"><span class="label-tag">Insight</span>This talk was about the workforce, but it made me think about our own students instead. Gen Z already grew up using AI. Our incoming students are the same — they'll already know these tools before they even enroll. So our AI training shouldn't just be for staff; the students are already ahead of us on this one.</div>
       </div>
-      <figure class="session-figure"><img src="images/genz.jpg" alt="Slide titled Gen Z is main workforce"><figcaption>Workforce-composition framing for AI-native habits arriving from the entry level up.</figcaption></figure>
+      <figure class="session-figure"><img src="images/genz.jpg" alt="Slide titled Gen Z is main workforce"><figcaption>Workforce-composition framing for why AI-native habits are arriving from the entry level up.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Enrollment Growth · Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>AI habits form fastest at the newest, least senior level of any organization — for Benilde, that's simultaneously the incoming workforce and the incoming <b>Enrollment Growth</b> student body. Training built only around faculty and senior staff will miss where AI fluency is actually strongest on campus, a <b>Future Ready</b> gap worth closing with student-facing AI literacy programming, not just faculty workshops.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Our newest students are probably more comfortable with AI than a lot of our staff are. If we only train faculty and leadership, we're missing where AI use is already strongest — with the students themselves.</div>
   </article>
 
   <article class="session">
@@ -399,12 +403,12 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>Framed as "the innovator's mindset in the age of AI." Its idea of embodiment was picked up directly by the Physical AI panel later that day.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>Keynotes that introduce one reusable concept function as shared vocabulary for the rest of an event, and watching which framing gets picked up by unrelated later sessions is a useful signal for what a field is actually converging on. "Embodiment" turned out to be exactly that kind of concept, resurfacing directly in the Physical AI panel hours later. For a school, embodiment is a useful frame for thinking about where AI moves beyond chat-based tools into anything with a physical or high-stakes real-world consequence, such as campus access systems, labs, or design studios.</div>
+        <div class="insight"><span class="label-tag">Insight</span>The word "embodiment" kept coming back later that same day, especially in the robotics panel. It basically means AI that has to actually do something in the real world, not just chat. Worth keeping in mind once we go beyond a simple chatbot — things like campus access systems, labs, or hands-on design work.</div>
       </div>
       <figure class="session-figure"><img src="images/kunovsky.jpg" alt="Slide introducing Savannah Kunovsky of IDEO"><figcaption>Introduction slide for the IDEO AI MTechLab keynote.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>"Embodiment" — intelligence that has to act in, and be checked against, the physical world — became this summit's connective thread. It's a <b>Future Ready</b> concept Benilde should track as AI moves from classroom chat tools into anything touching physical campus operations, safety systems, or hands-on creative practice in design and multimedia programs.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Keep an eye on AI that has to act in the real world, not just answer questions — it matters most once we move past classroom chat tools into things like campus safety systems or studio work.</div>
   </article>
 
   <article class="session">
@@ -415,12 +419,12 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>$250M revenue in 12 months from zero; $645M raised at $2.6B valuation. Core message: "better models will keep shipping — the breakthrough is context."</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>When a vendor's growth pitch and a completely unrelated speaker's opening keynote independently reach the same architectural conclusion hours apart, that's a stronger signal of real market consensus than either claim alone. Both converged on the same point: the unlock isn't a bigger model, it's a persistent memory or context layer that follows a person across interactions. For a school, this argues against chasing the newest, biggest model for every feature, and instead prioritizing tools that remember a student's history across advising sessions, enrollments, or support tickets.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Two completely separate speakers, hours apart, basically said the same thing: the real improvement isn't a smarter model, it's an AI that remembers you. For us, that means the real question for any vendor is whether the tool remembers a student's history — not which brand of AI sits behind it.</div>
       </div>
       <figure class="session-figure"><img src="images/genspark.jpg" alt="Slide showing Genspark growth statistics"><figcaption>Genspark's growth numbers, offered as evidence for its "context, not bigger models" argument.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>A persistent memory/context layer matters more than a bigger model — a <b>Future Ready</b> principle for evaluating any AI tool Benilde considers, whether it's a chatbot, an advising agent, or a faculty-facing assistant. Ask less about which model powers the tool and more about whether it retains useful context about a specific student or case over time.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>An AI that remembers a student across conversations matters more than which model powers it. Ask vendors about memory, not just intelligence.</div>
   </article>
 
   <article class="session">
@@ -439,12 +443,12 @@
           <li><b>Where should AI's freedom to act stop? (CTO Lee):</b> the line is whether the outcome is reversible, not how smart the AI seems.</li>
           <li>A described Tesla Optimus incident — misidentifying a coworker as a part — was cited as the real cost of trusting an unproven world model.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>"Reversibility" is a more portable governance principle than most, because it's domain-agnostic and testable in advance — unlike vaguer guidance such as "align with our values," which is hard to apply consistently across departments. It can be applied as a literal checklist question to any proposed AI feature, physical or digital, which is why it echoed through later sessions well outside robotics and defense. For Benilde, it translates directly into a rule for the Mental Health Agent and Academic Advising Agent: AI can flag and suggest freely, but anything hard to undo — a probation recommendation, a safety escalation, a financial-aid decision — stays a human call.</div>
+        <div class="insight"><span class="label-tag">Insight</span>This is the one rule from the whole summit I'd actually want us to write down: let AI decide on its own only if a mistake can be undone. If it can't be undone — flagging a student for probation, a safety escalation — a person makes that call, no matter how good the AI looks. That's not really a tech decision, that's someone having the nerve to say "not this one."</div>
       </div>
-      <figure class="session-figure"><img src="images/robots.jpg" alt="Humanoid and quadruped robots on display at the expo floor"><figcaption>Humanoid and quadruped robots on the expo floor — "Physical AI" made tangible one floor down.</figcaption></figure>
+      <figure class="session-figure"><img src="images/robots.jpg" alt="Humanoid and quadruped robots on display at the expo floor"><figcaption>Humanoid and quadruped robots on the expo floor — "Physical AI" made tangible one floor down from the panel.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>Use reversibility, not capability, as the line for how much AI decides. This is a <b>Future Ready</b> principle directly usable for Benilde's Mental Health and Academic Advising agents: build the rule into each pilot's operating charter now, while both tools are still early in development, rather than discovering the boundary only after an incident forces the question.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>For our Mental Health and Advising AI tools: let the AI notice things and suggest, but keep the final call with a person for anything that's hard to undo. Write this down now, while both tools are still being built.<span class="ref">↳ Ties to takeaway #6: someone has to press the button.</span></div>
   </article>
 
   <article class="session">
@@ -457,12 +461,12 @@
           <li>"Instant capability isn't expertise" — the gap between fast AI output and knowing what's actually good is "slop."</li>
           <li>Ownership rule: 5 users, the builder owns it; 50, needs a named owner; 500, needs a full team.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>The 5/50/500 rule is really a proxy for blast radius, not raw usage — a tool with 5 users making low-stakes suggestions is a very different risk than 5 users making high-stakes calls, so it works best paired with the Physical AI panel's reversibility test. In a school, a faculty member's personal use of an AI grading assistant is low-risk; the moment that same tool is adopted department-wide for decisions affecting a student's standing, it needs a named owner and a documented process. This is exactly the quiet scope-creep that turns a helpful individual habit into an ungoverned institutional risk.</div>
+        <div class="insight"><span class="label-tag">Insight</span>The rule was: 5 users, one person owns it casually; 50, it needs a real owner; 500, it needs a team. What I'd add is that it's less about headcount and more about how much damage a mistake could do. One teacher using an AI grading tool casually is fine; the same tool deciding grades department-wide is a different animal entirely.</div>
       </div>
       <figure class="session-figure"><img src="images/publicis.jpg" alt="Slide titled Tokenmaxxing does not equal Transformation"><figcaption>Routing tasks to the "best" model is plumbing, not a strategy on its own.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Financial Growth</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>5 users, the builder still owns it; 50, it needs a named owner; 500, it needs a full team — a <b>Future Ready</b> and <b>Financial Growth</b> check Benilde should apply proactively at each threshold, rather than waiting for a pilot to become unmanageable before assigning it real ownership.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>The moment a personal AI habit becomes something a whole department relies on, someone needs to officially own it — don't wait until it's already everyone's tool to figure out who's in charge.<span class="ref">↳ Ties to takeaway #5: redesign process with the tech, not after it.</span></div>
   </article>
 </section>
 
@@ -476,7 +480,7 @@
     <div class="session-body"><div class="session-points">
       <span class="label-tag" style="color:var(--green-700)">Highlights</span>
       <ul><li>Presented a 4-level scorecard for AI maturity — from occasional tool use to genuine, everyday agentic work.</li></ul>
-      <div class="insight"><span class="label-tag">Insight</span>That a maturity-model talk earned its own dedicated session suggests the market conversation has matured past "should we adopt AI" into "how good are we at it yet" — a harder, more honest question. For Benilde, adopting a similar scorecard internally would let CET and the Digital Transformation Office track progress across departments in comparable terms, rather than each unit assessing its own readiness informally. It also gives Leadership a shared vocabulary for Board reporting that goes beyond "we have a chatbot now."</div>
+      <div class="insight"><span class="label-tag">Insight</span>Simple idea, but a good one: a 4-level scale for how far along a team actually is with AI, instead of just saying "we use AI now." We could use something like this ourselves so departments aren't all just guessing how ready they really are.</div>
     </div></div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
     <div class="session-note">Captured only in slide/photo form; caption detail wasn't fully recovered from the source images.</div>
@@ -493,12 +497,12 @@
           <li>Repeated the central statistic: roughly 80% of AI projects never reach full production — a systems problem.</li>
           <li><b>Four fixes:</b> solid verified data first, continuous domain re-checking, embedded (not bolted-on) workflows, real safety/oversight checks.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>Opening with the slowest-to-monetize, most credible work — protein folding, not a flashy chatbot demo — is itself a rhetorical strategy: positioning rigor as the differentiator in a market saturated with unverified demos. For a school evaluating any AI vendor's claims, ask what its most rigorously validated, least glamorous work looks like, not just its flashiest showcase feature. DeepMind's free academic-tier access to tools like AlphaFold is also a concrete example of the kind of low-cost research partnership Benilde's science and health-adjacent programs could explore directly.</div>
+        <div class="insight"><span class="label-tag">Insight</span>What stood out is that DeepMind opened with their slowest, least flashy work — predicting protein shapes — instead of a chatbot trick. It felt like "we don't need a gimmick, our stuff actually works." Good habit to copy: ask any vendor to show their most boring, most tested work, not their flashiest demo.</div>
       </div>
       <figure class="session-figure"><img src="images/deepmind.jpg" alt="Slide showing AI Transformation is a Systems-Level Exercise"><figcaption>DeepMind's framing: AI transformation succeeds or fails as a systems-level exercise.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Global Partnership Engagement</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>The summit's most-repeated number — 80% don't reach production — traces to data readiness, a <b>Future Ready</b> lesson directly applicable to Benilde's Phase 2 pilots. It's also a <b>Global Partnership Engagement</b> opening: DeepMind's free-tier academic tools are a concrete, low-cost starting point for any program wanting hands-on exposure to applied AI research rather than just consumer-facing chat tools.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>80% of AI projects never really launch — and it comes down to messy data and weak habits, not bad AI. DeepMind also offers some research tools free to schools, worth someone looking into.<span class="ref">↳ Ties to takeaways #1 and #2: data first, and testing well ≠ working at scale.</span></div>
   </article>
 
   <article class="session">
@@ -508,12 +512,12 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>Mapped four competitor types racing into AI payments: AI platforms, existing wallets, retailers, card networks. Introduced Shinhan's "Agent Pay" pilot.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>When four structurally different competitor types move into the same space at once, the opportunity is real but the eventual standard is genuinely unsettled. For a school's finance and student-accounts operations, this is a preview rather than an urgent call to action: tuition payment and financial-aid disbursement will eventually be touched by similar AI-agent-driven tools, but the vendor landscape is too unsettled to commit early. It's worth Benilde's Finance office tracking this over the next one to two years rather than evaluating vendors today.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Four completely different types of companies are racing into AI payments at once. That usually means something real is happening, but nobody's actually won yet. For our own Finance office, this is more "keep watching" than "act now."</div>
       </div>
       <figure class="session-figure"><img src="images/shinhan.jpg" alt="Table comparing key player movements in AI payments"><figcaption>Shinhan Card's map of AI entering payments from four directions at once.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Financial Growth · Global Partnership Engagement</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>Payments previews what's coming to every trust-sensitive process — a <b>Financial Growth</b> and <b>Global Partnership Engagement</b> signal worth Benilde's Finance and IT offices monitoring, particularly as it may eventually touch how tuition and financial aid are processed.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>AI is showing up in payments from every direction at once — worth Finance keeping an eye on, since tuition and financial aid could eventually be touched by this, but no need to rush into anything.</div>
   </article>
 
   <article class="session">
@@ -522,7 +526,7 @@
     <div class="session-body"><div class="session-points">
       <span class="label-tag" style="color:var(--green-700)">Highlights</span>
       <ul><li>Captured via stage/slide photos only; the full argument wasn't recovered.</li></ul>
-      <div class="insight"><span class="label-tag">Insight</span>Even from a thin record, the framing itself matters: distinguishing "automating a task" from "delegating an actual decision" is the exact vocabulary the Physical AI panel's reversibility principle needs to be applied inside a real workflow. For Benilde, automating the task of drafting a first-pass email reply is very different from delegating the decision of whether a student's appeal should be approved, even if both look like "AI helping with student services" from the outside. Every pilot proposal should state which category it falls into before it's approved.</div>
+      <div class="insight"><span class="label-tag">Insight</span>Even with limited notes from this one, the main point stuck: doing a task for someone (drafting a reply) is very different from making a decision for them (approving an appeal). Before we approve any new AI tool, we should just ask plainly which one it's actually doing.</div>
     </div></div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
     <div class="session-note">Worth following up on if a fuller recording turns up.</div>
@@ -543,11 +547,11 @@
           <li>A gold-rush comparison: the money went to infrastructure sellers, not most people trying to use it.</li>
           <li>LG described a common trap: a "plain-English database search" tool that broke down once scaled to thousands of real tables.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>The "who presses the button" problem and LG's technical failure likely compound each other: a shaky pilot makes leadership less willing to approve scaling, and that hesitation delays the data-engineering fix that would have stabilized it. Schools are just as susceptible to this cycle, since most institutions run on a patchwork of legacy student-information and finance systems never designed with AI-agent access in mind. Breaking the cycle starts with treating the technical fix and the leadership sign-off as two parallel workstreams, not sequential ones.</div>
+        <div class="insight"><span class="label-tag">Insight</span>What struck me here: the biggest reason AI projects stall isn't the tech, it's that nobody senior wants to be the one to say "yes, scale it up." LG also mentioned a tool that worked fine in testing but broke once it hit real scale — which probably makes leadership even more hesitant to approve the next one. We should fix both at once, not wait for one before starting the other.</div>
       </div>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Financial Growth</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>Executive hesitation — not data or model quality — was the biggest bottleneck named here. It's a <b>Future Ready</b> and <b>Financial Growth</b> governance problem the Digital Transformation Office should own explicitly by naming a decision-maker for every pilot before it's built, not after it's ready to scale (see §06).</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>The biggest blocker wasn't the AI — it was nobody wanting to be the one to approve scaling it up. We should name that person for every pilot from day one, not scramble to find them once a pilot is ready to grow.<span class="ref">↳ This is takeaway #6, word for word: adoption is a courage problem.</span></div>
   </article>
 
   <article class="session">
@@ -557,11 +561,11 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>Named the core difficulty as turning knowledge that lives only in experienced staff's heads into shared, written data.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>"Turning tacit knowledge into data" is functionally the same problem manufacturers have always had with retiring experienced staff — AI didn't create it, it just raised the cost of not solving it. Schools face a close parallel: a veteran registrar or advisor's judgment about edge cases often lives entirely in that person's head, undocumented, until they retire or move on. Any AI tool meant to assist with these judgment calls will only be as good as the documentation effort that precedes it, which means the real first project is often a knowledge-capture exercise, not a software purchase.</div>
+        <div class="insight"><span class="label-tag">Insight</span>This one hit close to home. A lot of what makes a school actually run well lives in the heads of a few long-time staff — a registrar who just knows how to handle a weird case, an advisor who's seen every version of a tricky appeal. Before any AI tool can help with that kind of judgment call, someone has to write that knowledge down first. That's slow, unglamorous work, and it comes before the AI, not after.</div>
       </div>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>Writing down tacit, expert-only knowledge is the unglamorous but unavoidable first step before any AI tool can be trusted with it — a <b>Future Ready</b> lesson for Benilde's registrar, advising, and financial-aid offices specifically, where institutional judgment calls are often concentrated in a small number of long-tenured staff.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Before any AI tool can help with the tricky judgment calls our staff make, we need to write that knowledge down first — true for registrar, advising, and financial-aid offices especially.<span class="ref">↳ This is takeaway #4, word for word: tacit knowledge is the new gold.</span></div>
   </article>
 
   <article class="session">
@@ -571,12 +575,12 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>One shared data pipeline feeds AI training, compliance, security monitoring, incident response, and AI agents from a single source.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>Routing security and AI through the same pipeline is efficient, but it also means a security incident and an AI-agent failure will increasingly surface in the same monitoring system. For a school with limited IT staffing, this efficiency argument is compelling: one well-governed data foundation can support cybersecurity monitoring, compliance reporting, and AI-agent operations at once, instead of three separate systems each requiring its own maintenance. The tradeoff is that IT and the Digital Transformation Office need a clear, pre-agreed answer for who responds when an incident could plausibly be either a breach or an AI malfunction.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Simple idea: instead of three separate systems for security, compliance, and AI, build one shared setup that feeds all three. For a school with a small IT team, that's genuinely useful — less to maintain. The one thing to figure out ahead of time is who responds when something breaks and it's not obvious if it's a security issue or an AI glitch.</div>
       </div>
       <figure class="session-figure"><img src="images/cisco.jpg" alt="Diagram of Cisco Data Fabric architecture"><figcaption>One shared data foundation feeding security, compliance, and AI agents alike.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Enhanced Reputation and Branding</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>Cybersecurity and AI-agent readiness are converging on the same requirement — a <b>Future Ready</b> foundation that also protects Benilde's <b>Reputation and Branding</b> as a trustworthy institution, since one well-governed pipeline is both cheaper to maintain and less likely to produce the kind of visible failure that damages public trust.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Running AI and cybersecurity on one shared, well-kept system is smart for a small IT team, and it protects our reputation too — a public failure looks the same to outsiders either way.<span class="ref">↳ Ties to takeaway #7: silos slow AI more than compute ever will.</span></div>
   </article>
 
   <article class="session">
@@ -590,12 +594,12 @@
           <li>Formula for a real AI win: time saved × how much better the outcome is. Most companies stop at "time saved."</li>
           <li>Top reps talk ~46% of the time vs. 68% for average reps, and wait later in the call to discuss price.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>The formula is easy to state, hard to measure: "effectiveness" requires agreeing on what outcome you're optimizing for, and most organizations — schools included — haven't had that conversation before adopting the tool, which is exactly how an institution ends up only measuring the efficiency half. For Benilde's Recruitment Chatbot and Advising Agent, efficiency is easy to track (response time, hours saved), but effectiveness requires agreeing in advance on the outcome that matters — conversion to enrollment, or improved retention — and building that measurement in from day one, not retrofitting it later.</div>
+        <div class="insight"><span class="label-tag">Insight</span>"Time saved times how much better the result is" sounds simple, but most companies — schools too — never actually agree ahead of time on what "better" even means. For our chatbot and advising tool, we need to decide upfront whether we're measuring the easy part (faster replies) or the part that actually matters (more students enrolling and staying), and build that measurement in from day one.</div>
       </div>
       <figure class="session-figure"><img src="images/gong.jpg" alt="Slide with Gong company statistics"><figcaption>Gong's closing credibility slide — company stats and industry-analyst rankings.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Enrollment Growth · Financial Growth</div>
-    <div class="takeaway"><span class="label-tag">Takeaway</span>"Time saved × outcome improved" applies directly to Benilde's <b>Enrollment Growth</b> funnel — the Recruitment Chatbot and Advising Agent both need this two-part measurement built in from the start. It's also a <b>Financial Growth</b> discipline for reporting any AI tool's real value to the Board in terms the Board can act on, not just adoption statistics.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>For our Recruitment Chatbot and Advising Agent, we should track both halves — time saved AND whether it actually helped students enroll or stay enrolled. Reporting only the first half to the Board isn't the full picture.<span class="ref">↳ Ties to takeaway #9: people + process are the missing link, not just the AI.</span></div>
   </article>
 
   <article class="session">

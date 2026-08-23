@@ -50,7 +50,6 @@
   .section-head h2{ font-size:28px; }
   .section-intro{ color:var(--ink-soft); max-width:680px; margin-bottom:28px; font-size:15.5px; }
 
-  /* TL;DR */
   .tldr{ background:var(--green-100); border:1px solid color-mix(in srgb, var(--green-700) 25%, transparent); border-radius:14px; padding:24px 26px; }
   .tldr h2{ font-size:22px; color:var(--green-900); }
   .tldr .sub{ font-size:13.5px; color:var(--ink-soft); margin-top:4px; }
@@ -90,8 +89,14 @@
   .session-figure{ border-radius:8px; overflow:hidden; border:1px solid var(--line); align-self:start; }
   .session-figure img{ display:block; width:100%; height:auto; }
   .session-figure figcaption{ font-size:12px; color:var(--ink-faint); padding:8px 10px; background:var(--paper); border-top:1px solid var(--line); }
-  .takeaway{ margin-top:16px; border-left:3px solid var(--green-600); background:var(--green-50); padding:12px 16px; border-radius:0 8px 8px 0; font-size:14.5px; }
+  .label-tag{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.09em; text-transform:uppercase; font-weight:700; display:block; margin:14px 0 5px; }
+  .insight{ font-size:14.5px; font-style:italic; color:var(--ink-soft); background:var(--slate-100); border-radius:8px; padding:10px 14px; }
+  .insight .label-tag{ color:var(--slate-600); margin-top:0; }
+  .pillar-tag{ margin-top:12px; font-size:12.5px; background:var(--amber-100); color:var(--amber-ink); border-radius:8px; padding:7px 12px; }
+  .pillar-tag b{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.07em; text-transform:uppercase; margin-right:6px; }
+  .takeaway{ margin-top:12px; border-left:3px solid var(--green-600); background:var(--green-50); padding:12px 16px; border-radius:0 8px 8px 0; font-size:14.5px; }
   .takeaway .label{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--green-700); font-weight:600; display:block; margin-bottom:4px; }
+  .takeaway b{ color:var(--green-900); }
   .session-note{ margin-top:12px; font-size:12.8px; color:var(--ink-faint); font-style:italic; }
   .session.compact .session-body{ grid-template-columns:1fr; }
 
@@ -110,28 +115,23 @@
   .theme-item h4{ font-size:16.5px; margin-bottom:4px; }
   .theme-item p{ margin:0; font-size:14.5px; color:var(--ink-soft); }
 
-  .rec-block{ background:var(--paper-raised); border:1px solid var(--line); border-radius:14px; padding:24px 26px; margin-bottom:18px; box-shadow:var(--shadow); }
+  .rec-block{ background:var(--paper-raised); border:1px solid var(--line); border-radius:14px; padding:24px 26px; margin-bottom:18px; box-shadow:var(--shadow); border-top:4px solid var(--green-700); }
   .rec-head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
   .rec-head h3{ font-size:19.5px; }
   .rec-tag{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--slate-600); background:var(--slate-100); padding:3px 10px; border-radius:999px; letter-spacing:0.03em; }
   .rec-why{ font-size:14px; color:var(--ink-soft); margin:10px 0 14px; }
-  .rec-steps{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; }
-  @media (max-width:680px){ .rec-steps{ grid-template-columns:1fr; } }
-  .rec-col h5{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--green-700); margin:0 0 8px; }
-  .rec-col ul{ margin:0; padding-left:18px; font-size:14.3px; }
-  .rec-col li{ margin-bottom:8px; }
+  .responsible{ margin-top:10px; background:var(--amber-100); border-radius:8px; padding:9px 14px; font-size:13.5px; color:var(--amber-ink); }
+  .responsible b{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; }
 
-  .glossary{ display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin-top:8px; }
-  @media (max-width:680px){ .glossary{ grid-template-columns:1fr; } }
-  .glossary div{ font-size:14px; padding:10px 0; border-top:1px solid var(--line-soft); }
-  .glossary div:nth-child(-n+2){ border-top:none; }
-  .glossary b{ color:var(--green-700); }
+  .role-block{ background:var(--paper-raised); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin-bottom:16px; box-shadow:var(--shadow); }
+  .role-block h3{ font-size:18px; color:var(--green-900); }
+  .role-block .tagline{ font-size:13.5px; font-style:italic; color:var(--slate-600); margin-top:3px; margin-bottom:10px; }
+  .role-block ul{ margin:0; padding-left:20px; font-size:14px; }
+  .role-block li{ margin-bottom:7px; }
+  .decision-path{ background:var(--amber-100); border-radius:10px; padding:16px 20px; font-size:14.5px; font-weight:600; color:var(--ink); margin-top:8px; }
+  .decision-path .label-tag{ color:var(--amber-ink); margin-top:0; }
 
   footer{ margin-top:70px; padding-top:24px; border-top:1px solid var(--line); font-size:12.8px; color:var(--ink-faint); }
-  table.data{ width:100%; border-collapse:collapse; font-size:13.6px; margin-top:6px; }
-  table.data th, table.data td{ text-align:left; padding:7px 10px; border-bottom:1px solid var(--line-soft); }
-  table.data th{ font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-faint); }
-  .scrollx{ overflow-x:auto; }
 </style>
 </head>
 <body>
@@ -139,15 +139,15 @@
 <div class="cover">
   <div class="cover-eyebrow">Summit report</div>
   <h1>AI Summit Seoul 2026</h1>
-  <p class="cover-sub">A plain-language record of talks, panels, and expo highlights from AI Summit Seoul (AIS26) — reconstructed from live-translation captures and on-site photos.</p>
+  <p class="cover-sub">A plain-language record of talks, panels, and expo highlights from AI Summit Seoul (AIS26) — reconstructed from live-translation captures and on-site photos, mapped to Vision 2030 and a proposed ownership model for turning it into action.</p>
   <figure class="cover-figure">
     <img src="images/cover.jpg" alt="Ballroom at AI Summit Seoul, main stage screen reading AIS26 AI Summit Seoul">
   </figure>
   <div class="cover-meta">
-    <div><strong>Dates covered</strong><span class="mono">Aug 19–20, 2026</span></div>
+    <div><strong>Talks &amp; panels</strong><span class="mono">Aug 19–20, 2026</span></div>
+    <div><strong>Exhibit floor</strong><span class="mono">ran through Aug 21, 2026</span></div>
     <div><strong>Venue</strong><span class="mono">Gramercy Banquet &amp; Convention, Seoul</span></div>
     <div><strong>Sessions logged</strong><span class="mono">21 talks / panels · 3 expo booths</span></div>
-    <div><strong>Source material</strong><span class="mono">231 photos · 8 live-caption sequences · 7 short clips</span></div>
   </div>
 </div>
 
@@ -158,11 +158,11 @@
     <h2>If you only have 5 minutes</h2>
     <p class="sub">The five ideas that came up again and again, in plain language.</p>
     <ol>
-      <li><strong>Most AI pilots never make it to real use — and it's rarely the AI's fault.</strong> The most-repeated number of the summit: roughly 80% of AI projects never reach full production. The real blockers were messy/scattered data, tools bolted onto old workflows instead of built into them, and — most often — no senior person willing to approve scaling something up.</li>
-      <li><strong>Picking the AI model is the easy part now.</strong> Every major AI company (Anthropic, OpenAI, Microsoft, AWS) is now selling hands-on help to actually deploy AI inside a company, not just software access. The competition has moved from "whose model is smartest" to "who can actually get it running."</li>
-      <li><strong>Robots and physical AI need a stricter safety rule than chatbots.</strong> A chatbot's wrong answer is annoying; a robot's wrong action can hurt someone. The clearest rule offered: let AI act on its own only where a mistake can be undone. Anything that can't be undone stays a human decision.</li>
-      <li><strong>Good results always traced back to good data — not a fancier model.</strong> Storage companies, database companies, and AI labs all said the same thing in different words: get your data organized and accessible first, or nothing built on top of it will work reliably.</li>
-      <li><strong>The workforce most comfortable with AI is also the newest.</strong> Roughly 30% of the global office workforce is now Gen Z — the group most likely to already use AI tools daily. Training and change-management plans built only for senior staff will miss where AI habits are actually forming.</li>
+      <li><strong>Most AI pilots never make it to real use — and it's rarely the AI's fault.</strong> Roughly 80% of AI projects never reach full production. The real blockers were messy data, tools bolted onto old workflows, and no senior person willing to approve scaling something up.</li>
+      <li><strong>Picking the AI model is the easy part now.</strong> Every major AI company (Anthropic, OpenAI, Microsoft, AWS) is now selling hands-on help to actually deploy AI inside a company, not just software access.</li>
+      <li><strong>Robots and physical AI need a stricter safety rule than chatbots.</strong> A chatbot's wrong answer is annoying; a robot's wrong action can hurt someone. The clearest rule offered: let AI act on its own only where a mistake can be undone.</li>
+      <li><strong>Good results always traced back to good data — not a fancier model.</strong> Storage, database, and AI companies all said the same thing in different words: organize your data first, or nothing built on top of it works reliably.</li>
+      <li><strong>The workforce most comfortable with AI is also the newest.</strong> Roughly 30% of the global office workforce is now Gen Z — training built only for senior staff will miss where AI habits are actually forming.</li>
     </ol>
   </div>
 </section>
@@ -175,7 +175,7 @@
       <li><strong>Numbers and quotes are the speakers' own claims</strong>, passed through machine translation — treat every statistic as "what the speaker said," not something we independently checked.</li>
       <li><strong>Some sentences are cut off</strong> where a floating app button covered the text, or a photo was blurry. Gaps are left as gaps, not guessed at.</li>
       <li><strong>A few names have uncertain spelling</strong> in the captions (marked as <span class="mono">name unconfirmed</span>) — worth double-checking against the official program before using them externally.</li>
-      <li><strong>Venue signage said "Aug 19–21,"</strong> three days, but the material collected only covers two days (Aug 19–20).</li>
+      <li><strong>AI Summit Seoul (AIS26) ran Aug 19–21;</strong> the third day (Aug 21) was dedicated to the exhibition floor. This report's talk/panel coverage spans Aug 19–20, plus expo photos captured across the event.</li>
     </ul>
   </div>
   <div class="day-nav">
@@ -208,7 +208,7 @@
         <li>Panel: AI Governance in Manufacturing</li>
         <li>Agentic AI Strategies for Digital Resilience (Cisco)</li>
         <li>From Intuition to Intelligence (Gong)</li>
-        <li>Expo floor: robotics, ed-tech, health-AI booths</li>
+        <li>Expo floor: robotics, ed-tech, health-AI booths (through Aug 21)</li>
       </ol>
     </div>
   </div>
@@ -217,553 +217,466 @@
 <section id="glossary-section">
   <div class="section-head"><span class="section-num">01</span><h2>Six terms worth knowing before you read on</h2></div>
   <p class="section-intro">Skip this if you're already fluent in AI-conference jargon. Otherwise, these six terms show up repeatedly below.</p>
-  <div class="glossary">
-    <div><b>Agentic AI</b> — AI that doesn't just answer a question, but takes multi-step actions on its own toward a goal (e.g. booking, researching, filing).</div>
-    <div><b>AX</b> — shorthand used throughout the summit for "AI Transformation," the enterprise-wide effort to adopt AI, not just a single tool.</div>
-    <div><b>Harness Engineering</b> — the tooling and guardrails built around an AI model so it can be trusted to run unsupervised (the difference between a weekend prototype and something IT will actually support).</div>
-    <div><b>Sim-to-Real gap</b> — when something trained or tested in a simulator/lab works, then fails once it meets real-world mess (bad lighting, heat, unpredictable people).</div>
-    <div><b>World model</b> — an AI's internal understanding of how physical things behave (gravity, collisions, cause and effect) — the piece robots need that chatbots don't.</div>
-    <div><b>FDE (Forward-Deployed Engineer)</b> — a vendor's own engineer embedded inside a customer's rollout, rather than just selling a license and walking away.</div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px 24px;">
+    <div style="font-size:14px; padding:10px 0;"><b style="color:var(--green-700)">Agentic AI</b> — AI that doesn't just answer a question, but takes multi-step actions on its own toward a goal.</div>
+    <div style="font-size:14px; padding:10px 0;"><b style="color:var(--green-700)">AX</b> — shorthand for "AI Transformation," the enterprise-wide effort to adopt AI, not just a single tool.</div>
+    <div style="font-size:14px; padding:10px 0;"><b style="color:var(--green-700)">Harness Engineering</b> — the tooling and guardrails around an AI model so it can run unsupervised.</div>
+    <div style="font-size:14px; padding:10px 0;"><b style="color:var(--green-700)">Sim-to-Real gap</b> — when something tested in a lab/simulator fails once it meets real-world mess.</div>
+    <div style="font-size:14px; padding:10px 0;"><b style="color:var(--green-700)">World model</b> — an AI's internal understanding of how physical things behave.</div>
+    <div style="font-size:14px; padding:10px 0;"><b style="color:var(--green-700)">FDE (Forward-Deployed Engineer)</b> — a vendor's own engineer embedded inside a customer's rollout.</div>
   </div>
 </section>
 
 <section id="day1">
   <div class="section-head"><span class="section-num">02</span><h2>Day 1 — Foundations &amp; the enterprise reality check</h2></div>
-  <p class="section-intro">The first day moved from where agentic AI came from, to how far it actually reaches into production today — with two recurring warnings: most AI pilots never scale past a demo, and the physical/robotics wave ("Physical AI") is arriving faster than the safety testing built for it.</p>
+  <p class="section-intro">The first day moved from where agentic AI came from, to how far it actually reaches into production today.</p>
 
   <article class="session">
-    <div class="session-top">
-      <div>
-        <div class="session-time">Morning · Main Stage</div>
-        <h3 class="session-title">The Long Road to Agentic AI: A Pioneer's Perspective
-          <span class="kr">선구자의 관점에서 본 AI 어시스턴트에서 에이전틱 AI의 시대</span>
-        </h3>
-      </div>
-    </div>
-    <div class="chip-row">
-      <span class="chip">Speaker name not captured on slide</span>
-      <span class="chip track">Career: SRI → Nuance → Yahoo → Cortana → Google Assistant → Samsung Bixby/Viv → Georgia Tech</span>
-    </div>
-    <p class="in-short"><b>In short:</b> Today's AI assistants are less controllable than the voice assistants of the 2010s — and the fix on offer is a smaller, checkable control layer, not a bigger model.</p>
+    <div class="session-top"><div><div class="session-time">Morning · Main Stage</div>
+      <h3 class="session-title">The Long Road to Agentic AI: A Pioneer's Perspective<span class="kr">선구자의 관점에서 본 AI 어시스턴트에서 에이전틱 AI의 시대</span></h3></div></div>
+    <div class="chip-row"><span class="chip">Speaker name not captured on slide</span><span class="chip track">Career: SRI → Nuance → Yahoo → Cortana → Google Assistant → Samsung Bixby/Viv → Georgia Tech</span></div>
     <div class="session-body">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li>Traced "agentic AI" back to SRI's 1995 Office Assistant — a system that routed speech, email, and calendar requests to specialist agents, the direct ancestor of Siri and of what we now call agentic AI.</li>
+          <li>Traced "agentic AI" back to SRI's 1995 Office Assistant — the direct ancestor of Siri and today's AI agents.</li>
           <li>Argued 2010s-era assistants (Cortana, Google Assistant, Bixby) were deliberately limited, but controllable and fixable when something went wrong.</li>
           <li>Called 2022's ChatGPT moment "the wrong turn": fluent, but the older, more controllable structure was thrown out along with the friction.</li>
-          <li>Cited 2026 research showing today's agents guess when a task is unclear (89% success with a clear task vs. 6.7% with a vague one) and get stuck repeating their own wrong assumption in longer conversations.</li>
-          <li>Proposed a fix: a much smaller "sidecar" system that checks the model's actual reasoning (not just its final words), plus better real-time back-and-forth — "a meeting of the minds," not more autonomy.</li>
+          <li>Cited 2026 research: today's agents guess when a task is unclear (89% success with a clear task vs. 6.7% with a vague one).</li>
+          <li>Proposed a fix: a smaller "sidecar" system that checks the model's actual reasoning — "a meeting of the minds," not more autonomy.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>The pattern here suggests the industry conflated "more fluent" with "more capable." The deliberate constraints older assistants had weren't limitations to be discarded — they were what made a system auditable.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/pioneer.jpg" alt="Slide showing SRI Office Assistant agent architecture diagram from 1995">
-        <figcaption>SRI's 1995 "Office Assistant" — presented as the direct ancestor of today's AI agents.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/pioneer.jpg" alt="Slide showing SRI Office Assistant agent architecture diagram from 1995"><figcaption>SRI's 1995 "Office Assistant" — presented as the direct ancestor of today's AI agents.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>Fluency isn't the same as reliability. The field spent a decade building controllable systems, then reset to something harder to steer when today's AI arrived.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>Fluency isn't the same as reliability — a <b>Future Ready</b> test for which AI tools Benilde trusts with real responsibility, not just which ones sound impressive.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div>
-        <div class="session-time">Morning · Main Stage</div>
-        <h3 class="session-title">Agentic AI in Space: Traditional and Agentic AI Are Revolutionizing Space
-          <span class="kr">지구 밖의 자율 AI: 60개 위성이 스스로 생각하고 협력하는 법</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Morning · Main Stage</div>
+      <h3 class="session-title">Agentic AI in Space: Traditional and Agentic AI Are Revolutionizing Space<span class="kr">지구 밖의 자율 AI: 60개 위성이 스스로 생각하고 협력하는 법</span></h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
-    <p class="in-short"><b>In short:</b> A system that automatically points ~60 satellites at a developing event (like a volcano) — humans set the goal, the system handles the busywork.</p>
     <div class="session-body compact">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li>Demoed a workflow that detects an event (e.g. a volcanic heat signature), automatically picks the right satellites to look at it, and tracks it — shown live with a simulated Mount Pinatubo eruption.</li>
-          <li>Framed the goal as "humans <em>on</em> the loop, not <em>in</em> the loop" — people set intent and check results; the system does the coordination.</li>
-          <li>Closed on the idea of AI that builds its own step-by-step plan from a goal, instead of engineers hand-building a plan for every new situation.</li>
+          <li>Demoed a workflow that detects an event, automatically picks the right satellites to look at it, and tracks it — shown live with a simulated Mount Pinatubo eruption.</li>
+          <li>Framed the goal as "humans on the loop, not in the loop" — people set intent and check results; the system does the coordination.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>This model works because satellite tasking has cheap, reversible mistakes and a clear success metric. Those conditions don't hold everywhere — the exact caveat the Physical AI panel raises later that evening.</div>
       </div>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>"Set the goal, check the result" is a clean pattern for anything that has to watch and coordinate many sensors or systems at once — on Earth or off it.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>"Set the goal, check the result" is a <b>Future Ready</b> pattern worth borrowing — but only where mistakes are cheap to undo.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div>
-        <div class="session-time">Morning · Main Stage</div>
-        <h3 class="session-title">Is AI Actually Helping Enterprise Productivity?</h3>
-      </div>
-    </div>
-    <div class="chip-row">
-      <span class="chip">Featuring Prof. Kyungjong Lee — KB Kookmin Bank / KB Financial Group</span>
-    </div>
-    <p class="in-short"><b>In short:</b> Companies are adopting AI fast, but very few can show it actually helped their bottom line.</p>
+    <div class="session-top"><div><div class="session-time">Morning · Main Stage</div><h3 class="session-title">Is AI Actually Helping Enterprise Productivity?</h3></div></div>
+    <div class="chip-row"><span class="chip">Featuring Prof. Kyungjong Lee — KB Kookmin Bank / KB Financial Group</span></div>
     <div class="session-body compact">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
           <li>Of executives running multiple AI projects, only 6% said the projects moved profit by more than 2% — 94% saw no measurable financial impact.</li>
           <li>A Bank of Korea survey found 60–70% of Korean companies say they're adopting AI, but fewer than 10% report actual results.</li>
-          <li>Gartner data: over half of enterprise AI projects get cancelled at the "just testing it" stage, before ever reaching real use.</li>
-          <li>KB Financial Group described its own path: its AI-agent platform started development in 2024, launched in April 2025, and is now scaling up.</li>
+          <li>Gartner data: over half of enterprise AI projects get cancelled at the pilot stage.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>Three independent sources — Gartner, a national bank survey, and this speaker's own polling — landed on the same story. That's the honest median experience going into 2026, not cherry-picked pessimism.</div>
       </div>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>"Everyone's using AI" and "AI is actually working here" are two very different claims — and the gap between them was this summit's biggest running theme.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Financial Growth · Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>"Everyone's using AI" and "AI is actually working here" are different claims — a <b>Financial Growth</b> and <b>Future Ready</b> distinction Benilde's own pilots should be measured against before budget scales.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div>
-        <div class="session-time">Midday · Main Stage</div>
-        <h3 class="session-title">2026 Enterprise Agentic AX Technology Trends: Harness &amp; Loop Engineering
-          <span class="kr">2026 Enterprise Agentic AX 기술 트렌드 및 Harness &amp; Loop 엔지니어링 적용 사례 소개</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Midday · Main Stage</div>
+      <h3 class="session-title">2026 Enterprise Agentic AX Technology Trends: Harness &amp; Loop Engineering<span class="kr">2026 Enterprise Agentic AX 기술 트렌드 및 Harness &amp; Loop 엔지니어링 적용 사례 소개</span></h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
-    <p class="in-short"><b>In short:</b> There's now an entire discipline dedicated to making AI safe and reliable to run day-to-day — and every major vendor is racing to sell that layer, not just the model.</p>
     <div class="session-body">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li>Described a maturity ladder — casual chatbot use, then simple developer tools, then multi-tool platforms, then fully governed enterprise setups — with a clear warning: the easier/faster end of that ladder is also the hardest to control.</li>
-          <li>Explained "Loop Engineering": instead of a person prompting the AI step by step, you design a small loop — set a goal, let the agent try, have it check its own work, fix on failure, stop on success — with a human checking in on the bigger picture, not every step.</li>
-          <li>Covered tools that give AI agents a working "memory" across conversations, which most AI systems still lack by default.</li>
-          <li>Closed on a striking fact: Anthropic, OpenAI, AWS, and Microsoft have together committed over $9 billion combined to embedding their own staff inside customers' AI rollouts.</li>
+          <li>Described a maturity ladder — casual chatbot use, then developer tools, then multi-tool platforms, then fully governed enterprise setups.</li>
+          <li>Explained "Loop Engineering": set a goal, let the agent try, have it check its own work, fix on failure, stop on success.</li>
+          <li>Anthropic, OpenAI, AWS, and Microsoft have together committed over $9 billion to embedding their own staff inside customers' AI rollouts.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>Four fierce competitors converging on the identical business model is a strong signal the model layer has commoditized. Competitive edge — and lock-in risk — has moved to deployment expertise.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/harness.jpg" alt="Slide illustrating Harness Engineering as a three-panel comic from vibe coding to enterprise production">
-        <figcaption>"Harness Engineering" — the missing layer between a weekend prototype and something an enterprise can actually run.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/harness.jpg" alt="Slide illustrating Harness Engineering as a three-panel comic"><figcaption>"Harness Engineering" — the missing layer between a prototype and enterprise-grade AI.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>Every major AI vendor is now selling hands-on deployment help, not just model access — proof that the hard part was never picking a model.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Global Partnership Engagement</div>
+    <div class="takeaway"><span class="label">Takeaway</span>Every major vendor now sells hands-on deployment help — a <b>Global Partnership Engagement</b> detail worth negotiating into any contract, and proof picking a model was never the hard part.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Afternoon · Main Stage</div>
-        <h3 class="session-title">The Agentic Data Stack: Speed and Simplicity for AI That Scales</h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Afternoon · Main Stage</div><h3 class="session-title">The Agentic Data Stack: Speed and Simplicity for AI That Scales</h3></div></div>
     <div class="chip-row"><span class="chip">ClickHouse</span></div>
-    <p class="in-short"><b>In short:</b> AI agents hammer a database with far more unpredictable requests than a normal app does — you need a database built for that pattern.</p>
     <div class="session-body">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li>Walked through how AI queries databases changed over 2022–2025: from one predictable request per user, to an AI agent firing off many unpredictable requests at once.</li>
-          <li>Shared that OpenAI's daily log data is comparable to "500 Libraries of Congress a day," growing over 20% a month — and that Anthropic credited this same database technology as instrumental in shipping Claude 4.</li>
+          <li>AI agent queries shifted from one predictable request per user to many unpredictable requests at once.</li>
+          <li>OpenAI's daily logs compare to "500 Libraries of Congress a day"; Anthropic credited this tech in shipping Claude 4.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>This shift is a hidden capacity-planning cost most organizations haven't priced into infrastructure budgets — it shows up only once a pilot scales, not during the demo.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/clickhouse.jpg" alt="Slide with two article cards about OpenAI and Anthropic using ClickHouse for observability">
-        <figcaption>ClickHouse's closing slide, citing its use inside OpenAI's and Anthropic's own systems.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/clickhouse.jpg" alt="Slide with article cards about OpenAI and Anthropic using ClickHouse"><figcaption>ClickHouse's closing slide, citing use inside OpenAI's and Anthropic's own systems.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>AI agents don't just need "a database" — they need one built for many unpredictable requests at once, not the steady, predictable pattern older software assumes.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>AI agents need a database built for unpredictable requests — a <b>Future Ready</b> requirement before any college-wide AI platform decision.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Afternoon · Main Stage</div>
-        <h3 class="session-title">From Models to Reality: What It Takes to Run AI Reliably at Scale
-          <span class="kr">모델에서 현실까지: 대규모 AI를 안정적으로 운영하기 위한 조건</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Afternoon · Main Stage</div>
+      <h3 class="session-title">From Models to Reality: What It Takes to Run AI Reliably at Scale<span class="kr">모델에서 현실까지: 대규모 AI를 안정적으로 운영하기 위한 조건</span></h3></div></div>
     <div class="chip-row"><span class="chip">Colin Presly · VP, Customer Engineering, Seagate Technology</span></div>
-    <p class="in-short"><b>In short:</b> AI made data itself the scarce, valuable resource — and most of it still ends up sitting on plain hard drives, not fancy chips.</p>
     <div class="session-body">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li>Described three stages most companies pass through: can we build something useful → can we run it in production → does it create lasting value. Most companies are still stuck between the first two.</li>
-          <li>Cited data-growth estimates: under 1 zettabyte of data existed in 2005, 72 in 2020, and a projected 527 by 2029 — with AI training and AI's day-to-day use creating two different, both-growing kinds of demand for storage.</li>
-          <li>Noted that 85–95% of all AI data ultimately rests on ordinary hard drives, not premium chips — making basic storage density and cost a real lever on AI's overall cost and environmental footprint.</li>
+          <li>Three stages: can we build something useful → can we run it in production → does it create lasting value. Most stay stuck between the first two.</li>
+          <li>85–95% of all AI data ultimately rests on ordinary hard drives, not premium chips.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>Self-serving coming from a storage vendor, but a useful corrective: AI cost conversations fixate on GPU spend, when storage economics deserve equal attention.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/seagate.jpg" alt="Slide reading: AI has made data the most valuable asset in the digital economy">
-        <figcaption>Seagate's closing point: AI didn't just create demand for computing power — it made the underlying data itself the scarce, valuable asset.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/seagate.jpg" alt="Slide reading: AI has made data the most valuable asset"><figcaption>Seagate's point: AI made the underlying data itself the scarce, valuable asset.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>Every AI conversation eventually becomes a data-storage-and-governance conversation. The model gets the attention; where the data actually lives decides whether it's affordable and trustworthy.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Financial Growth · Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>Every AI conversation becomes a data-storage conversation — a <b>Financial Growth</b> and <b>Future Ready</b> reminder that where data lives decides what's affordable.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Afternoon · Main Stage</div>
-        <h3 class="session-title">How AI Is Redefining the Future of Work
-          <span class="kr">AI가 바꾸는 일의 미래</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Afternoon · Main Stage</div><h3 class="session-title">How AI Is Redefining the Future of Work<span class="kr">AI가 바꾸는 일의 미래</span></h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
-    <p class="in-short"><b>In short:</b> The newest, youngest part of the workforce is also the most AI-fluent — plan training around that reality, not around senior staff alone.</p>
     <div class="session-body">
       <div class="session-points">
-        <ul>
-          <li>Roughly 30% of the global office workforce is now Gen Z, a group that shows notably higher entrepreneurial and side-project instincts than earlier generations.</li>
-          <li>Noted a Korea-specific detail: mandatory military service and long job-hunting periods push back the age Korean Gen Z workers actually start full-time roles, compared to other countries.</li>
-        </ul>
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
+        <ul><li>Roughly 30% of the global office workforce is now Gen Z, with higher entrepreneurial instincts than earlier generations.</li></ul>
+        <div class="insight"><span class="label-tag">Insight</span>A governance-mismatch warning: policies written by and for senior leadership may regulate the group least likely to be driving day-to-day AI usage.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/genz.jpg" alt="Slide titled Gen Z is main workforce with workforce statistics">
-        <figcaption>Workforce-composition framing for why AI-native habits are arriving from the entry level up.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/genz.jpg" alt="Slide titled Gen Z is main workforce"><figcaption>Workforce-composition framing for AI-native habits arriving from the entry level up.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>AI habits are forming fastest at the newest, least senior level of the workforce — governance and training built only for leadership will miss it.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Enrollment Growth · Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>AI habits form fastest at the newest, least senior level — the same cohort Benilde recruits for <b>Enrollment Growth</b>, a <b>Future Ready</b> reason to train for entry-level fluency.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Late afternoon · Keynote</div>
-        <h3 class="session-title">Building as a Creative Act: An Innovator's Mindset for the AI Age
-          <span class="kr">AI 시대의 혁신가의 마인드셋</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Late afternoon · Keynote</div><h3 class="session-title">Building as a Creative Act: An Innovator's Mindset for the AI Age<span class="kr">AI 시대의 혁신가의 마인드셋</span></h3></div></div>
     <div class="chip-row"><span class="chip">Savannah Kunovsky · Managing Director, IDEO AI MTechLab</span></div>
-    <p class="in-short"><b>In short:</b> This talk's idea of "embodiment" — AI that has to act in the physical world, not just answer questions — became the thread that connected the rest of the day.</p>
     <div class="session-body">
       <div class="session-points">
-        <ul>
-          <li>Opening keynote of the afternoon, framed as "the innovator's mindset in the age of AI" from IDEO's AI-focused lab.</li>
-          <li>Its framing of embodiment was picked up directly, by name, later that same day in the Physical AI panel.</li>
-        </ul>
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
+        <ul><li>Framed as "the innovator's mindset in the age of AI." Its idea of embodiment was picked up directly by the Physical AI panel later that day.</li></ul>
+        <div class="insight"><span class="label-tag">Insight</span>Watching which framing gets picked up by unrelated later sessions is a useful signal for what a field is actually converging on, not just one speaker's pet phrase.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/kunovsky.jpg" alt="Slide introducing Savannah Kunovsky of IDEO">
-        <figcaption>Introduction slide for the IDEO AI MTechLab keynote.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/kunovsky.jpg" alt="Slide introducing Savannah Kunovsky of IDEO"><figcaption>Introduction slide for the IDEO AI MTechLab keynote.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>"Embodiment" — intelligence that has to act in, and be checked against, the physical world — was this summit's connective thread between design thinking and hard robotics/defense discussions.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>"Embodiment" became this summit's connective thread — a <b>Future Ready</b> concept as AI moves from chat into physical/creative practice.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Late afternoon · Main Stage</div>
-        <h3 class="session-title">Beyond Better Models: What Will Define the Next Era of AI?
-          <span class="kr">AI 에이전트의 미래: 더 나은 모델이 아니라 더 나은 워크플로우</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Late afternoon · Main Stage</div>
+      <h3 class="session-title">Beyond Better Models: What Will Define the Next Era of AI?<span class="kr">AI 에이전트의 미래: 더 나은 모델이 아니라 더 나은 워크플로우</span></h3></div></div>
     <div class="chip-row"><span class="chip">Genspark</span></div>
-    <p class="in-short"><b>In short:</b> A second speaker independently landed on the same idea as the morning's opening talk — the real unlock is memory/context, not a bigger model.</p>
     <div class="session-body">
       <div class="session-points">
-        <ul>
-          <li>Shared growth numbers as evidence, not boasting: $250M in yearly revenue within 12 months from zero, $645M raised at a $2.6B valuation, over 7,000 paying business customers.</li>
-          <li>Core message: "better models will keep shipping — the breakthrough is context." Described a "second brain" layer that follows a person across apps, rather than living inside any single tool.</li>
-        </ul>
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
+        <ul><li>$250M revenue in 12 months from zero; $645M raised at $2.6B valuation. Core message: "better models will keep shipping — the breakthrough is context."</li></ul>
+        <div class="insight"><span class="label-tag">Insight</span>A vendor pitch and an unrelated keynote independently reaching the same conclusion hours apart is a stronger signal of real consensus than either alone.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/genspark.jpg" alt="Slide showing Genspark growth statistics: ARR, funding raised, and business customers">
-        <figcaption>Genspark's growth numbers, offered as evidence for its "context, not bigger models" argument.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/genspark.jpg" alt="Slide showing Genspark growth statistics"><figcaption>Genspark's growth numbers, offered as evidence for its "context, not bigger models" argument.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>Two unrelated speakers, hours apart, reached the same conclusion independently: a persistent memory/context layer matters more than a bigger model.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>Two unrelated speakers reached the same conclusion: memory/context matters more than model size — a <b>Future Ready</b> principle for evaluating any AI tool.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Evening · Keynote Panel</div>
-        <h3 class="session-title">The Era of Physical AI: The Future of Industry Transformed by Physical AI</h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Evening · Keynote Panel</div><h3 class="session-title">The Era of Physical AI: The Future of Industry Transformed by Physical AI</h3></div></div>
     <div class="chip-row">
       <span class="chip">Moderator: Prof. Doohee Jeong — Handong Global University / Impactive AI</span>
       <span class="chip">Prof. Ahyoung Kim — Seoul National University</span>
       <span class="chip">Tony Jang — CEO, FactoryLab.AI (ex-Hyundai AutoEver)</span>
       <span class="chip">CTO Seung-young Lee — LIG Defense &amp; Aerospace</span>
     </div>
-    <p class="in-short"><b>In short:</b> The single most useful idea from the whole summit: let AI decide freely only where a mistake can be undone — everything else stays a human call.</p>
     <div class="session-body">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li><strong>Why now:</strong> The turning point traced through AlphaGo → an earlier wave of AI that disappointed robotics (2014–2020) → the technology behind ChatGPT, which succeeded in language, then vision, then robotics — the shift from just <em>sensing</em> the world to actually <em>understanding</em> it.</li>
-          <li><strong>Demo vs. real deployment — three questions</strong> (Tony Jang): Does using it require changing how things already work? Does a failure fit inside normal turnaround time? Is the data needed to keep it accurate clearly someone's job? If all three check out, it's real — not just "a cool demo."</li>
-          <li><strong>When is a "world model" real, not marketing?</strong> A simulator built on real physics is proven technology; a system claiming to perfectly understand physics from scratch is "still at the packaging stage." A described incident at Tesla — its Optimus robot misidentifying a coworker as a part and pinning them to a wall — was cited as the real cost of getting this wrong.</li>
-          <li><strong>Where should AI's freedom to act stop?</strong> (CTO Seung-young Lee, defense context): the line is whether the outcome is <em>reversible</em>, not how smart the AI is. Where a decision can't be undone, AI's job is to hand humans better information faster — not to decide. That's a deliberate boundary, not a current technical limit.</li>
-          <li><strong>Why lab-tested AI often fails in the real world:</strong> roughly half the time it's a software issue (a lab's lighting/conditions don't match reality); the other half is hardware (real heat, vibration, and signal loss that's hard to simulate at all).</li>
-          <li><strong>Testing under active interference, not just noise:</strong> in defense, the threat isn't accidental error — it's deliberate jamming and deception. The proposed fix: test against a wide range of realistic conditions, keep expanding that range as new edge cases turn up, and treat this as something that needs government-level involvement, not one company solving it alone.</li>
+          <li><b>Demo vs. real deployment (Tony Jang):</b> does using it require changing how things already work? Does a failure fit inside normal turnaround time? Is the retraining data clearly someone's job?</li>
+          <li><b>Where should AI's freedom to act stop? (CTO Lee):</b> the line is whether the outcome is reversible, not how smart the AI seems.</li>
+          <li>A described Tesla Optimus incident — misidentifying a coworker as a part — was cited as the real cost of trusting an unproven world model.</li>
+          <li><b>Testing under active interference:</b> in defense, the threat is deliberate jamming and deception, not accidental error.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>"Reversibility" is a more portable governance principle than most, because it's domain-agnostic and testable in advance — a literal checklist question for any AI feature, physical or digital.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/robots.jpg" alt="Humanoid and quadruped robots on display at the expo floor">
-        <figcaption>Humanoid and quadruped robots on the expo floor — the "Physical AI" theme made tangible one floor down from the panel.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/robots.jpg" alt="Humanoid and quadruped robots on display at the expo floor"><figcaption>Humanoid and quadruped robots on the expo floor — "Physical AI" made tangible one floor down.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>Use <em>reversibility</em>, not how capable the AI seems, as the line for how much it's allowed to decide — and test any physical AI system against a wide range of real conditions, not a fixed checklist, before trusting it in the field.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>Use reversibility, not capability, as the line for how much AI decides — a <b>Future Ready</b> principle directly usable for Benilde's own Mental Health and Academic Advising AI agents.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Evening · Main Stage</div>
-        <h3 class="session-title">The Rise of AI-Native Work
-          <span class="kr">AI 네이티브 워크플로우 혁명</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Evening · Main Stage</div><h3 class="session-title">The Rise of AI-Native Work<span class="kr">AI 네이티브 워크플로우 혁명</span></h3></div></div>
     <div class="chip-row"><span class="chip">Laurent Thevenet — Head of Creative Technology, APAC &amp; MEA, Publicis Groupe</span></div>
-    <p class="in-short"><b>In short:</b> Give AI users a shared, supported toolkit instead of restricting them — and grow the ownership of a tool as its use grows.</p>
     <div class="session-body">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li>"Instant capability isn't expertise": AI gives you fast output, but a person still needs to judge whether it's actually good and what could go wrong — "the gap is slop."</li>
-          <li>Warned against treating "which model to use for which task" as a strategy on its own — it's plumbing, not transformation.</li>
-          <li>Argued the fix for ungoverned tool sprawl isn't restricting people — it's giving them a shared, well-supported set of tools and data to build on.</li>
-          <li>Proposed a simple rule for when a tool needs formal ownership: 5 users, the builder still owns it fine; 50 users, it needs a named owner; 500 users, it needs a full team.</li>
+          <li>"Instant capability isn't expertise" — the gap between fast AI output and knowing what's actually good is "slop."</li>
+          <li>Ownership rule: 5 users, the builder owns it; 50, needs a named owner; 500, needs a full team.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>The 5/50/500 rule is really a proxy for blast radius, not raw usage — it works best paired with the Physical AI panel's reversibility test, not used alone.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/publicis.jpg" alt="Slide titled Tokenmaxxing does not equal Transformation with model router logos">
-        <figcaption>Routing tasks to the "best" model is plumbing, not a strategy on its own.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/publicis.jpg" alt="Slide titled Tokenmaxxing does not equal Transformation"><figcaption>Routing tasks to the "best" model is plumbing, not a strategy on its own.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>A simple ready-made rule for when an internal AI prototype needs formal ownership: 5 users → the builder; 50 → a named owner; 500 → a full team.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Financial Growth</div>
+    <div class="takeaway"><span class="label">Takeaway</span>5 → the builder; 50 → a named owner; 500 → a full team — a <b>Future Ready</b> and <b>Financial Growth</b> check before any pilot becomes unmanageable.</div>
   </article>
-
 </section>
 
 <section id="day2">
   <div class="section-head"><span class="section-num">03</span><h2>Day 2 — Industry deployment &amp; governance</h2></div>
-  <p class="section-intro">The second day shifted from "what is agentic AI" to "why doesn't it work yet at our scale" — messy data, change management, and the uncomfortable question of who's actually willing to approve scaling something up.</p>
+  <p class="section-intro">The second day shifted from "what is agentic AI" to "why doesn't it work yet at our scale."</p>
 
-  <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Morning · Main Stage</div>
-        <h3 class="session-title">The Conditions for AX Success and a Truly AI-Native Enterprise</h3>
-      </div>
-    </div>
+  <article class="session compact">
+    <div class="session-top"><div><div class="session-time">Morning · Main Stage</div><h3 class="session-title">The Conditions for AX Success and a Truly AI-Native Enterprise</h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
-    <div class="session-body compact">
-      <div class="session-points">
-        <ul>
-          <li>Presented a simple 4-level scorecard for how far a company's AI use has actually progressed — from occasional tool use to genuine, everyday agentic work.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="session-note">Captured only in slide/photo form; the caption detail for this talk wasn't fully recovered from the source images.</div>
+    <div class="session-body compact"><div class="session-points">
+      <span class="label-tag" style="color:var(--green-700)">Highlights</span>
+      <ul><li>Presented a 4-level scorecard for AI maturity — from occasional tool use to genuine, everyday agentic work.</li></ul>
+      <div class="insight"><span class="label-tag">Insight</span>That a maturity-model talk earned its own session suggests the market has matured past "should we adopt AI" into "how good are we at it yet."</div>
+    </div></div>
+    <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
+    <div class="session-note">Captured only in slide/photo form; caption detail wasn't fully recovered from the source images.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Morning · Track A</div>
-        <h3 class="session-title">Accelerating Breakthroughs with AI: Unlocking Opportunities in Traditional Industries</h3>
-      </div>
-    </div>
-    <div class="chip-row">
-      <span class="chip">Ramine Tinati — Head of APAC, Google DeepMind</span>
-      <span class="chip track">Moderator: Seri Kim</span>
-    </div>
-    <p class="in-short"><b>In short:</b> Most AI pilots fail as a systems problem (people, data, workflow) — not because the AI itself is weak.</p>
+    <div class="session-top"><div><div class="session-time">Morning · Track A</div><h3 class="session-title">Accelerating Breakthroughs with AI: Unlocking Opportunities in Traditional Industries</h3></div></div>
+    <div class="chip-row"><span class="chip">Ramine Tinati — Head of APAC, Google DeepMind</span><span class="chip track">Moderator: Seri Kim</span></div>
     <div class="session-body">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li>Opened with DeepMind's science-first roots (the AlphaGo match, played in Seoul a decade ago), then its non-chatbot track record: AlphaFold (200M+ protein structures, now free even for commercial use), a materials-science model with 2.2M predicted crystal structures, and weather-forecasting tools.</li>
-          <li>Repeated the central statistic: roughly 80% of AI projects never reach full production — a systems problem spanning people, data, existing tools, and infrastructure, not a "the model isn't smart enough" problem.</li>
-          <li><strong>Why pilots stall — three causes:</strong> scattered/unusable data, AI added on top of a workflow instead of built into it, and cultural resistance (no one senior owning it).</li>
-          <li><strong>Four fixes:</strong> get the data solid and verified first; keep re-checking the AI against how your industry actually talks; build AI into daily tasks, not just chat; and put real safety/oversight checks in place.</li>
-          <li>Named three industries with the most room to benefit from this approach: healthcare/life sciences, manufacturing/supply chain, and telecom/infrastructure.</li>
+          <li>DeepMind's science-first roots (AlphaGo, played in Seoul a decade ago), AlphaFold, materials-science and weather models.</li>
+          <li>Repeated the central statistic: roughly 80% of AI projects never reach full production — a systems problem.</li>
+          <li><b>Four fixes:</b> solid verified data first, continuous domain re-checking, embedded (not bolted-on) workflows, real safety/oversight checks.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>Opening with the slowest-to-monetize, most credible work — not a flashy demo — is itself a rhetorical strategy: positioning rigor as the differentiator in a market saturated with unverified demos.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/deepmind.jpg" alt="Slide showing AI Transformation is a Systems-Level Exercise diagram">
-        <figcaption>DeepMind's framing: AI transformation succeeds or fails as a systems-level exercise, not a model swap.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/deepmind.jpg" alt="Slide showing AI Transformation is a Systems-Level Exercise"><figcaption>DeepMind's framing: AI transformation succeeds or fails as a systems-level exercise.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>The summit's most-repeated number — <strong>80% of AI projects don't reach production</strong> — traces back to the same root cause every time: data readiness and how well it's built into daily work, not the AI's raw capability.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Global Partnership Engagement</div>
+    <div class="takeaway"><span class="label">Takeaway</span>The summit's most-repeated number — 80% don't reach production — traces to data readiness, a <b>Future Ready</b> lesson, and a <b>Global Partnership Engagement</b> opening given DeepMind's free academic-tier tools.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Morning · Main Stage</div>
-        <h3 class="session-title">The Present and Future of Payment in the Age of AI
-          <span class="kr">AI 기술과 만난 결제(Payment)의 현재와 미래</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Morning · Main Stage</div><h3 class="session-title">The Present and Future of Payment in the Age of AI<span class="kr">AI 기술과 만난 결제(Payment)의 현재와 미래</span></h3></div></div>
     <div class="chip-row"><span class="chip">Sunghee An — Executive Director, Shinhan Card AX Research Institute</span></div>
-    <p class="in-short"><b>In short:</b> Four completely different types of companies are all racing to put an AI agent inside your next payment.</p>
     <div class="session-body">
       <div class="session-points">
-        <ul>
-          <li>Mapped the competition across four types of players: AI companies partnering into payments (OpenAI + Stripe, Google), existing wallets (KakaoPay, NaverPay, Samsung Pay), online retailers (Amazon, Walmart), and card networks (Mastercard, Visa).</li>
-          <li>Introduced Shinhan's own "Agent Pay" pilot — AI agents managing payments on a customer's behalf.</li>
-        </ul>
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
+        <ul><li>Mapped four competitor types racing into AI payments: AI platforms, existing wallets, retailers, card networks. Introduced Shinhan's "Agent Pay" pilot.</li></ul>
+        <div class="insight"><span class="label-tag">Insight</span>When four structurally different competitor types move into the same space at once, the opportunity is real but the eventual standard is genuinely unsettled — worth watching, not urgently acting on.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/shinhan.jpg" alt="Table comparing key player movements in AI payments across four categories">
-        <figcaption>Shinhan Card's map of AI entering payments from four directions at once.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/shinhan.jpg" alt="Table comparing key player movements in AI payments"><figcaption>Shinhan Card's map of AI entering payments from four directions at once.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>Payments is a preview of what's coming to every trust-sensitive process — general AI platforms, existing operators, and network players are all racing for the same seat at the table.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Financial Growth · Global Partnership Engagement</div>
+    <div class="takeaway"><span class="label">Takeaway</span>Payments previews what's coming to every trust-sensitive process — a <b>Financial Growth</b> and <b>Global Partnership Engagement</b> signal worth watching.</div>
   </article>
 
-  <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Midday · Main Stage</div>
-        <h3 class="session-title">Decisions vs. Tasks: What Agentic AI Actually Means in Operations</h3>
-      </div>
-    </div>
+  <article class="session compact">
+    <div class="session-top"><div><div class="session-time">Midday · Main Stage</div><h3 class="session-title">Decisions vs. Tasks: What Agentic AI Actually Means in Operations</h3></div></div>
     <div class="chip-row"><span class="chip">Prent Mishra</span></div>
-    <div class="session-body compact">
-      <div class="session-points">
-        <ul>
-          <li>Captured via stage/slide photos only. The talk's core distinction — automating a discrete task versus letting AI make an actual decision — is directly related to the "reversibility" idea from the Physical AI panel, but the full argument wasn't recovered from the source images.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="session-note">Worth following up on if a fuller recording turns up — this distinction matters for the recommendations below.</div>
+    <div class="session-body compact"><div class="session-points">
+      <span class="label-tag" style="color:var(--green-700)">Highlights</span>
+      <ul><li>Captured via stage/slide photos only; the full argument wasn't recovered.</li></ul>
+      <div class="insight"><span class="label-tag">Insight</span>Even from a thin record, the framing itself matters: "automating a task" vs. "delegating a decision" is exactly the vocabulary the Physical AI panel's reversibility principle needs to be applied inside a real workflow.</div>
+    </div></div>
+    <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
+    <div class="session-note">Worth following up on if a fuller recording turns up.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Afternoon · Track D</div>
-        <h3 class="session-title">Panel: Hidden Bottlenecks in Enterprise AI — Data Quality, Governance, and Reality</h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Afternoon · Track D</div><h3 class="session-title">Panel: Hidden Bottlenecks in Enterprise AI — Data Quality, Governance, and Reality</h3></div></div>
     <div class="chip-row">
       <span class="chip">Moderator: <span class="mono">name unconfirmed</span> ("Seunghyun"/"Seunghwan" Lee), VP, Samil PwC</span>
       <span class="chip">Yongmin Choi — Head of AI Strategy Center, Woori Financial Group</span>
       <span class="chip">Yoonhee Hwang — Senior VP, Data Intelligence, LG Electronics</span>
     </div>
-    <p class="in-short"><b>In short:</b> The single biggest blocker wasn't the technology — it was nobody senior willing to say "yes, scale it up."</p>
     <div class="session-body">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li>Named the real bottleneck of the last 2–3 years as that exact moment — someone senior has to approve scaling a pilot that already works.</li>
-          <li>Used a gold-rush comparison: in past tech waves, the money went to the companies selling the infrastructure (chipmakers, cloud providers), not most of the people trying to use it — a caution against over-spending on computing power before the actual workflow value is proven.</li>
-          <li>Debated whether AI agents should be managed like software accounts or like digital employees with defined roles — an open question, not a settled one.</li>
-          <li>LG Electronics described a common trap: a "plain-English database search" tool that worked great in testing broke down once scaled to thousands of real tables — accuracy quietly dropped as it left the lab.</li>
-          <li>Closing advice: pair every AI rollout with an actual redesign of the process and people's roles — don't just bolt AI onto how things already work.</li>
+          <li>Named the real bottleneck: someone senior has to approve scaling a pilot that already works.</li>
+          <li>A gold-rush comparison: the money went to infrastructure sellers, not most people trying to use it.</li>
+          <li>LG described a common trap: a "plain-English database search" tool that broke down once scaled to thousands of real tables.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>The "who presses the button" problem and LG's technical failure likely compound each other: a shaky pilot makes leadership less willing to approve scaling, delaying the fix that would stabilize it.</div>
       </div>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>Executive hesitation — not data or model quality — was named as the single biggest bottleneck here. It's a leadership and incentive problem more than a technical one.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Financial Growth</div>
+    <div class="takeaway"><span class="label">Takeaway</span>Executive hesitation — not data or model quality — was the biggest bottleneck named here. A <b>Future Ready</b> and <b>Financial Growth</b> governance problem the Digital Transformation Office should own explicitly (see §05).</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Afternoon · Track D</div>
-        <h3 class="session-title">Panel: AI Governance in Manufacturing</h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Afternoon · Track D</div><h3 class="session-title">Panel: AI Governance in Manufacturing</h3></div></div>
     <div class="chip-row"><span class="chip">Three panelists, names not captured in the recovered transcript</span></div>
-    <p class="in-short"><b>In short:</b> Before any AI agent can help on the factory floor, someone has to write down the knowledge that currently only lives in people's heads.</p>
     <div class="session-body">
       <div class="session-points">
-        <ul>
-          <li>Named the core difficulty as turning knowledge that lives only in experienced staff's heads into shared, written data before any AI agent can use it.</li>
-          <li>Raised real cost pressure from cheaper competitors, and the practical difficulty of hiring skilled on-site staff internationally, as reasons manufacturers are turning to AI tools for field work.</li>
-          <li>Closed with a candid point: when agents absorb roughly half a team's old workload, the goal isn't to cut the team — it's to move them to the work the tools still can't do.</li>
-        </ul>
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
+        <ul><li>Named the core difficulty as turning knowledge that lives only in experienced staff's heads into shared, written data.</li></ul>
+        <div class="insight"><span class="label-tag">Insight</span>"Turning tacit knowledge into data" is functionally the same problem manufacturers have always had with retiring experienced staff. AI didn't create it — it just raised the cost of not solving it.</div>
       </div>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>Writing down tacit, expert-only knowledge is the unglamorous but unavoidable first step before any manufacturing AI can be trusted — no software fixes that on its own.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
+    <div class="takeaway"><span class="label">Takeaway</span>Writing down tacit, expert-only knowledge is the unglamorous but unavoidable first step — a <b>Future Ready</b> lesson for any department piloting AI on undocumented know-how.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Afternoon · Main Stage</div>
-        <h3 class="session-title">Agentic AI Strategies for Building Digital Resilience
-          <span class="kr">디지털 레질리언스 구축을 위한 에이전틱 AI 전략</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Afternoon · Main Stage</div><h3 class="session-title">Agentic AI Strategies for Building Digital Resilience<span class="kr">디지털 레질리언스 구축을 위한 에이전틱 AI 전략</span></h3></div></div>
     <div class="chip-row"><span class="chip">Cisco</span></div>
-    <p class="in-short"><b>In short:</b> One well-organized data pipeline can feed security, compliance, and AI agents alike — instead of a separate setup for each.</p>
     <div class="session-body">
       <div class="session-points">
-        <ul>
-          <li>Presented a shared data pipeline that routes machine/system data into one low-cost store, then feeds it into AI training, compliance, security monitoring, incident response, and everyday AI agents from that single source.</li>
-          <li>Made the same point as the DeepMind talk from a different angle: one well-governed data foundation is the prerequisite for AI and security to actually work well together.</li>
-        </ul>
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
+        <ul><li>One shared data pipeline feeds AI training, compliance, security monitoring, incident response, and AI agents from a single source.</li></ul>
+        <div class="insight"><span class="label-tag">Insight</span>Routing security and AI through the same pipeline is efficient, but a security incident and an AI-agent failure will increasingly surface in the same monitoring system — worth deciding who owns that in advance.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/cisco.jpg" alt="Diagram of Cisco Data Fabric architecture routing machine data into ML training, security, and observability">
-        <figcaption>One shared data foundation feeding security, compliance, and AI agents alike.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/cisco.jpg" alt="Diagram of Cisco Data Fabric architecture"><figcaption>One shared data foundation feeding security, compliance, and AI agents alike.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>Cybersecurity readiness and AI-agent readiness are converging on the same requirement: one well-governed data pipeline everything draws from.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Enhanced Reputation and Branding</div>
+    <div class="takeaway"><span class="label">Takeaway</span>Cybersecurity and AI-agent readiness are converging on the same requirement — a <b>Future Ready</b> foundation that also protects Benilde's <b>Reputation and Branding</b>.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Late afternoon · Track A</div>
-        <h3 class="session-title">From Intuition to Intelligence: How AI Has Redefined Revenue Growth
-          <span class="kr">세일즈 과학의 혁명: AI는 영업을 어떻게 바꼈는가</span>
-        </h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Late afternoon · Track A</div><h3 class="session-title">From Intuition to Intelligence: How AI Has Redefined Revenue Growth<span class="kr">세일즈 과학의 혁명: AI는 영업을 어떻게 바꼈는가</span></h3></div></div>
     <div class="chip-row"><span class="chip">Barra Ó Briain — Head of APEC Sales, Gong</span></div>
-    <p class="in-short"><b>In short:</b> A simple, honest way to check if an AI tool is actually working: did it save time, <em>and</em> did it improve the actual result?</p>
     <div class="session-body">
       <div class="session-points">
+        <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
-          <li>Cited a PwC study: 74% of AI's business value goes to just 20% of companies — not because they bought more software, but because they redesigned how they work around it, and let it make more decisions while also investing in <em>more</em> oversight, not less.</li>
-          <li>Contrasted an 88% AI-adoption figure with a separate finding that 60% of AI projects are on track to miss their goals — "everyone has the tool, almost no one has the value."</li>
-          <li>Proposed a simple formula for what counts as a real AI win: time saved <em>times</em> how much better the actual outcome is. Most companies stop at the "time saved" half.</li>
-          <li>From analyzing millions of real sales calls: top-performing reps talk about 46% of the time versus 68% for average reps — and they wait until much later in the call to discuss price, once real value has been shown.</li>
-          <li>Cited results at customer companies: roughly 10 hours per week given back to each rep, 46–50% less time to get new hires up to speed, and a self-reported 64% jump in productivity — with Anthropic named as one customer.</li>
+          <li>PwC: 74% of AI's business value goes to just 20% of companies — the ones that redesigned workflows and invested in more oversight, not less.</li>
+          <li>Formula for a real AI win: time saved × how much better the outcome is. Most companies stop at "time saved."</li>
+          <li>Top reps talk ~46% of the time vs. 68% for average reps, and wait later in the call to discuss price.</li>
         </ul>
+        <div class="insight"><span class="label-tag">Insight</span>The formula is easy to state, hard to measure: "effectiveness" requires agreeing what outcome you're optimizing for — a conversation most organizations skip before buying the tool.</div>
       </div>
-      <figure class="session-figure">
-        <img src="images/gong.jpg" alt="Slide with Gong company statistics and Gartner Magic Quadrant ranking">
-        <figcaption>Gong's closing credibility slide — company stats and industry-analyst rankings.</figcaption>
-      </figure>
+      <figure class="session-figure"><img src="images/gong.jpg" alt="Slide with Gong company statistics"><figcaption>Gong's closing credibility slide — company stats and industry-analyst rankings.</figcaption></figure>
     </div>
-    <div class="takeaway"><span class="label">Takeaway</span>"Time saved times outcome improved" is a simple, reusable check for whether an AI tool is actually working, or just automating the easy half of the job.</div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Enrollment Growth · Financial Growth</div>
+    <div class="takeaway"><span class="label">Takeaway</span>"Time saved × outcome improved" applies directly to Benilde's <b>Enrollment Growth</b> funnel (Recruitment Chatbot, Advising Agent) and is a <b>Financial Growth</b> discipline for reporting any AI tool's real value.</div>
   </article>
 
   <article class="session">
-    <div class="session-top">
-      <div><div class="session-time">Throughout both days · Expo Floor</div>
-        <h3 class="session-title">Expo highlights</h3>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">Throughout · Expo Floor (through Aug 21)</div><h3 class="session-title">Expo highlights</h3></div></div>
     <div class="expo-grid">
-      <div class="expo-card">
-        <img src="images/robots.jpg" alt="Humanoid and quadruped robots on display">
-        <div class="expo-text"><h4>FAIN Robotics × AGIBOT</h4><p>Humanoid and quadruped robots on live demo — the most direct, physical illustration of "Physical AI" on the whole show floor.</p></div>
-      </div>
-      <div class="expo-card">
-        <img src="images/ggu.jpg" alt="Golden Gate University booth for Doctor of Technology in Applied and Agentic AI">
-        <div class="expo-text"><h4>Golden Gate University</h4><p>A fully online doctorate in Applied &amp; Agentic AI for working AI practitioners — a sign of how fast credentialing is following the field.</p></div>
-      </div>
-      <div class="expo-card">
-        <img src="images/health.jpg" alt="Foretell My Health booth for blood-based AI cancer screening">
-        <div class="expo-text"><h4>Foretell My Health</h4><p>A blood-based AI cancer-screening startup, starting with ovarian cancer risk — AI showing up in healthcare diagnostics, not just enterprise software.</p></div>
-      </div>
+      <div class="expo-card"><img src="images/robots.jpg" alt="Humanoid and quadruped robots on display"><div class="expo-text"><h4>FAIN Robotics × AGIBOT</h4><p>Humanoid and quadruped robots on live demo — "Physical AI" made tangible.</p></div></div>
+      <div class="expo-card"><img src="images/ggu.jpg" alt="Golden Gate University booth"><div class="expo-text"><h4>Golden Gate University</h4><p>A fully online doctorate in Applied &amp; Agentic AI for working practitioners.</p></div></div>
+      <div class="expo-card"><img src="images/health.jpg" alt="Foretell My Health booth"><div class="expo-text"><h4>Foretell My Health</h4><p>A blood-based AI cancer-screening startup, starting with ovarian cancer risk.</p></div></div>
     </div>
+    <div class="pillar-tag"><b>Vision 2030 pillars</b>Enhanced Reputation and Branding · Global Partnership Engagement</div>
   </article>
 
   <article class="session compact">
-    <div class="session-top">
-      <div><div class="session-time">End of Day 2</div>
-        <h3 class="session-title">Closing</h3>
-      </div>
-    </div>
-    <div class="session-body compact">
-      <div class="session-points">
-        <p style="margin:0; color:var(--ink-soft); font-size:15px;">The closing line from the live feed: <em>"Thank you once again for your insightful presentation. This concludes all the sessions of AI Summit Seoul 2026."</em></p>
-      </div>
-    </div>
+    <div class="session-top"><div><div class="session-time">End of Day 2</div><h3 class="session-title">Closing</h3></div></div>
+    <div class="session-body compact"><div class="session-points"><p style="margin:0; color:var(--ink-soft); font-size:15px;">The closing line from the live feed: <em>"Thank you once again for your insightful presentation. This concludes all the sessions of AI Summit Seoul 2026."</em></p></div></div>
   </article>
-
 </section>
 
 <section id="themes">
   <div class="section-head"><span class="section-num">04</span><h2>Four ideas that kept coming back</h2></div>
-  <p class="section-intro">Across all 21 sessions, regardless of industry or track, these four points kept resurfacing.</p>
   <div class="theme-list">
-    <div class="theme-item"><div class="theme-mark">01</div><div><h4>Most AI pilots die before real use — and it's rarely the AI's fault</h4><p>From the morning talk (94% saw no profit impact) to DeepMind's "80% never reach production" to the "who presses the button" problem: messy data, tools bolted onto old workflows, and hesitant leadership were named as the real blockers across five separate sessions on three different tracks.</p></div></div>
-    <div class="theme-item"><div class="theme-mark">02</div><div><h4>The hard part moved from "which model" to "how do we actually run this"</h4><p>The maturity ladder for AI tools, the $9B+ race among major vendors to embed their own engineers in customer rollouts, and the "routing tasks to the right model isn't a strategy" warning all point the same way: picking a model is the easy part now.</p></div></div>
-    <div class="theme-item"><div class="theme-mark">03</div><div><h4>Physical AI needs a stricter safety bar than software AI</h4><p>The Physical AI panel's "can it be undone?" rule, and its "test a wide range of conditions, not a fixed checklist" answer, echoed in the manufacturing panel's caution about hidden expert knowledge and in Seagate's storage-reliability framing. The moment AI acts in the physical world, a mistake stops being "a wrong answer" and becomes "an accident."</p></div></div>
-    <div class="theme-item"><div class="theme-mark">04</div><div><h4>Good data is the prerequisite everyone agreed on, independently</h4><p>ClickHouse (AI agents make unpredictable database requests), Seagate (85–95% of AI data sits on plain hard drives), DeepMind (good data is step one of four), Cisco (one shared pipeline feeds every AI use case), and the manufacturing panel ("write down the tacit knowledge first") all named the same prerequisite in different words.</p></div></div>
+    <div class="theme-item"><div class="theme-mark">01</div><div><h4>Most AI pilots die before real use — and it's rarely the AI's fault</h4><p>Messy data, tools bolted onto old workflows, and hesitant leadership were named as the real blockers across five separate sessions on three different tracks.</p></div></div>
+    <div class="theme-item"><div class="theme-mark">02</div><div><h4>The hard part moved from "which model" to "how do we actually run this"</h4><p>The $9B+ race among major vendors to embed engineers in customer rollouts shows picking a model is the easy part now.</p></div></div>
+    <div class="theme-item"><div class="theme-mark">03</div><div><h4>Physical AI needs a stricter safety bar than software AI</h4><p>The Physical AI panel's "can it be undone?" rule echoed across the manufacturing panel and Seagate's storage-reliability framing.</p></div></div>
+    <div class="theme-item"><div class="theme-mark">04</div><div><h4>Good data is the prerequisite everyone agreed on, independently</h4><p>ClickHouse, Seagate, DeepMind, Cisco, and the manufacturing panel all named the same prerequisite in different words.</p></div></div>
   </div>
 </section>
 
+<section id="vision2030">
+  <div class="section-head"><span class="section-num">05</span><h2>Vision 2030 Alignment: Who Makes This Real</h2></div>
+  <p class="section-intro">The ideas above are only useful if someone owns turning them into action. This maps the summit's themes onto the five strategic pillars — with a specific office named against each recommendation, because the summit's own most-repeated failure mode was exactly this: no one senior owning the decision to act.</p>
+
+  <div class="rec-block">
+    <div class="rec-head"><h3>1 · Enrollment Growth</h3></div>
+    <p class="rec-why">Give the Recruitment Chatbot persistent context across a prospect's full journey. Apply the reversibility test to the Academic Advising Agent now, while it's still in development.</p>
+    <div class="responsible"><b>Responsible</b> — Center of Educational Technology (CET), with Admissions; Academic Council for advising-agent guardrails.</div>
+  </div>
+  <div class="rec-block">
+    <div class="rec-head"><h3>2 · Enhanced Reputation and Branding</h3></div>
+    <p class="rec-why">Publish a first AI case study once Phase 2 pilot results land. Brand Benilde's public AI position around governance discipline, not raw capability.</p>
+    <div class="responsible"><b>Responsible</b> — Marketing &amp; Communications, with CET for content; Office of the Chancellor for public positioning.</div>
+  </div>
+  <div class="rec-block">
+    <div class="rec-head"><h3>3 · Future Ready</h3></div>
+    <p class="rec-why">Add the three-question go/no-go gate to every Phase 2 pilot before it's proposed for scale-up. Confirm the data warehouse can handle agentic query load before the platform is selected.</p>
+    <div class="responsible"><b>Responsible</b> — CET and Academic Council for the gate; CET / IT infrastructure for the data warehouse review.</div>
+  </div>
+  <div class="rec-block">
+    <div class="rec-head"><h3>4 · Global Partnership Engagement</h3></div>
+    <p class="rec-why">Require every shortlisted platform vendor to disclose what deployment support is bundled into their contract. Scope one applied-research partnership with a lab offering free academic-tier tools.</p>
+    <div class="responsible"><b>Responsible</b> — CET and Procurement for vendor terms; Office of the Chancellor and academic deans for research partnerships.</div>
+  </div>
+  <div class="rec-block">
+    <div class="rec-head"><h3>5 · Financial Growth</h3></div>
+    <p class="rec-why">Report Phase 2 pilot results on both efficiency and effectiveness, not adoption alone. Release Phase 3 budget in gated tranches tied to Phase 2 evidence.</p>
+    <div class="responsible"><b>Responsible</b> — CET and Finance for reporting format; the Board / Leadership Team for gated budget release.</div>
+  </div>
+
+  <div class="rec-block" style="border-top-color:var(--amber-ink)">
+    <div class="rec-head"><h3>Who leads this, overall</h3><span class="rec-tag">ownership</span></div>
+    <p class="rec-why">A single accountable office, not a rotating committee, turns the five rows above from a wish list into a plan. <b>Proposed lead role:</b> a Director, Office of AI-Enabled Transformation, reporting to the Office of the Chancellor, with CET as its operating arm. <b>Decision authority:</b> that Director applies the go/no-go gate and recommends scale-up; the Chancellor's Office holds final sign-off on anything budget-significant or reputationally sensitive.</p>
+    <p class="rec-why"><b>Possible budget sources:</b> an institutional strategic/innovation fund released in gated tranches; reallocated IT/EdTech operating budget as lower-value tools are retired; vendor co-investment (bundled deployment support); external grants/partnership funding; philanthropic or alumni giving earmarked for innovation.</p>
+  </div>
+</section>
+
+<section id="roles">
+  <div class="section-head"><span class="section-num">06</span><h2>AI Implementation: Roles &amp; Responsibilities</h2></div>
+  <p class="section-intro">The summit's clearest lesson was that roles without a decision path just recreate the "ad hoc committee" problem. Below is a proposed model for who does what, and who ultimately decides.</p>
+
+  <div class="role-block"><h3>1. Digital Transformation Office (Program Lead)</h3><p class="tagline">The orchestrator, not the builder of everything.</p>
+    <ul>
+      <li>Owns the roadmap's cadence and the master pilot list — the one place that can see across IT, CET, and Academic Affairs at once.</li>
+      <li>Runs the three-question go/no-go gate on every pilot before it's proposed for scale-up.</li>
+      <li>Prepares Board/BLT reporting on both efficiency and effectiveness, not adoption numbers alone.</li>
+      <li>Escalates anything hitting the reversibility line to Leadership — does not decide it alone.</li>
+    </ul></div>
+
+  <div class="role-block"><h3>2. IT Team</h3><p class="tagline">The infrastructure and safety net.</p>
+    <ul>
+      <li>Owns the data-warehouse / agentic-query-capacity question before any platform is selected college-wide.</li>
+      <li>Runs security review on every AI vendor: data residency, access scope, breach exposure.</li>
+      <li>Owns uptime and support once a pilot graduates from CET's hands into daily operations.</li>
+    </ul></div>
+
+  <div class="role-block"><h3>3. Innovation &amp; EdTech (Center of Educational Technology)</h3><p class="tagline">The pedagogical and use-case owner.</p>
+    <ul>
+      <li>Vets tools against the EdTech AI Tools Guide rubric before anything reaches a classroom or advisor.</li>
+      <li>Runs the actual pilots (syllabus AI, Academic Advising Agent, Mental Health Agent) and reports results.</li>
+      <li>Owns faculty and student training under the AI Literacy Framework.</li>
+    </ul></div>
+
+  <div class="role-block"><h3>4. Leadership (VP for Admin &amp; Innovation, Office of the Chancellor, BLT)</h3><p class="tagline">The risk owner and budget releaser — the "who presses the button" role the summit's most-repeated failure mode says usually goes unfilled.</p>
+    <ul>
+      <li>Signs off on anything budget-significant or reputationally sensitive.</li>
+      <li>Releases Phase 3 scale-up funding in gated tranches tied to Phase 2 evidence.</li>
+      <li>Sets the non-negotiable boundary: which decisions, per the reversibility test, never become AI's call.</li>
+    </ul></div>
+
+  <div class="role-block"><h3>5. Other School Leaders (Academic Council, Deans/Program Chairs, Finance, Marketing &amp; Comms, Student Affairs)</h3><p class="tagline">The domain implementers — a pilot that works in CET's hands still needs a Dean or Program Chair to make it standard practice.</p>
+    <ul>
+      <li>Academic Council: policy guardrails for anything touching grading, advising, or academic integrity.</li>
+      <li>Finance: the efficiency-times-effectiveness reporting format, and sign-off on budget tranches.</li>
+      <li>Marketing &amp; Communications: the public "governance discipline" narrative.</li>
+      <li>Student Affairs: co-owns the Mental Health Agent given its stakes.</li>
+    </ul></div>
+
+  <div class="decision-path"><span class="label-tag">The decision path</span>CET pilots → Digital Transformation Office runs the go/no-go gate → IT signs off on infrastructure/security → Leadership approves scale + budget → the domain leader owns rollout. Any step that hits the reversibility line routes to Leadership regardless of how well the pilot tested.</div>
+</section>
+
 <footer>
-  Reconstructed from on-site photos and Flitto live-translation captures of AI Summit Seoul (AIS26), Aug 19–20, 2026. See §00 for sourcing caveats — speaker names, exact figures, and quotes should be checked against an official recording or transcript before external use.
+  Reconstructed from on-site photos and Flitto live-translation captures of AI Summit Seoul (AIS26), Aug 19–21, 2026 (talks/panels Aug 19–20; exhibit floor through Aug 21). See §00 for sourcing caveats — speaker names, exact figures, and quotes should be checked against an official recording or transcript before external use.
 </footer>
 
 </div>

@@ -137,6 +137,11 @@
   .rec-why{ font-size:14px; color:var(--ink-soft); margin:10px 0 14px; line-height:1.6; }
   .responsible{ margin-top:10px; background:var(--amber-100); border-radius:8px; padding:9px 14px; font-size:13.5px; color:var(--amber-ink); }
   .responsible b{ font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; }
+  .roi-kpi{ margin-top:10px; background:var(--slate-100); border-radius:8px; padding:11px 14px; font-size:13.3px; color:var(--ink); line-height:1.6; }
+  .roi-kpi .rk-label{ font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--slate-600); font-weight:700; display:block; margin-bottom:3px; }
+  .roi-kpi ul{ margin:2px 0 10px; padding-left:18px; }
+  .roi-kpi ul:last-child{ margin-bottom:0; }
+  .roi-kpi li{ margin-bottom:3px; }
 
   .role-block{ background:var(--paper-raised); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin-bottom:16px; box-shadow:var(--shadow); }
   .role-block h3{ font-size:17.5px; color:var(--green-900); }
@@ -610,6 +615,7 @@
       <div class="expo-card"><img src="images/seagatebooth.jpg" alt="Seagate expo booth"><div class="expo-text"><h4>Seagate — same company as Day 1's storage talk</h4><p>Seeing "Run AI Anywhere" live on the show floor was a good reminder that the talk wasn't abstract — this is an actual product line.</p></div></div>
       <div class="expo-card"><img src="images/aimfuture.jpg" alt="AIM Future on-device edge AI chip booth"><div class="expo-text"><h4>AIM Future</h4><p>On-device edge AI chips (NPU/ASIC) for cameras, robots, and cars — a reminder that not all AI runs in the cloud.</p></div></div>
       <div class="expo-card"><img src="images/splunk.jpg" alt="Splunk, a Cisco company, booth on Agentic SOC and Observability for AI"><div class="expo-text"><h4>Splunk (a Cisco company)</h4><p>"Why did our AI suddenly get slow?" — observability for AI agents, from the same company behind Day 2's data-resilience talk.</p></div></div>
+      <div class="expo-card"><img src="images/jamf.jpg" alt="Jamf booth banner reading Govern AI on Mac with confidence"><div class="expo-text"><h4>Jamf — "Govern AI on Mac with confidence"</h4><p>Apple device-management governance for AI specifically — directly relevant given how much of our own device fleet is Mac/iOS.</p></div></div>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Enhanced Reputation and Branding · Global Partnership Engagement</div>
   </article>
@@ -638,26 +644,56 @@
     <div class="rec-head"><h3>1 · Enrollment Growth</h3></div>
     <p class="rec-why">Give the Recruitment Chatbot persistent context across a prospect's full journey. Apply the reversibility test to the Academic Advising Agent now, while it's still in development.</p>
     <div class="responsible"><b>Responsible</b> — Center of Educational Technology (CET), with Admissions; Academic Council for advising-agent guardrails.</div>
+    <div class="roi-kpi">
+      <span class="rk-label">Potential ROI</span>
+      <ul><li>Lower cost per enrolled student — a chatbot that keeps context across the funnel should convert more inquiries without more staff.</li><li>Retained tuition revenue from students the Advising Agent flags early enough to keep enrolled.</li></ul>
+      <span class="rk-label">KPIs to track</span>
+      <ul><li>Chatbot inquiry → completed application conversion rate</li><li>Average response time to a prospective student inquiry</li><li>Term-to-term retention rate among students the Advising Agent flagged as at-risk</li></ul>
+    </div>
   </div>
   <div class="rec-block">
     <div class="rec-head"><h3>2 · Enhanced Reputation and Branding</h3></div>
     <p class="rec-why">Publish a first AI case study once Phase 2 pilot results land. Brand Benilde's public AI position around governance discipline, not raw capability.</p>
     <div class="responsible"><b>Responsible</b> — Marketing &amp; Communications, with CET for content; Office of the Chancellor for public positioning.</div>
+    <div class="roi-kpi">
+      <span class="rk-label">Potential ROI</span>
+      <ul><li>Earned media and inbound interest from being the credible "governance-first" story, not the flashiest AI demo.</li><li>Stronger position in accreditation and partner conversations that already ask about AI policy.</li></ul>
+      <span class="rk-label">KPIs to track</span>
+      <ul><li>External citations/mentions of Benilde's AI governance model (press, academic papers, conference invitations)</li><li>Inbound partnership or speaking-invite requests referencing our AI work</li></ul>
+    </div>
   </div>
   <div class="rec-block">
     <div class="rec-head"><h3>3 · Future Ready</h3></div>
     <p class="rec-why">Add the three-question go/no-go gate to every Phase 2 pilot before it's proposed for scale-up. Confirm the data warehouse can handle agentic query load before the platform is selected.</p>
     <div class="responsible"><b>Responsible</b> — CET and Academic Council for the gate; CET / IT infrastructure for the data warehouse review.</div>
+    <div class="roi-kpi">
+      <span class="rk-label">Potential ROI</span>
+      <ul><li>Avoided waste on pilots that were never going to reach production — the summit's own baseline says most institutions lose about 80% of AI spend to this.</li><li>Avoided cost of a governance incident by catching it before scale, not after.</li></ul>
+      <span class="rk-label">KPIs to track</span>
+      <ul><li>% of pilots that pass the go/no-go gate and reach Phase 3 (compare against that 80%-fail baseline)</li><li>Time from pilot approval to production-ready</li><li>Data warehouse uptime and headroom under real agentic query load</li></ul>
+    </div>
   </div>
   <div class="rec-block">
     <div class="rec-head"><h3>4 · Global Partnership Engagement</h3></div>
     <p class="rec-why">Require every shortlisted platform vendor to disclose what deployment support is bundled into their contract. Scope one applied-research partnership with a lab offering free academic-tier tools.</p>
     <div class="responsible"><b>Responsible</b> — CET and Procurement for vendor terms; Office of the Chancellor and academic deans for research partnerships.</div>
+    <div class="roi-kpi">
+      <span class="rk-label">Potential ROI</span>
+      <ul><li>Lower net implementation cost if vendor-bundled setup support replaces work we'd otherwise pay a contractor for.</li><li>Free or discounted access to research-grade tools (like DeepMind's academic-tier offerings) instead of paying full commercial price.</li></ul>
+      <span class="rk-label">KPIs to track</span>
+      <ul><li>Vendor-provided implementation hours logged per contract</li><li>Estimated dollar value of in-kind/free-tier tools secured</li><li>Number of active partnerships with a named joint deliverable (not just a signed MOU)</li></ul>
+    </div>
   </div>
   <div class="rec-block">
     <div class="rec-head"><h3>5 · Financial Growth</h3></div>
     <p class="rec-why">Report Phase 2 pilot results on both efficiency and effectiveness, not adoption alone. Release Phase 3 budget in gated tranches tied to Phase 2 evidence.</p>
     <div class="responsible"><b>Responsible</b> — CET and Finance for reporting format; the Board / Leadership Team for gated budget release.</div>
+    <div class="roi-kpi">
+      <span class="rk-label">Potential ROI</span>
+      <ul><li>Staff hours saved that can be redirected instead of hired for.</li><li>Incremental tuition revenue from any measurable retention or enrollment lift.</li><li>Tighter budget discipline from releasing money in tranches instead of one lump sum.</li></ul>
+      <span class="rk-label">KPIs to track</span>
+      <ul><li>Advisor/staff hours saved per week (the efficiency half)</li><li>Retention or enrollment lift attributable to an AI tool (the effectiveness half — the part most reports skip)</li><li>Cost per successful outcome: total AI spend ÷ number of confirmed wins</li><li>Actual spend vs. the approved gated-tranche budget</li></ul>
+    </div>
   </div>
 
   <div class="rec-block" style="border-top-color:var(--amber-ink)">

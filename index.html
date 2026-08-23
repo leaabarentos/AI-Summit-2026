@@ -47,15 +47,18 @@
   @media print{ .top-bar{ display:none; } }
 
   /* cover */
-  .cover{ background:var(--green-950); color:#eef5ee; padding:56px 28px 44px; }
-  .cover-inner{ max-width:920px; margin:0 auto; display:flex; flex-direction:column; gap:20px; }
+  .cover{ background:var(--green-950); color:#eef5ee; padding:56px 28px 40px; }
+  .cover-inner{ max-width:920px; margin:0 auto; }
+  .cover-top{ display:grid; grid-template-columns:1fr 260px; gap:36px; align-items:start; }
+  @media (max-width:700px){ .cover-top{ grid-template-columns:1fr; } }
+  .cover-text{ display:flex; flex-direction:column; gap:16px; padding-top:4px; }
   .cover-eyebrow{ font-family:'Avenir Next','Avenir','Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12.5px; letter-spacing:0.11em; text-transform:uppercase; color:#bcd9c4; font-weight:700; }
   .cover h1{ color:#fbfdf9; font-size:clamp(32px,4.8vw,50px); line-height:1.06; }
-  .cover-sub{ font-size:17.5px; color:#cfe4d2; max-width:660px; }
-  .cover-figure{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid #1c5138; max-width:340px; align-self:flex-start; }
+  .cover-sub{ font-size:17.5px; color:#cfe4d2; max-width:520px; }
+  .cover-figure{ border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 8px rgba(0,0,0,0.25), 0 16px 36px rgba(0,0,0,0.3); border:1px solid #1c5138; justify-self:end; width:100%; max-width:260px; }
   .cover-figure img{ display:block; width:100%; height:auto; }
-  @media (max-width:640px){ .cover-figure{ max-width:220px; } }
-  .cover-meta{ display:flex; flex-wrap:wrap; gap:10px 28px; padding-top:14px; border-top:1px solid #1c5138; font-size:14px; color:#cfe4d2; }
+  @media (max-width:700px){ .cover-figure{ justify-self:start; max-width:220px; margin-top:4px; } }
+  .cover-meta{ display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:26px; padding-top:14px; border-top:1px solid #1c5138; font-size:14px; color:#cfe4d2; }
   .cover-meta div strong{ display:block; color:#f2f8f0; font-size:14.5px; font-weight:700; }
   .cover-meta div span{ font-size:13px; color:#a9c9b0; }
 
@@ -161,12 +164,16 @@
 
 <div class="cover">
   <div class="cover-inner">
-    <div class="cover-eyebrow">Summit report · De La Salle-College of Saint Benilde</div>
-    <h1>AI Summit Seoul 2026</h1>
-    <p class="cover-sub">A plain-language record of talks, panels, and expo highlights from AI Summit Seoul (AIS26) — reconstructed from live-translation captures and on-site photos, mapped to Vision 2030 and a proposed ownership model for turning it into action.</p>
-    <figure class="cover-figure">
-      <img src="images/cover.jpg" alt="Ballroom at AI Summit Seoul, main stage screen reading AIS26 AI Summit Seoul">
-    </figure>
+    <div class="cover-top">
+      <div class="cover-text">
+        <div class="cover-eyebrow">Summit report · De La Salle-College of Saint Benilde</div>
+        <h1>AI Summit Seoul 2026</h1>
+        <p class="cover-sub">A plain-language record of talks, panels, and expo highlights from AI Summit Seoul (AIS26) — reconstructed from live-translation captures and on-site photos, mapped to Vision 2030 and a proposed ownership model for turning it into action.</p>
+      </div>
+      <figure class="cover-figure">
+        <img src="images/cover.jpg" alt="Ballroom at AI Summit Seoul, main stage screen reading AIS26 AI Summit Seoul">
+      </figure>
+    </div>
     <div class="cover-meta">
       <div><strong>Talks &amp; panels</strong><span>Aug 19–20, 2026</span></div>
       <div><strong>Exhibit floor</strong><span>ran through Aug 21, 2026</span></div>

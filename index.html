@@ -52,8 +52,9 @@
   .cover-eyebrow{ font-family:'Avenir Next','Avenir','Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12.5px; letter-spacing:0.11em; text-transform:uppercase; color:#bcd9c4; font-weight:700; }
   .cover h1{ color:#fbfdf9; font-size:clamp(32px,4.8vw,50px); line-height:1.06; }
   .cover-sub{ font-size:17.5px; color:#cfe4d2; max-width:660px; }
-  .cover-figure{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid #1c5138; }
+  .cover-figure{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid #1c5138; max-width:340px; align-self:flex-start; }
   .cover-figure img{ display:block; width:100%; height:auto; }
+  @media (max-width:640px){ .cover-figure{ max-width:220px; } }
   .cover-meta{ display:flex; flex-wrap:wrap; gap:10px 28px; padding-top:14px; border-top:1px solid #1c5138; font-size:14px; color:#cfe4d2; }
   .cover-meta div strong{ display:block; color:#f2f8f0; font-size:14.5px; font-weight:700; }
   .cover-meta div span{ font-size:13px; color:#a9c9b0; }
@@ -695,6 +696,41 @@
     </ul></div>
 
   <div class="decision-path"><span class="label-tag">The decision path</span>CET pilots → Digital Transformation Office runs the go/no-go gate → IT signs off on infrastructure/security → Leadership approves scale + budget → the domain leader owns rollout. Any step that hits the reversibility line routes to Leadership regardless of how well the pilot tested.</div>
+</section>
+
+<section id="benchmarks">
+  <div class="section-head"><span class="section-num">07</span><h2>Peer Benchmarks: What Other Schools Are Already Doing</h2></div>
+  <p class="section-intro">These are named, sourced examples — not summit talk, but documented institutional moves already underway at other universities. Each is linked below so it can be independently verified before it's cited externally.</p>
+
+  <div class="rec-block">
+    <div class="rec-head"><h3>Arizona State University × OpenAI</h3><span class="rec-tag">Global Partnership Engagement</span></div>
+    <p class="rec-why">ASU became the first university with an institutional-level OpenAI partnership in January 2024, and has since expanded it to give every student, faculty, and staff member free access to ChatGPT Edu with GPT‑5. Nearly 700 projects have come out of its internal "AI Innovation Challenge," with more than 175 proposals submitted in the first two weeks alone. This is the most direct precedent for what a bundled, vendor-supported campus-wide rollout can look like at scale.</p>
+    <div class="responsible"><b>Source</b> — <a href="https://tech.asu.edu/features/asu-and-openai-expand-collaboration-scaling-ai" target="_blank" rel="noopener">ASU Enterprise Technology, "ASU and OpenAI expand collaboration"</a></div>
+  </div>
+
+  <div class="rec-block">
+    <div class="rec-head"><h3>National University of Singapore × OpenAI</h3><span class="rec-tag">Global Partnership Engagement</span></div>
+    <p class="rec-why">NUS announced a strategic OpenAI collaboration rolling out ChatGPT Edu to all students, faculty, and staff starting August 31, 2026, alongside new curriculum requirements and research platforms. As the closest Asia-Pacific peer example to what Benilde is weighing for its Phase 2 platform decision, it's a useful reference point for contract terms and rollout sequencing.</p>
+    <div class="responsible"><b>Source</b> — <a href="https://news.nus.edu.sg/nus-powers-education-research-and-administration-to-new-heights-with-ai-through-a-strategic-collaboration-with-openai/" target="_blank" rel="noopener">NUS News, "NUS powers education, research and administration... through a strategic collaboration with OpenAI"</a></div>
+  </div>
+
+  <div class="rec-block">
+    <div class="rec-head"><h3>Georgia Institute of Technology — "Jill Watson"</h3><span class="rec-tag">Future Ready</span></div>
+    <p class="rec-why">Georgia Tech's long-running AI teaching-assistant project, running since 2016 and now rebuilt on ChatGPT, is recognized as the first documented chatbot to enhance teaching presence in online learning; IDC has separately named Georgia Tech a national leader in higher-ed AI deployment. Worth noting: Georgia Tech's AVA Lab is also where the "sidecar controller" research referenced in this summit's opening keynote (Day 1, Session 1) comes from — the same lab, two different angles on the same problem.</p>
+    <div class="responsible"><b>Source</b> — <a href="https://www.ai.gatech.edu/news" target="_blank" rel="noopener">Georgia Tech AI, news &amp; recognition</a></div>
+  </div>
+
+  <div class="rec-block">
+    <div class="rec-head"><h3>Saudi Electronic University — academic advising chatbot</h3><span class="rec-tag">Enrollment Growth</span></div>
+    <p class="rec-why">A peer-reviewed, published deployment of an AI academic-advising chatbot, evaluated against student satisfaction, advisor workload reduction, and chatbot accuracy — a directly comparable, evidence-based precedent for Benilde's own Academic Advising Agent pilot, including the kind of measurement framework worth adapting.</p>
+    <div class="responsible"><b>Source</b> — <a href="https://thescipub.com/abstract/jcssp.2026.840.859" target="_blank" rel="noopener">Journal of Computer Science, "Chatbot for Academic Advising: Case Study at Saudi Electronic University"</a></div>
+  </div>
+
+  <div class="rec-block" style="border-top-color:var(--amber-ink)">
+    <div class="rec-head"><h3>Philippine higher-ed AI governance landscape — Benilde already stands out</h3><span class="rec-tag">Enhanced Reputation and Branding</span></div>
+    <p class="rec-why">Peer-reviewed comparative research found at least eight Philippine universities have issued formal AI governance guidelines. Most of them — UP, UPOU, Ateneo de Manila, DLSU, and FEU — use a "soft," principle-based approach. <b>Benilde is specifically identified in the literature as the outlier with a "hybrid" model</b>, combining policy-driven requirements with maintained flexibility. This isn't a summit claim or an internal assessment — it's an externally published finding, which makes it a genuinely strong, citable line for Benilde's public AI narrative (see Pillar 2 above) rather than something the institution is only saying about itself.</p>
+    <div class="responsible"><b>Source</b> — Toquero, "Trends, Trajectories and Tomorrows of AI Regulations in Philippine Higher Educational Institutions," <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/hequ.70090" target="_blank" rel="noopener">Higher Education Quarterly (2026)</a>; corroborated by comparative analyses on <a href="https://www.researchgate.net/publication/398559056_TOWARDS_NATIONAL_STANDARDS_COMPARATIVE_ANALYSIS_OF_AI_GOVERNANCE_MODELS_IN_PHILIPPINE_HIGHER_EDUCATION" target="_blank" rel="noopener">ResearchGate</a> / <a href="https://zenodo.org/records/15212683" target="_blank" rel="noopener">Zenodo</a>.</div>
+  </div>
 </section>
 
 <footer>

@@ -35,13 +35,18 @@
   a{ color:var(--green-700); }
   .wrap{ max-width:920px; margin:0 auto; padding:0 28px 120px; }
 
-  .top-bar{ background:var(--green-950); border-bottom:3px solid var(--amber-ink); }
+  .top-bar{ background:var(--green-950); border-bottom:3px solid var(--amber-ink); position:sticky; top:0; z-index:50; }
   .top-bar-inner{ max-width:920px; margin:0 auto; padding:12px 28px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
   .top-bar-label{ color:#dfeee3; font-size:13px; font-weight:700; letter-spacing:0.02em; }
   .top-bar-actions{ display:flex; gap:10px; flex-wrap:wrap; }
   .top-btn{ display:inline-flex; align-items:center; gap:6px; background:#0f3423; color:#f2f8f0; border:1px solid #1c5138;
     border-radius:8px; padding:7px 14px; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; font-family:inherit; }
   .top-btn:hover{ background:#144a30; }
+  .section-nav{ max-width:920px; margin:0 auto; padding:0 28px 10px; display:flex; gap:6px; overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none; }
+  .section-nav::-webkit-scrollbar{ display:none; }
+  .section-nav a{ flex:0 0 auto; color:#cfe4d2; background:#0f3423; border:1px solid #1c5138; border-radius:999px; padding:5px 12px;
+    font-size:12.5px; font-weight:600; text-decoration:none; white-space:nowrap; }
+  .section-nav a:hover{ background:#144a30; color:#f2f8f0; }
   @media print{ .top-bar{ display:none; } }
 
   .cover{ background:var(--green-950); color:#eef5ee; padding:56px 28px 40px; }
@@ -59,7 +64,8 @@
   .cover-meta div strong{ display:block; color:#f2f8f0; font-size:14.5px; font-weight:700; }
   .cover-meta div span{ font-size:13px; color:#a9c9b0; }
 
-  section{ padding-top:56px; }
+  section{ padding-top:56px; scroll-margin-top:96px; }
+  html{ scroll-behavior:smooth; }
   .section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:22px; }
   .section-num{ font-size:13px; color:var(--ink-faint); font-weight:700; letter-spacing:0.04em; }
   .section-head h2{ font-size:27px; }
@@ -164,6 +170,17 @@
       <button class="top-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
     </div>
   </div>
+  <nav class="section-nav">
+    <a href="#tldr">10 Takeaways</a>
+    <a href="#method">Why This Mattered</a>
+    <a href="#glossary-section">Glossary</a>
+    <a href="#day1">Day 1</a>
+    <a href="#day2">Day 2</a>
+    <a href="#themes">4 Ideas</a>
+    <a href="#vision2030">Vision 2030</a>
+    <a href="#roles">Roles</a>
+    <a href="#benchmarks">Benchmarks</a>
+  </nav>
 </div>
 
 <div class="cover">

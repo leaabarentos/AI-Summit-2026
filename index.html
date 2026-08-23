@@ -166,6 +166,29 @@
   .decision-path{ background:var(--amber-100); border-radius:10px; padding:16px 20px; font-size:14.5px; font-weight:700; color:var(--ink); margin-top:8px; }
   .decision-path .label-tag{ color:var(--amber-ink); margin-top:0; }
 
+  .tier-key{ display:flex; gap:18px; flex-wrap:wrap; margin-bottom:24px; font-size:13px; color:var(--ink-soft); }
+  .tier-key span{ display:inline-flex; align-items:center; gap:7px; }
+  .tier-dot{ width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .tier-dot.quick{ background:var(--green-700); }
+  .tier-dot.medium{ background:var(--slate-600); }
+  .tier-dot.strategic{ background:var(--amber-ink); }
+  .opp-tier-head{ font-size:13px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700; margin:30px 0 14px; display:flex; align-items:center; gap:9px; }
+  .opp-tier-head:first-of-type{ margin-top:6px; }
+  .opp-tier-head .tier-dot{ width:9px; height:9px; }
+  .opp-tier-head.quick{ color:var(--green-700); }
+  .opp-tier-head.medium{ color:var(--slate-600); }
+  .opp-tier-head.strategic{ color:var(--amber-ink); }
+  .opp-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:8px; }
+  @media (max-width:760px){ .opp-grid{ grid-template-columns:1fr; } }
+  .opp-card{ background:var(--paper-raised); border:1px solid var(--line); border-radius:12px; padding:18px 20px; box-shadow:var(--shadow); border-top:3px solid var(--green-700); display:flex; flex-direction:column; }
+  .opp-card.medium{ border-top-color:var(--slate-600); }
+  .opp-card.strategic{ border-top-color:var(--amber-ink); }
+  .opp-card h4{ font-size:15.5px; color:var(--green-900); }
+  .opp-office{ font-size:12px; color:var(--slate-600); font-weight:700; letter-spacing:0.02em; margin-top:4px; }
+  .opp-desc{ font-size:13.6px; color:var(--ink-soft); line-height:1.55; margin-top:8px; flex-grow:1; }
+  .opp-pillars{ margin-top:12px; display:flex; flex-wrap:wrap; gap:6px; }
+  .opp-pillars span{ font-size:11px; font-weight:700; background:var(--amber-100); color:var(--amber-ink); border-radius:999px; padding:3px 10px; }
+
   footer{ margin-top:70px; padding-top:24px; border-top:1px solid var(--line); font-size:12.8px; color:var(--ink-faint); }
 </style>
 </head>
@@ -189,6 +212,7 @@
         <a href="#glossary-section">Glossary</a>
         <a href="#themes">4 Ideas That Kept Coming Back</a>
         <a href="#vision2030">Vision 2030 Alignment</a>
+        <a href="#ai-opportunities">More AI Opportunities</a>
         <a href="#roles">Roles &amp; Responsibilities</a>
         <a href="#benchmarks">Peer Benchmarks</a>
         <a href="#expo">Expo / Exhibit Showcase</a>
@@ -769,8 +793,103 @@
   </div>
 </section>
 
+<section id="ai-opportunities">
+  <div class="section-head"><span class="section-num">06</span><h2>Beyond the Two Flagship Tools: More AI Opportunities for Benilde</h2></div>
+  <p class="section-intro">The Recruitment Chatbot and Academic Advising Agent are the two initiatives already in motion. Below are twelve more candidates — none of them approved or funded yet — pulled from the same "automate the unglamorous, keep a human on anything hard to undo" logic that ran through the summit, and mapped to which office would actually run them and which Vision 2030 pillar they serve.</p>
+
+  <div class="tier-key">
+    <span><span class="tier-dot quick"></span>Quick win — off-the-shelf tools, one office, a few months</span>
+    <span><span class="tier-dot medium"></span>Medium-term — needs process redesign or integration, roughly a semester</span>
+    <span><span class="tier-dot strategic"></span>Strategic bet — cross-office, needs governance sign-off, bigger payoff</span>
+  </div>
+
+  <div class="opp-tier-head quick"><span class="tier-dot quick"></span>Quick Wins</div>
+  <div class="opp-grid">
+    <div class="opp-card">
+      <h4>IT helpdesk ticket triage &amp; routing</h4>
+      <div class="opp-office">Owner: IT Team</div>
+      <p class="opp-desc">AI reads an incoming ticket, categorizes it (network / hardware / software / access), routes it to the right queue, and suggests a matching knowledge-base article before a human ever picks it up.</p>
+      <div class="opp-pillars"><span>Future Ready</span></div>
+    </div>
+    <div class="opp-card">
+      <h4>HR resume screening assist</h4>
+      <div class="opp-office">Owner: HR</div>
+      <p class="opp-desc">AI pre-screens and ranks applications against a job posting's stated requirements so HR spends interview time on a shortlist, not a stack. The hiring decision stays fully human.</p>
+      <div class="opp-pillars"><span>Future Ready</span><span>Financial Growth</span></div>
+    </div>
+    <div class="opp-card">
+      <h4>Bursar invoice &amp; receipt reconciliation</h4>
+      <div class="opp-office">Owner: Finance</div>
+      <p class="opp-desc">AI reads scanned invoices and receipts, auto-matches them to purchase orders and budget lines, and flags mismatches for a person to review instead of manual line-by-line checking.</p>
+      <div class="opp-pillars"><span>Financial Growth</span></div>
+    </div>
+    <div class="opp-card">
+      <h4>Meeting minutes &amp; action-item drafting</h4>
+      <div class="opp-office">Owner: any office, piloted by Digital Transformation Office</div>
+      <p class="opp-desc">AI transcribes a recorded leadership or committee meeting and drafts a first-pass set of minutes and action items; a person edits and owns what actually gets circulated.</p>
+      <div class="opp-pillars"><span>Future Ready</span></div>
+    </div>
+    <div class="opp-card">
+      <h4>Marcom content first-drafts</h4>
+      <div class="opp-office">Owner: Marketing &amp; Communications</div>
+      <p class="opp-desc">AI turns an event brief into a first-pass social caption or newsletter blurb; Marcom edits and approves before anything posts publicly.</p>
+      <div class="opp-pillars"><span>Enhanced Reputation and Branding</span></div>
+    </div>
+  </div>
+
+  <div class="opp-tier-head medium"><span class="tier-dot medium"></span>Medium-Term Builds</div>
+  <div class="opp-grid">
+    <div class="opp-card medium">
+      <h4>Registrar document processing</h4>
+      <div class="opp-office">Owner: Registrar, with IT</div>
+      <p class="opp-desc">OCR plus AI-assisted extraction for transcript requests, enrollment-verification letters, and diploma requests — cutting the manual re-typing that slows down every one of these routine requests.</p>
+      <div class="opp-pillars"><span>Future Ready</span><span>Enrollment Growth</span></div>
+    </div>
+    <div class="opp-card medium">
+      <h4>Library research-assistant layer</h4>
+      <div class="opp-office">Owner: Library, with CET</div>
+      <p class="opp-desc">An AI search layer grounded in the library's own catalog and paid database subscriptions, so students get a cited, checkable answer instead of a generic chatbot guessing from the open web.</p>
+      <div class="opp-pillars"><span>Future Ready</span></div>
+    </div>
+    <div class="opp-card medium">
+      <h4>Procurement RFP/bid summarization</h4>
+      <div class="opp-office">Owner: Procurement</div>
+      <p class="opp-desc">AI reads competing vendor proposals and produces a side-by-side comparison — cost, terms, red flags — for the committee, who still makes the actual call.</p>
+      <div class="opp-pillars"><span>Financial Growth</span></div>
+    </div>
+    <div class="opp-card medium">
+      <h4>Faculty course-content drafting assist</h4>
+      <div class="opp-office">Owner: CET, with academic deans</div>
+      <p class="opp-desc">AI helps a faculty member draft a first pass of a syllabus, rubric, or practice-quiz set aligned to stated learning outcomes — faculty review, edit, and own the final version.</p>
+      <div class="opp-pillars"><span>Future Ready</span></div>
+    </div>
+  </div>
+
+  <div class="opp-tier-head strategic"><span class="tier-dot strategic"></span>Strategic Bets</div>
+  <div class="opp-grid">
+    <div class="opp-card strategic">
+      <h4>Alumni &amp; donor engagement assistant</h4>
+      <div class="opp-office">Owner: Alumni Relations / Advancement, with Marcom</div>
+      <p class="opp-desc">An AI layer over alumni-relations data that flags realistic reengagement moments and personalizes outreach at a scale a small advancement team can't reach by hand.</p>
+      <div class="opp-pillars"><span>Global Partnership Engagement</span><span>Financial Growth</span></div>
+    </div>
+    <div class="opp-card strategic">
+      <h4>Predictive enrollment &amp; capacity planning</h4>
+      <div class="opp-office">Owner: Admissions &amp; Finance jointly, with CET</div>
+      <p class="opp-desc">A model combining inquiry, application, and past-cycle data to forecast enrollment per program, so Admissions and Finance plan capacity and budget together instead of reacting after the fact.</p>
+      <div class="opp-pillars"><span>Enrollment Growth</span><span>Financial Growth</span></div>
+    </div>
+    <div class="opp-card strategic">
+      <h4>One shared "front door" for student questions</h4>
+      <div class="opp-office">Owner: CET as integrator, IT as infrastructure owner</div>
+      <p class="opp-desc">A single conversational layer — the same "harness" pattern from the summit's Enterprise AX talk — that routes a student's question to Registrar, Bursar, or Advising as needed, instead of three separate bots that don't talk to each other.</p>
+      <div class="opp-pillars"><span>Future Ready</span><span>Enrollment Growth</span></div>
+    </div>
+  </div>
+</section>
+
 <section id="roles">
-  <div class="section-head"><span class="section-num">06</span><h2>AI Implementation: Roles &amp; Responsibilities</h2></div>
+  <div class="section-head"><span class="section-num">07</span><h2>AI Implementation: Roles &amp; Responsibilities</h2></div>
   <p class="section-intro">The summit's clearest lesson was that roles without a decision path just recreate the "ad hoc committee" problem. Below is a proposed model for who does what, and who ultimately decides.</p>
 
   <div class="role-block"><h3>1. Digital Transformation Office (Program Lead)</h3><p class="tagline">The orchestrator, not the builder of everything.</p>
@@ -814,7 +933,7 @@
 </section>
 
 <section id="benchmarks">
-  <div class="section-head"><span class="section-num">07</span><h2>Peer Benchmarks: What Other Schools Are Already Doing</h2></div>
+  <div class="section-head"><span class="section-num">08</span><h2>Peer Benchmarks: What Other Schools Are Already Doing</h2></div>
   <p class="section-intro">These are named, sourced examples — not summit talk, but documented institutional moves already underway at other universities. Each is linked below so it can be independently verified before it's cited externally.</p>
 
   <div class="rec-block">

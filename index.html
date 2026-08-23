@@ -42,11 +42,20 @@
   .top-btn{ display:inline-flex; align-items:center; gap:6px; background:#0f3423; color:#f2f8f0; border:1px solid #1c5138;
     border-radius:8px; padding:7px 14px; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; font-family:inherit; }
   .top-btn:hover{ background:#144a30; }
-  .section-nav{ max-width:920px; margin:0 auto; padding:0 28px 10px; display:flex; gap:6px; overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none; }
-  .section-nav::-webkit-scrollbar{ display:none; }
-  .section-nav a{ flex:0 0 auto; color:#cfe4d2; background:#0f3423; border:1px solid #1c5138; border-radius:999px; padding:5px 12px;
-    font-size:12.5px; font-weight:600; text-decoration:none; white-space:nowrap; }
-  .section-nav a:hover{ background:#144a30; color:#f2f8f0; }
+  .nav-dropdown{ max-width:920px; margin:0 auto; padding:0 28px 10px; position:relative; }
+  .nav-trigger{ background:#0f3423; color:#f2f8f0; border:1px solid #1c5138; border-radius:8px; padding:7px 14px;
+    font-size:13px; font-weight:700; font-family:inherit; cursor:pointer; }
+  .nav-trigger:hover{ background:#144a30; }
+  .nav-panel{ display:none; position:absolute; top:calc(100% + 4px); left:28px; right:28px;
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow);
+    padding:18px 22px; gap:22px; grid-template-columns:repeat(3,1fr); max-height:min(70vh,560px); overflow-y:auto; z-index:60; }
+  .nav-panel.open{ display:grid; }
+  @media (max-width:700px){ .nav-panel{ grid-template-columns:1fr; left:14px; right:14px; } }
+  .nav-col{ display:flex; flex-direction:column; }
+  .nav-group-label{ font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; color:var(--green-700); margin-bottom:6px; }
+  .nav-panel a{ color:var(--ink-soft); text-decoration:none; font-size:13.5px; padding:5px 0; border-bottom:1px solid var(--line-soft); }
+  .nav-panel a:last-child{ border-bottom:none; }
+  .nav-panel a:hover{ color:var(--green-700); }
   @media print{ .top-bar{ display:none; } }
 
   .cover{ background:var(--green-950); color:#eef5ee; padding:56px 28px 40px; }
@@ -170,17 +179,48 @@
       <button class="top-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
     </div>
   </div>
-  <nav class="section-nav">
-    <a href="#tldr">10 Takeaways</a>
-    <a href="#method">Why This Mattered</a>
-    <a href="#glossary-section">Glossary</a>
-    <a href="#day1">Day 1</a>
-    <a href="#day2">Day 2</a>
-    <a href="#themes">4 Ideas</a>
-    <a href="#vision2030">Vision 2030</a>
-    <a href="#roles">Roles</a>
-    <a href="#benchmarks">Benchmarks</a>
-  </nav>
+  <div class="nav-dropdown" id="navDropdown">
+    <button class="nav-trigger" onclick="document.getElementById('navPanel').classList.toggle('open')">☰ Jump to a section ▾</button>
+    <div class="nav-panel" id="navPanel">
+      <div class="nav-col">
+        <span class="nav-group-label">Overview</span>
+        <a href="#tldr">10 Takeaways</a>
+        <a href="#method">Why This Mattered</a>
+        <a href="#glossary-section">Glossary</a>
+        <a href="#themes">4 Ideas That Kept Coming Back</a>
+        <a href="#vision2030">Vision 2030 Alignment</a>
+        <a href="#roles">Roles &amp; Responsibilities</a>
+        <a href="#benchmarks">Peer Benchmarks</a>
+      </div>
+      <div class="nav-col">
+        <span class="nav-group-label">Day 1 · Aug 19</span>
+        <a href="#pioneer">The Long Road to Agentic AI</a>
+        <a href="#space">Agentic AI in Space</a>
+        <a href="#productivity">Is AI Helping Productivity?</a>
+        <a href="#harness">Harness &amp; Loop Engineering</a>
+        <a href="#clickhouse">The Agentic Data Stack</a>
+        <a href="#seagate">From Models to Reality</a>
+        <a href="#genz">Future of Work</a>
+        <a href="#kunovsky">Building as a Creative Act</a>
+        <a href="#genspark">Beyond Better Models</a>
+        <a href="#physicalai">The Era of Physical AI</a>
+        <a href="#publicis">The Rise of AI-Native Work</a>
+      </div>
+      <div class="nav-col">
+        <span class="nav-group-label">Day 2 · Aug 20</span>
+        <a href="#axsuccess">Conditions for AX Success</a>
+        <a href="#deepmind">Accelerating Breakthroughs (DeepMind)</a>
+        <a href="#shinhan">Payment in the Age of AI</a>
+        <a href="#decisionstasks">Decisions vs. Tasks</a>
+        <a href="#wooripanel">Panel: Hidden Bottlenecks</a>
+        <a href="#manufacturingpanel">Panel: AI Governance in Manufacturing</a>
+        <a href="#cisco">Digital Resilience (Cisco)</a>
+        <a href="#gong">Intuition to Intelligence (Gong)</a>
+        <a href="#expo">Expo Highlights</a>
+        <a href="#closing">Closing</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="cover">
@@ -284,7 +324,7 @@
   <div class="section-head"><span class="section-num">02</span><h2>Day 1 — Foundations &amp; the enterprise reality check</h2></div>
   <p class="section-intro">The first day moved from where agentic AI came from, to how far it actually reaches into production today.</p>
 
-  <article class="session">
+  <article class="session" id="pioneer">
     <div class="session-top"><div><div class="session-time">Morning · Main Stage</div>
       <h3 class="session-title">The Long Road to Agentic AI: A Pioneer's Perspective<span class="kr">선구자의 관점에서 본 AI 어시스턴트에서 에이전틱 AI의 시대</span></h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span><span class="chip track">Career: SRI → Nuance → Yahoo → Cortana → Google Assistant → Samsung Bixby/Viv → Georgia Tech</span></div>
@@ -305,7 +345,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>Sounding smart isn't the same as being reliable. Before we put any AI assistant in front of students for advising or admissions, we should make the vendor show us what happens when a student asks something confusing or off-topic — not just watch a polished demo.</div>
   </article>
 
-  <article class="session">
+  <article class="session" id="space">
     <div class="session-top"><div><div class="session-time">Morning · Main Stage</div>
       <h3 class="session-title">Agentic AI in Space: Traditional and Agentic AI Are Revolutionizing Space<span class="kr">지구 밖의 자율 AI: 60개 위성이 스스로 생각하고 협력하는 법</span></h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
@@ -323,7 +363,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>This "set the goal, let it coordinate, check the result" pattern is worth borrowing — but only for tasks where a mistake is cheap to catch and fix, like syncing schedules between offices. Anything touching a student's record should stay more hands-on.</div>
   </article>
 
-  <article class="session">
+  <article class="session" id="productivity">
     <div class="session-top"><div><div class="session-time">Morning · Main Stage</div><h3 class="session-title">Is AI Actually Helping Enterprise Productivity?</h3></div></div>
     <div class="chip-row"><span class="chip">Featuring Prof. Kyungjong Lee — KB Kookmin Bank / KB Financial Group</span></div>
     <div class="session-body">
@@ -341,7 +381,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>Using AI and AI actually helping are two different claims. Every pilot we run should track one specific thing — hours saved, faster replies, more students staying enrolled — before we call it a win or spend more on it.<span class="ref">↳ Ties to takeaway #2: PoC ≠ production.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="harness">
     <div class="session-top"><div><div class="session-time">Midday · Main Stage</div>
       <h3 class="session-title">2026 Enterprise Agentic AX Technology Trends: Harness &amp; Loop Engineering<span class="kr">2026 Enterprise Agentic AX 기술 트렌드 및 Harness &amp; Loop 엔지니어링 적용 사례 소개</span></h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
@@ -361,7 +401,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>Ask every vendor what real setup help they'll give us — most of the big names now offer it. Building a demo is easy; getting it actually running for the whole school is the real work.<span class="ref">↳ Ties to takeaway #3: Building is easy. Scaling is the real work.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="clickhouse">
     <div class="session-top"><div><div class="session-time">Afternoon · Main Stage</div><h3 class="session-title">The Agentic Data Stack: Speed and Simplicity for AI That Scales</h3></div></div>
     <div class="chip-row"><span class="chip">ClickHouse</span></div>
     <div class="session-body">
@@ -379,7 +419,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>Before we pick a platform, IT should check if our systems can actually handle a lot of students using an AI tool at the same time — not just one person testing it quietly.<span class="ref">↳ Ties to takeaway #1: Data is the bottleneck, not the model.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="seagate">
     <div class="session-top"><div><div class="session-time">Afternoon · Main Stage</div>
       <h3 class="session-title">From Models to Reality: What It Takes to Run AI Reliably at Scale<span class="kr">모델에서 현실까지: 대규모 AI를 안정적으로 운영하기 위한 조건</span></h3></div></div>
     <div class="chip-row"><span class="chip">Colin Presly · VP, Customer Engineering, Seagate Technology</span></div>
@@ -398,7 +438,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>Before we spend more on AI, Finance and IT should figure out where all this student data will actually live, and what that costs us over time — not just the price tag on the AI tool itself.<span class="ref">↳ Ties to takeaway #10: infrastructure wins the gold rush.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="genz">
     <div class="session-top"><div><div class="session-time">Afternoon · Main Stage</div><h3 class="session-title">How AI Is Redefining the Future of Work<span class="kr">AI가 바꾸는 일의 미래</span></h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
     <div class="session-body">
@@ -413,7 +453,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>Our newest students are probably more comfortable with AI than a lot of our staff are. If we only train faculty and leadership, we're missing where AI use is already strongest — with the students themselves.</div>
   </article>
 
-  <article class="session">
+  <article class="session" id="kunovsky">
     <div class="session-top"><div><div class="session-time">Late afternoon · Keynote</div><h3 class="session-title">Building as a Creative Act: An Innovator's Mindset for the AI Age<span class="kr">AI 시대의 혁신가의 마인드셋</span></h3></div></div>
     <div class="chip-row"><span class="chip">Savannah Kunovsky · Managing Director, IDEO AI MTechLab</span></div>
     <div class="session-body">
@@ -428,7 +468,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>Keep an eye on AI that has to act in the real world, not just answer questions — it matters most once we move past classroom chat tools into things like campus safety systems or studio work.</div>
   </article>
 
-  <article class="session">
+  <article class="session" id="genspark">
     <div class="session-top"><div><div class="session-time">Late afternoon · Main Stage</div>
       <h3 class="session-title">Beyond Better Models: What Will Define the Next Era of AI?<span class="kr">AI 에이전트의 미래: 더 나은 모델이 아니라 더 나은 워크플로우</span></h3></div></div>
     <div class="chip-row"><span class="chip">Genspark</span></div>
@@ -444,7 +484,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>An AI that remembers a student across conversations matters more than which model powers it. Ask vendors about memory, not just intelligence.</div>
   </article>
 
-  <article class="session">
+  <article class="session" id="physicalai">
     <div class="session-top"><div><div class="session-time">Evening · Keynote Panel</div><h3 class="session-title">The Era of Physical AI: The Future of Industry Transformed by Physical AI</h3></div></div>
     <div class="chip-row">
       <span class="chip">Moderator: Prof. Doohee Jeong — Handong Global University / Impactive AI</span>
@@ -468,7 +508,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>For our Mental Health and Advising AI tools: let the AI notice things and suggest, but keep the final call with a person for anything that's hard to undo. Write this down now, while both tools are still being built.<span class="ref">↳ Ties to takeaway #6: someone has to press the button.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="publicis">
     <div class="session-top"><div><div class="session-time">Evening · Main Stage</div><h3 class="session-title">The Rise of AI-Native Work<span class="kr">AI 네이티브 워크플로우 혁명</span></h3></div></div>
     <div class="chip-row"><span class="chip">Laurent Thevenet — Head of Creative Technology, APAC &amp; MEA, Publicis Groupe</span></div>
     <div class="session-body">
@@ -491,7 +531,7 @@
   <div class="section-head"><span class="section-num">03</span><h2>Day 2 — Industry deployment &amp; governance</h2></div>
   <p class="section-intro">The second day shifted from "what is agentic AI" to "why doesn't it work yet at our scale."</p>
 
-  <article class="session">
+  <article class="session" id="axsuccess">
     <div class="session-top"><div><div class="session-time">Morning · Main Stage</div><h3 class="session-title">The Conditions for AX Success and a Truly AI-Native Enterprise</h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
     <div class="session-body"><div class="session-points">
@@ -503,7 +543,7 @@
     <div class="session-note">Captured only in slide/photo form; caption detail wasn't fully recovered from the source images.</div>
   </article>
 
-  <article class="session">
+  <article class="session" id="deepmind">
     <div class="session-top"><div><div class="session-time">Morning · Track A</div><h3 class="session-title">Accelerating Breakthroughs with AI: Unlocking Opportunities in Traditional Industries</h3></div></div>
     <div class="chip-row"><span class="chip">Ramine Tinati — Head of APAC, Google DeepMind</span><span class="chip track">Moderator: Seri Kim</span></div>
     <div class="session-body">
@@ -522,7 +562,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>80% of AI projects never really launch — and it comes down to messy data and weak habits, not bad AI. DeepMind also offers some research tools free to schools, worth someone looking into.<span class="ref">↳ Ties to takeaways #1 and #2: data first, and testing well ≠ working at scale.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="shinhan">
     <div class="session-top"><div><div class="session-time">Morning · Main Stage</div><h3 class="session-title">The Present and Future of Payment in the Age of AI<span class="kr">AI 기술과 만난 결제(Payment)의 현재와 미래</span></h3></div></div>
     <div class="chip-row"><span class="chip">Sunghee An — Executive Director, Shinhan Card AX Research Institute</span></div>
     <div class="session-body">
@@ -537,7 +577,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>AI is showing up in payments from every direction at once — worth Finance keeping an eye on, since tuition and financial aid could eventually be touched by this, but no need to rush into anything.</div>
   </article>
 
-  <article class="session">
+  <article class="session" id="decisionstasks">
     <div class="session-top"><div><div class="session-time">Midday · Main Stage</div><h3 class="session-title">Decisions vs. Tasks: What Agentic AI Actually Means in Operations</h3></div></div>
     <div class="chip-row"><span class="chip">Prent Mishra</span></div>
     <div class="session-body"><div class="session-points">
@@ -549,7 +589,7 @@
     <div class="session-note">Worth following up on if a fuller recording turns up.</div>
   </article>
 
-  <article class="session">
+  <article class="session" id="wooripanel">
     <div class="session-top"><div><div class="session-time">Afternoon · Track D</div><h3 class="session-title">Panel: Hidden Bottlenecks in Enterprise AI — Data Quality, Governance, and Reality</h3></div></div>
     <div class="chip-row">
       <span class="chip">Moderator: <em>name unconfirmed</em> ("Seunghyun"/"Seunghwan" Lee), VP, Samil PwC</span>
@@ -571,7 +611,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>The biggest blocker wasn't the AI — it was nobody wanting to be the one to approve scaling it up. We should name that person for every pilot from day one, not scramble to find them once a pilot is ready to grow.<span class="ref">↳ This is takeaway #6, word for word: adoption is a courage problem.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="manufacturingpanel">
     <div class="session-top"><div><div class="session-time">Afternoon · Track D</div><h3 class="session-title">Panel: AI Governance in Manufacturing</h3></div></div>
     <div class="chip-row"><span class="chip">Three panelists, names not captured in the recovered transcript</span></div>
     <div class="session-body">
@@ -585,7 +625,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>Before any AI tool can help with the tricky judgment calls our staff make, we need to write that knowledge down first — true for registrar, advising, and financial-aid offices especially.<span class="ref">↳ This is takeaway #4, word for word: tacit knowledge is the new gold.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="cisco">
     <div class="session-top"><div><div class="session-time">Afternoon · Main Stage</div><h3 class="session-title">Agentic AI Strategies for Building Digital Resilience<span class="kr">디지털 레질리언스 구축을 위한 에이전틱 AI 전략</span></h3></div></div>
     <div class="chip-row"><span class="chip">Cisco</span></div>
     <div class="session-body">
@@ -600,7 +640,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>Running AI and cybersecurity on one shared, well-kept system is smart for a small IT team, and it protects our reputation too — a public failure looks the same to outsiders either way.<span class="ref">↳ Ties to takeaway #7: silos slow AI more than compute ever will.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="gong">
     <div class="session-top"><div><div class="session-time">Late afternoon · Track A</div><h3 class="session-title">From Intuition to Intelligence: How AI Has Redefined Revenue Growth<span class="kr">세일즈 과학의 혁명: AI는 영업을 어떻게 바꼈는가</span></h3></div></div>
     <div class="chip-row"><span class="chip">Barra Ó Briain — Head of APEC Sales, Gong</span></div>
     <div class="session-body">
@@ -619,7 +659,7 @@
     <div class="takeaway"><span class="label-tag">Takeaway</span>For our Recruitment Chatbot and Advising Agent, we should track both halves — time saved AND whether it actually helped students enroll or stay enrolled. Reporting only the first half to the Board isn't the full picture.<span class="ref">↳ Ties to takeaway #9: people + process are the missing link, not just the AI.</span></div>
   </article>
 
-  <article class="session">
+  <article class="session" id="expo">
     <div class="session-top"><div><div class="session-time">Throughout · Expo Floor (through Aug 21)</div><h3 class="session-title">Expo highlights</h3></div></div>
     <div class="expo-grid">
       <div class="expo-card"><img src="images/robotdog.jpg" alt="Quadruped robot walking on the FAIN Robotics demo floor"><div class="expo-text"><h4>FAIN Robotics × AGIBOT</h4><p>Their quadruped robot actually trotting around the demo floor — "Physical AI" made tangible, not just slides.</p></div></div>
@@ -636,7 +676,7 @@
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Enhanced Reputation and Branding · Global Partnership Engagement</div>
   </article>
 
-  <article class="session compact">
+  <article class="session compact" id="closing">
     <div class="session-top"><div><div class="session-time">End of Day 2</div><h3 class="session-title">Closing</h3></div></div>
     <div class="session-body compact"><div class="session-points"><p style="margin:0; color:var(--ink-soft); font-size:15px;">The closing line from the live feed: <em>"Thank you once again for your insightful presentation. This concludes all the sessions of AI Summit Seoul 2026."</em></p></div></div>
   </article>
@@ -803,5 +843,15 @@
 </footer>
 
 </div>
+<script>
+  document.addEventListener('click', function(e){
+    var dropdown = document.getElementById('navDropdown');
+    var panel = document.getElementById('navPanel');
+    if (!panel.classList.contains('open')) return;
+    if (e.target.closest('#navPanel a') || !e.target.closest('#navDropdown')) {
+      panel.classList.remove('open');
+    }
+  });
+</script>
 </body>
 </html>

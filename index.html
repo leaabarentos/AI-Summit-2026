@@ -5,53 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Summit Seoul 2026 — Session Report</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
-
   :root{
-    --paper:#faf9f5; --paper-raised:#ffffff; --ink:#1a1f1c; --ink-soft:#4a5650; --ink-faint:#7c8a82;
-    --line:#dfe3dc; --line-soft:#ebede7; --green-900:#153d1f; --green-700:#1b5e20; --green-600:#2e7d32;
-    --green-100:#e6efe4; --green-50:#f2f7f0; --slate-600:#3b5b7a; --slate-100:#e7edf3;
-    --amber-ink:#5a4a1f; --amber-100:#f3ecd9; --shadow:0 1px 2px rgba(20,30,20,0.04), 0 6px 20px rgba(20,30,20,0.06); --radius:10px;
+    --paper:#f6f5f0; --paper-raised:#ffffff; --ink:#132018; --ink-soft:#48584d; --ink-faint:#7c8b7f;
+    --line:#dde3d8; --line-soft:#e9ede4; --green-950:#08291a; --green-900:#0c3d27; --green-700:#0c5c3d; --green-600:#157a4f;
+    --green-100:#eaf1ec; --green-50:#f4f8f2; --slate-600:#3b5b7a; --slate-100:#e7edf3;
+    --amber-ink:#6b5320; --amber-100:#f1e8d4; --shadow:0 1px 2px rgba(8,41,26,0.06), 0 8px 24px rgba(8,41,26,0.07); --radius:10px;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --paper:#12160f; --paper-raised:#181e15; --ink:#eaf0e6; --ink-soft:#b9c4b3; --ink-faint:#7f8c79;
-      --line:#2b3327; --line-soft:#232a1f; --green-900:#a9d3a8; --green-700:#7fbf85; --green-600:#67b06c;
-      --green-100:#1e2c1e; --green-50:#182319; --slate-600:#8fb3d6; --slate-100:#1c2530;
-      --amber-ink:#e3d19a; --amber-100:#2c2717; --shadow:0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+      --paper:#0d130f; --paper-raised:#141c15; --ink:#e9f1e7; --ink-soft:#adbdac; --ink-faint:#758377;
+      --line:#26332a; --line-soft:#1c2620; --green-950:#dff0e4; --green-900:#a9d4bb; --green-700:#7fc79a; --green-600:#67b06c;
+      --green-100:#16281d; --green-50:#121d16; --slate-600:#8fb3d6; --slate-100:#1c2530;
+      --amber-ink:#d8bd7c; --amber-100:#2b2416; --shadow:0 1px 2px rgba(0,0,0,0.35), 0 10px 26px rgba(0,0,0,0.4);
     }
   }
   :root[data-theme="dark"]{
-    --paper:#12160f; --paper-raised:#181e15; --ink:#eaf0e6; --ink-soft:#b9c4b3; --ink-faint:#7f8c79;
-    --line:#2b3327; --line-soft:#232a1f; --green-900:#a9d3a8; --green-700:#7fbf85; --green-600:#67b06c;
-    --green-100:#1e2c1e; --green-50:#182319; --slate-600:#8fb3d6; --slate-100:#1c2530;
-    --amber-ink:#e3d19a; --amber-100:#2c2717; --shadow:0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    --paper:#0d130f; --paper-raised:#141c15; --ink:#e9f1e7; --ink-soft:#adbdac; --ink-faint:#758377;
+    --line:#26332a; --line-soft:#1c2620; --green-950:#dff0e4; --green-900:#a9d4bb; --green-700:#7fc79a; --green-600:#67b06c;
+    --green-100:#16281d; --green-50:#121d16; --slate-600:#8fb3d6; --slate-100:#1c2530;
+    --amber-ink:#d8bd7c; --amber-100:#2b2416; --shadow:0 1px 2px rgba(0,0,0,0.35), 0 10px 26px rgba(0,0,0,0.4);
   }
   *{box-sizing:border-box;}
-  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,sans-serif; font-size:16px; line-height:1.6; }
-  h1,h2,h3,h4{ font-family:'Fraunces',Georgia,serif; font-weight:600; text-wrap:balance; color:var(--ink); margin:0; }
-  .mono{ font-family:'IBM Plex Mono',ui-monospace,monospace; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Avenir Next','Avenir','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:16px; line-height:1.62;
+  }
+  h1,h2,h3,h4{ font-family:'Avenir Next','Avenir','Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:700; text-wrap:balance; color:var(--ink); margin:0; }
+  .label-cap{ font-size:11px; letter-spacing:0.11em; text-transform:uppercase; font-weight:700; }
   a{ color:var(--green-700); }
   .wrap{ max-width:920px; margin:0 auto; padding:0 28px 120px; }
 
-  .cover{ padding:64px 28px 40px; max-width:920px; margin:0 auto; display:flex; flex-direction:column; gap:22px; }
-  .cover-eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.11em; text-transform:uppercase; color:var(--green-700); font-weight:600; }
-  .cover h1{ font-size:clamp(34px,5vw,52px); line-height:1.05; }
-  .cover-sub{ font-size:19px; color:var(--ink-soft); max-width:640px; }
-  .cover-figure{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); }
+  /* top bar */
+  .top-bar{ background:var(--green-950); border-bottom:3px solid var(--amber-ink); }
+  .top-bar-inner{ max-width:920px; margin:0 auto; padding:12px 28px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+  .top-bar-label{ color:#dfeee3; font-size:13px; font-weight:700; letter-spacing:0.02em; }
+  .top-bar-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+  .top-btn{ display:inline-flex; align-items:center; gap:6px; background:#0f3423; color:#f2f8f0; border:1px solid #1c5138;
+    border-radius:8px; padding:7px 14px; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; font-family:inherit; }
+  .top-btn:hover{ background:#144a30; }
+  @media print{ .top-bar{ display:none; } }
+
+  /* cover */
+  .cover{ background:var(--green-950); color:#eef5ee; padding:56px 28px 44px; }
+  .cover-inner{ max-width:920px; margin:0 auto; display:flex; flex-direction:column; gap:20px; }
+  .cover-eyebrow{ font-family:'Avenir Next','Avenir','Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12.5px; letter-spacing:0.11em; text-transform:uppercase; color:#bcd9c4; font-weight:700; }
+  .cover h1{ color:#fbfdf9; font-size:clamp(32px,4.8vw,50px); line-height:1.06; }
+  .cover-sub{ font-size:17.5px; color:#cfe4d2; max-width:660px; }
+  .cover-figure{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid #1c5138; }
   .cover-figure img{ display:block; width:100%; height:auto; }
-  .cover-meta{ display:flex; flex-wrap:wrap; gap:10px 28px; padding-top:6px; border-top:1px solid var(--line); font-size:14px; color:var(--ink-soft); }
-  .cover-meta div strong{ display:block; color:var(--ink); font-size:14.5px; font-weight:600; }
-  .cover-meta div span.mono{ font-size:13px; color:var(--ink-faint); }
+  .cover-meta{ display:flex; flex-wrap:wrap; gap:10px 28px; padding-top:14px; border-top:1px solid #1c5138; font-size:14px; color:#cfe4d2; }
+  .cover-meta div strong{ display:block; color:#f2f8f0; font-size:14.5px; font-weight:700; }
+  .cover-meta div span{ font-size:13px; color:#a9c9b0; }
 
   section{ padding-top:56px; }
   .section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:22px; }
-  .section-num{ font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ink-faint); letter-spacing:0.04em; }
-  .section-head h2{ font-size:28px; }
+  .section-num{ font-size:13px; color:var(--ink-faint); font-weight:700; letter-spacing:0.04em; }
+  .section-head h2{ font-size:27px; }
   .section-intro{ color:var(--ink-soft); max-width:680px; margin-bottom:28px; font-size:15.5px; }
 
   .tldr{ background:var(--green-100); border:1px solid color-mix(in srgb, var(--green-700) 25%, transparent); border-radius:14px; padding:24px 26px; }
-  .tldr h2{ font-size:22px; color:var(--green-900); }
+  .tldr h2{ font-size:21px; color:var(--green-900); }
   .tldr .sub{ font-size:13.5px; color:var(--ink-soft); margin-top:4px; }
   .tldr ol{ margin:16px 0 0; padding-left:22px; }
   .tldr li{ margin-bottom:12px; font-size:15.3px; }
@@ -65,21 +79,19 @@
   .day-nav{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px; }
   @media (max-width:640px){ .day-nav{ grid-template-columns:1fr; } }
   .day-card{ background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); }
-  .day-card .day-label{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green-700); letter-spacing:0.08em; text-transform:uppercase; }
-  .day-card h3{ font-size:19px; margin-top:6px; }
+  .day-card .day-label{ font-size:12px; color:var(--green-700); letter-spacing:0.08em; text-transform:uppercase; font-weight:700; }
+  .day-card h3{ font-size:18px; margin-top:6px; }
   .day-card ol{ margin:12px 0 0; padding-left:18px; font-size:13.8px; color:var(--ink-soft); }
   .day-card ol li{ margin-bottom:4px; }
 
-  .session{ background:var(--paper-raised); border:1px solid var(--line); border-radius:14px; padding:26px 26px 24px; margin-bottom:22px; box-shadow:var(--shadow); }
+  .session{ background:var(--paper-raised); border:1px solid var(--line); border-radius:14px; padding:26px 26px 24px; margin-bottom:22px; box-shadow:var(--shadow); border-top:3px solid var(--green-700); }
   .session-top{ display:flex; flex-wrap:wrap; gap:10px 14px; align-items:flex-start; justify-content:space-between; }
-  .session-time{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-faint); letter-spacing:0.05em; }
-  .session-title{ font-size:22px; margin-top:4px; line-height:1.2; }
-  .session-title .kr{ display:block; font-family:'Source Sans 3',sans-serif; font-weight:500; font-size:13.5px; color:var(--ink-faint); margin-top:3px; }
+  .session-time{ font-size:12px; color:var(--ink-faint); letter-spacing:0.05em; font-weight:700; }
+  .session-title{ font-size:21px; margin-top:4px; line-height:1.22; }
+  .session-title .kr{ display:block; font-weight:500; font-size:13.5px; color:var(--ink-faint); margin-top:3px; }
   .chip-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
-  .chip{ display:inline-flex; align-items:center; gap:6px; background:var(--green-100); color:var(--green-900); border-radius:999px; padding:4px 12px; font-size:12.8px; font-weight:600; }
+  .chip{ display:inline-flex; align-items:center; gap:6px; background:var(--green-100); color:var(--green-900); border-radius:999px; padding:4px 12px; font-size:12.8px; font-weight:700; }
   .chip.track{ background:var(--slate-100); color:var(--slate-600); }
-  .in-short{ margin-top:14px; font-size:15.3px; padding:10px 14px; background:var(--green-50); border-radius:8px; }
-  .in-short b{ color:var(--green-700); }
   .session-body{ margin-top:14px; display:grid; grid-template-columns:1.4fr 1fr; gap:22px; }
   @media (max-width:680px){ .session-body{ grid-template-columns:1fr; } }
   .session-points{ font-size:15px; color:var(--ink); }
@@ -89,13 +101,13 @@
   .session-figure{ border-radius:8px; overflow:hidden; border:1px solid var(--line); align-self:start; }
   .session-figure img{ display:block; width:100%; height:auto; }
   .session-figure figcaption{ font-size:12px; color:var(--ink-faint); padding:8px 10px; background:var(--paper); border-top:1px solid var(--line); }
-  .label-tag{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.09em; text-transform:uppercase; font-weight:700; display:block; margin:14px 0 5px; }
-  .insight{ font-size:14.5px; font-style:italic; color:var(--ink-soft); background:var(--slate-100); border-radius:8px; padding:10px 14px; }
+  .label-tag{ font-size:11px; letter-spacing:0.09em; text-transform:uppercase; font-weight:700; display:block; margin:14px 0 6px; }
+  .insight{ font-size:14.3px; color:var(--ink-soft); background:var(--slate-100); border-radius:8px; padding:12px 14px; line-height:1.55; }
   .insight .label-tag{ color:var(--slate-600); margin-top:0; }
   .pillar-tag{ margin-top:12px; font-size:12.5px; background:var(--amber-100); color:var(--amber-ink); border-radius:8px; padding:7px 12px; }
-  .pillar-tag b{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.07em; text-transform:uppercase; margin-right:6px; }
-  .takeaway{ margin-top:12px; border-left:3px solid var(--green-600); background:var(--green-50); padding:12px 16px; border-radius:0 8px 8px 0; font-size:14.5px; }
-  .takeaway .label{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--green-700); font-weight:600; display:block; margin-bottom:4px; }
+  .pillar-tag b{ font-size:10.5px; letter-spacing:0.07em; text-transform:uppercase; margin-right:6px; }
+  .takeaway{ margin-top:12px; border-left:3px solid var(--green-600); background:var(--green-50); padding:12px 16px; border-radius:0 8px 8px 0; font-size:14.3px; line-height:1.55; }
+  .takeaway .label-tag{ color:var(--green-700); margin-top:0; }
   .takeaway b{ color:var(--green-900); }
   .session-note{ margin-top:12px; font-size:12.8px; color:var(--ink-faint); font-style:italic; }
   .session.compact .session-body{ grid-template-columns:1fr; }
@@ -111,24 +123,24 @@
   .theme-list{ display:flex; flex-direction:column; gap:14px; }
   .theme-item{ display:grid; grid-template-columns:34px 1fr; gap:14px; padding:14px 0; border-top:1px solid var(--line-soft); }
   .theme-item:first-child{ border-top:none; }
-  .theme-mark{ font-family:'IBM Plex Mono',monospace; color:var(--green-700); font-size:13px; padding-top:2px; }
+  .theme-mark{ color:var(--green-700); font-size:13px; font-weight:700; padding-top:2px; }
   .theme-item h4{ font-size:16.5px; margin-bottom:4px; }
   .theme-item p{ margin:0; font-size:14.5px; color:var(--ink-soft); }
 
   .rec-block{ background:var(--paper-raised); border:1px solid var(--line); border-radius:14px; padding:24px 26px; margin-bottom:18px; box-shadow:var(--shadow); border-top:4px solid var(--green-700); }
   .rec-head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-  .rec-head h3{ font-size:19.5px; }
-  .rec-tag{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--slate-600); background:var(--slate-100); padding:3px 10px; border-radius:999px; letter-spacing:0.03em; }
-  .rec-why{ font-size:14px; color:var(--ink-soft); margin:10px 0 14px; }
+  .rec-head h3{ font-size:19px; }
+  .rec-tag{ font-size:11.5px; color:var(--slate-600); background:var(--slate-100); padding:3px 10px; border-radius:999px; letter-spacing:0.03em; font-weight:700; }
+  .rec-why{ font-size:14px; color:var(--ink-soft); margin:10px 0 14px; line-height:1.6; }
   .responsible{ margin-top:10px; background:var(--amber-100); border-radius:8px; padding:9px 14px; font-size:13.5px; color:var(--amber-ink); }
-  .responsible b{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; }
+  .responsible b{ font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; }
 
   .role-block{ background:var(--paper-raised); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin-bottom:16px; box-shadow:var(--shadow); }
-  .role-block h3{ font-size:18px; color:var(--green-900); }
-  .role-block .tagline{ font-size:13.5px; font-style:italic; color:var(--slate-600); margin-top:3px; margin-bottom:10px; }
+  .role-block h3{ font-size:17.5px; color:var(--green-900); }
+  .role-block .tagline{ font-size:13.5px; color:var(--slate-600); margin-top:3px; margin-bottom:10px; }
   .role-block ul{ margin:0; padding-left:20px; font-size:14px; }
   .role-block li{ margin-bottom:7px; }
-  .decision-path{ background:var(--amber-100); border-radius:10px; padding:16px 20px; font-size:14.5px; font-weight:600; color:var(--ink); margin-top:8px; }
+  .decision-path{ background:var(--amber-100); border-radius:10px; padding:16px 20px; font-size:14.5px; font-weight:700; color:var(--ink); margin-top:8px; }
   .decision-path .label-tag{ color:var(--amber-ink); margin-top:0; }
 
   footer{ margin-top:70px; padding-top:24px; border-top:1px solid var(--line); font-size:12.8px; color:var(--ink-faint); }
@@ -136,18 +148,30 @@
 </head>
 <body>
 
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span class="top-bar-label">AI Summit Seoul 2026 — Session Report</span>
+    <div class="top-bar-actions">
+      <a class="top-btn" href="AI Summit Seoul 2026 Report.docx" download>⬇ Download Report (.docx)</a>
+      <button class="top-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
+    </div>
+  </div>
+</div>
+
 <div class="cover">
-  <div class="cover-eyebrow">Summit report</div>
-  <h1>AI Summit Seoul 2026</h1>
-  <p class="cover-sub">A plain-language record of talks, panels, and expo highlights from AI Summit Seoul (AIS26) — reconstructed from live-translation captures and on-site photos, mapped to Vision 2030 and a proposed ownership model for turning it into action.</p>
-  <figure class="cover-figure">
-    <img src="images/cover.jpg" alt="Ballroom at AI Summit Seoul, main stage screen reading AIS26 AI Summit Seoul">
-  </figure>
-  <div class="cover-meta">
-    <div><strong>Talks &amp; panels</strong><span class="mono">Aug 19–20, 2026</span></div>
-    <div><strong>Exhibit floor</strong><span class="mono">ran through Aug 21, 2026</span></div>
-    <div><strong>Venue</strong><span class="mono">Gramercy Banquet &amp; Convention, Seoul</span></div>
-    <div><strong>Sessions logged</strong><span class="mono">21 talks / panels · 3 expo booths</span></div>
+  <div class="cover-inner">
+    <div class="cover-eyebrow">Summit report · De La Salle-College of Saint Benilde</div>
+    <h1>AI Summit Seoul 2026</h1>
+    <p class="cover-sub">A plain-language record of talks, panels, and expo highlights from AI Summit Seoul (AIS26) — reconstructed from live-translation captures and on-site photos, mapped to Vision 2030 and a proposed ownership model for turning it into action.</p>
+    <figure class="cover-figure">
+      <img src="images/cover.jpg" alt="Ballroom at AI Summit Seoul, main stage screen reading AIS26 AI Summit Seoul">
+    </figure>
+    <div class="cover-meta">
+      <div><strong>Talks &amp; panels</strong><span>Aug 19–20, 2026</span></div>
+      <div><strong>Exhibit floor</strong><span>ran through Aug 21, 2026</span></div>
+      <div><strong>Venue</strong><span>Gramercy Banquet &amp; Convention, Seoul</span></div>
+      <div><strong>Sessions logged</strong><span>21 talks / panels · 3 expo booths</span></div>
+    </div>
   </div>
 </div>
 
@@ -174,7 +198,7 @@
     <ul>
       <li><strong>Numbers and quotes are the speakers' own claims</strong>, passed through machine translation — treat every statistic as "what the speaker said," not something we independently checked.</li>
       <li><strong>Some sentences are cut off</strong> where a floating app button covered the text, or a photo was blurry. Gaps are left as gaps, not guessed at.</li>
-      <li><strong>A few names have uncertain spelling</strong> in the captions (marked as <span class="mono">name unconfirmed</span>) — worth double-checking against the official program before using them externally.</li>
+      <li><strong>A few names have uncertain spelling</strong> in the captions (marked as <em>name unconfirmed</em>) — worth double-checking against the official program before using them externally.</li>
       <li><strong>AI Summit Seoul (AIS26) ran Aug 19–21;</strong> the third day (Aug 21) was dedicated to the exhibition floor. This report's talk/panel coverage spans Aug 19–20, plus expo photos captured across the event.</li>
     </ul>
   </div>
@@ -243,38 +267,37 @@
           <li>Argued 2010s-era assistants (Cortana, Google Assistant, Bixby) were deliberately limited, but controllable and fixable when something went wrong.</li>
           <li>Called 2022's ChatGPT moment "the wrong turn": fluent, but the older, more controllable structure was thrown out along with the friction.</li>
           <li>Cited 2026 research: today's agents guess when a task is unclear (89% success with a clear task vs. 6.7% with a vague one).</li>
-          <li>Proposed a fix: a smaller "sidecar" system that checks the model's actual reasoning — "a meeting of the minds," not more autonomy.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>The pattern here suggests the industry conflated "more fluent" with "more capable." The deliberate constraints older assistants had weren't limitations to be discarded — they were what made a system auditable.</div>
+        <div class="insight"><span class="label-tag">Insight</span>The pattern here suggests the industry conflated "more fluent" with "more capable." The deliberate constraints older assistants had — a defined belief state, a repair mechanism — weren't limitations to be discarded; they were the parts that made a system auditable. For a school evaluating an AI advising or chatbot tool, this means a fluent demo should never substitute for asking how the system handles an ambiguous or out-of-scope request. Losing that structure isn't progress on every dimension — for a student-facing tool, it's exactly the dimension that matters most when something goes wrong.</div>
       </div>
       <figure class="session-figure"><img src="images/pioneer.jpg" alt="Slide showing SRI Office Assistant agent architecture diagram from 1995"><figcaption>SRI's 1995 "Office Assistant" — presented as the direct ancestor of today's AI agents.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>Fluency isn't the same as reliability — a <b>Future Ready</b> test for which AI tools Benilde trusts with real responsibility, not just which ones sound impressive.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Fluency isn't the same as reliability. Before adopting any AI assistant for advising, admissions, or student services, Benilde should require vendors to show how the system escalates or refuses an out-of-scope request, not just how well it answers a scripted demo question. This is a <b>Future Ready</b> test: the tools worth trusting with real student interactions are the ones with a visible, checkable control layer, not simply the ones that sound the most impressive in a pitch. It's a habit worth building into procurement now, before a tool is already embedded in daily operations.</div>
   </article>
 
   <article class="session">
     <div class="session-top"><div><div class="session-time">Morning · Main Stage</div>
       <h3 class="session-title">Agentic AI in Space: Traditional and Agentic AI Are Revolutionizing Space<span class="kr">지구 밖의 자율 AI: 60개 위성이 스스로 생각하고 협력하는 법</span></h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
-    <div class="session-body compact">
+    <div class="session-body">
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
           <li>Demoed a workflow that detects an event, automatically picks the right satellites to look at it, and tracks it — shown live with a simulated Mount Pinatubo eruption.</li>
           <li>Framed the goal as "humans on the loop, not in the loop" — people set intent and check results; the system does the coordination.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>This model works because satellite tasking has cheap, reversible mistakes and a clear success metric. Those conditions don't hold everywhere — the exact caveat the Physical AI panel raises later that evening.</div>
+        <div class="insight"><span class="label-tag">Insight</span>This model works because satellite tasking has cheap, reversible mistakes — a mis-pointed sensor just gets re-pointed — and a clear, measurable success condition. Those two conditions rarely hold in a school setting: a misrouted student inquiry or a wrongly flagged academic-integrity case is not something you simply "re-task" and try again. That's the exact caveat the Physical AI panel raises later that evening, and it's why "humans on the loop" works beautifully for infrastructure monitoring but needs real modification before touching anything involving a student's record or wellbeing.</div>
       </div>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>"Set the goal, check the result" is a <b>Future Ready</b> pattern worth borrowing — but only where mistakes are cheap to undo.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>"Set the goal, check the result" is a clean, <b>Future Ready</b> pattern worth borrowing for coordinating multiple administrative systems at once — for example, syncing enrollment, financial aid, and registrar data through one AI-assisted workflow. Benilde should extend this pattern only to processes where a wrong output is genuinely cheap to catch and undo, not to anything touching a student's academic or financial standing.</div>
   </article>
 
   <article class="session">
     <div class="session-top"><div><div class="session-time">Morning · Main Stage</div><h3 class="session-title">Is AI Actually Helping Enterprise Productivity?</h3></div></div>
     <div class="chip-row"><span class="chip">Featuring Prof. Kyungjong Lee — KB Kookmin Bank / KB Financial Group</span></div>
-    <div class="session-body compact">
+    <div class="session-body">
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul>
@@ -282,11 +305,11 @@
           <li>A Bank of Korea survey found 60–70% of Korean companies say they're adopting AI, but fewer than 10% report actual results.</li>
           <li>Gartner data: over half of enterprise AI projects get cancelled at the pilot stage.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>Three independent sources — Gartner, a national bank survey, and this speaker's own polling — landed on the same story. That's the honest median experience going into 2026, not cherry-picked pessimism.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Three independent sources — Gartner, a national bank survey, and this speaker's own executive polling — landed on the same story: most organizations adopting AI cannot show it moved a real number. That's a useful gut-check for a school considering a large AI investment, since higher education faces the same incentive to announce adoption before proving impact. It should recalibrate how fast Benilde expects the Recruitment Chatbot or Advising Agent to show a measurable effect on enrollment, retention, or staff time — and argues for setting that expectation with the Board before launch, not after.</div>
       </div>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Financial Growth · Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>"Everyone's using AI" and "AI is actually working here" are different claims — a <b>Financial Growth</b> and <b>Future Ready</b> distinction Benilde's own pilots should be measured against before budget scales.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>"Everyone's using AI" and "AI is actually working here" are different claims, and conflating them is how institutions over-commit budget on adoption numbers alone. Every Benilde AI pilot should report a specific operational metric — hours saved per advisor, response time per inquiry, retention lift per cohort — before it's considered for wider rollout. That's a <b>Financial Growth</b> and <b>Future Ready</b> discipline borrowed directly from this session's warning.</div>
   </article>
 
   <article class="session">
@@ -301,12 +324,12 @@
           <li>Explained "Loop Engineering": set a goal, let the agent try, have it check its own work, fix on failure, stop on success.</li>
           <li>Anthropic, OpenAI, AWS, and Microsoft have together committed over $9 billion to embedding their own staff inside customers' AI rollouts.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>Four fierce competitors converging on the identical business model is a strong signal the model layer has commoditized. Competitive edge — and lock-in risk — has moved to deployment expertise.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Four fierce competitors converging on the identical "embed our engineers with the customer" business model, at the same time, is a strong signal the model layer itself has commoditized. For a school evaluating vendors, the real differentiator in any AI contract is no longer "whose model is smartest" but "who will actually sit with our IT and CET teams to make this work." That shifts negotiating leverage: Benilde should expect deployment support bundled into any platform contract as standard, since every major vendor now positions it that way.</div>
       </div>
       <figure class="session-figure"><img src="images/harness.jpg" alt="Slide illustrating Harness Engineering as a three-panel comic"><figcaption>"Harness Engineering" — the missing layer between a prototype and enterprise-grade AI.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Global Partnership Engagement</div>
-    <div class="takeaway"><span class="label">Takeaway</span>Every major vendor now sells hands-on deployment help — a <b>Global Partnership Engagement</b> detail worth negotiating into any contract, and proof picking a model was never the hard part.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Every major vendor now sells hands-on deployment help, not just model access — a <b>Global Partnership Engagement</b> detail directly worth negotiating into Benilde's Phase 2 platform contract. It's also proof picking a model was never the hard part of an EdTech rollout; the real work is the governance, training, and integration layer around it, which is exactly what CET and the Digital Transformation Office are being asked to own.</div>
   </article>
 
   <article class="session">
@@ -319,12 +342,12 @@
           <li>AI agent queries shifted from one predictable request per user to many unpredictable requests at once.</li>
           <li>OpenAI's daily logs compare to "500 Libraries of Congress a day"; Anthropic credited this tech in shipping Claude 4.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>This shift is a hidden capacity-planning cost most organizations haven't priced into infrastructure budgets — it shows up only once a pilot scales, not during the demo.</div>
+        <div class="insight"><span class="label-tag">Insight</span>This shift — from one predictable query per user to an agent firing off many unpredictable queries at once — is a capacity-planning cost most organizations, schools included, haven't priced into their infrastructure budgets. A single Advising Agent or chatbot serving hundreds of students concurrently can generate a query load an ordinary student-information database was never designed for. That hidden cost surfaces only once a pilot scales past its demo, which is exactly the surprise Benilde's IT team should stress-test for before a college-wide rollout, not after.</div>
       </div>
       <figure class="session-figure"><img src="images/clickhouse.jpg" alt="Slide with article cards about OpenAI and Anthropic using ClickHouse"><figcaption>ClickHouse's closing slide, citing use inside OpenAI's and Anthropic's own systems.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>AI agents need a database built for unpredictable requests — a <b>Future Ready</b> requirement before any college-wide AI platform decision.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>AI agents need a database built for many unpredictable requests at once, not the steady, scheduled pattern most student information systems assume. This is a <b>Future Ready</b> requirement IT should validate — specifically, whether Benilde's data warehouse can handle concurrent agentic queries — before any platform decision is finalized in Phase 2.</div>
   </article>
 
   <article class="session">
@@ -338,12 +361,12 @@
           <li>Three stages: can we build something useful → can we run it in production → does it create lasting value. Most stay stuck between the first two.</li>
           <li>85–95% of all AI data ultimately rests on ordinary hard drives, not premium chips.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>Self-serving coming from a storage vendor, but a useful corrective: AI cost conversations fixate on GPU spend, when storage economics deserve equal attention.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Framing data as "the most valuable asset" is self-serving coming from a storage vendor, but the underlying number is a useful corrective for any institution. AI cost conversations in education tend to fixate on which subscription tier to buy, when the more durable cost driver is where student and institutional data actually lives and how long it's retained. For Benilde, the true long-term cost of any AI initiative includes data storage, retention policy, and archival planning — not just the software license.</div>
       </div>
       <figure class="session-figure"><img src="images/seagate.jpg" alt="Slide reading: AI has made data the most valuable asset"><figcaption>Seagate's point: AI made the underlying data itself the scarce, valuable asset.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Financial Growth · Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>Every AI conversation becomes a data-storage conversation — a <b>Financial Growth</b> and <b>Future Ready</b> reminder that where data lives decides what's affordable.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Every AI conversation eventually becomes a data-storage-and-governance conversation. Before approving further AI budget, Finance and IT should jointly confirm where Benilde's growing volume of student interaction data will actually live, and at what cost — a <b>Financial Growth</b> and <b>Future Ready</b> question easy to overlook until the bill arrives.</div>
   </article>
 
   <article class="session">
@@ -353,12 +376,12 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>Roughly 30% of the global office workforce is now Gen Z, with higher entrepreneurial instincts than earlier generations.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>A governance-mismatch warning: policies written by and for senior leadership may regulate the group least likely to be driving day-to-day AI usage.</div>
+        <div class="insight"><span class="label-tag">Insight</span>This is really a governance-mismatch warning dressed up as a workforce statistic: policies written by and for senior leadership may regulate the group least likely to be driving day-to-day AI usage. In a school, that group isn't the newest hires — it's the students themselves, already Gen Z and already AI-native before they enroll. Any AI policy Benilde writes for faculty and staff should assume the incoming student body has already formed AI habits well before arriving on campus, and design onboarding accordingly rather than starting from zero.</div>
       </div>
       <figure class="session-figure"><img src="images/genz.jpg" alt="Slide titled Gen Z is main workforce"><figcaption>Workforce-composition framing for AI-native habits arriving from the entry level up.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Enrollment Growth · Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>AI habits form fastest at the newest, least senior level — the same cohort Benilde recruits for <b>Enrollment Growth</b>, a <b>Future Ready</b> reason to train for entry-level fluency.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>AI habits form fastest at the newest, least senior level of any organization — for Benilde, that's simultaneously the incoming workforce and the incoming <b>Enrollment Growth</b> student body. Training built only around faculty and senior staff will miss where AI fluency is actually strongest on campus, a <b>Future Ready</b> gap worth closing with student-facing AI literacy programming, not just faculty workshops.</div>
   </article>
 
   <article class="session">
@@ -368,12 +391,12 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>Framed as "the innovator's mindset in the age of AI." Its idea of embodiment was picked up directly by the Physical AI panel later that day.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>Watching which framing gets picked up by unrelated later sessions is a useful signal for what a field is actually converging on, not just one speaker's pet phrase.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Keynotes that introduce one reusable concept function as shared vocabulary for the rest of an event, and watching which framing gets picked up by unrelated later sessions is a useful signal for what a field is actually converging on. "Embodiment" turned out to be exactly that kind of concept, resurfacing directly in the Physical AI panel hours later. For a school, embodiment is a useful frame for thinking about where AI moves beyond chat-based tools into anything with a physical or high-stakes real-world consequence, such as campus access systems, labs, or design studios.</div>
       </div>
       <figure class="session-figure"><img src="images/kunovsky.jpg" alt="Slide introducing Savannah Kunovsky of IDEO"><figcaption>Introduction slide for the IDEO AI MTechLab keynote.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>"Embodiment" became this summit's connective thread — a <b>Future Ready</b> concept as AI moves from chat into physical/creative practice.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>"Embodiment" — intelligence that has to act in, and be checked against, the physical world — became this summit's connective thread. It's a <b>Future Ready</b> concept Benilde should track as AI moves from classroom chat tools into anything touching physical campus operations, safety systems, or hands-on creative practice in design and multimedia programs.</div>
   </article>
 
   <article class="session">
@@ -384,12 +407,12 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>$250M revenue in 12 months from zero; $645M raised at $2.6B valuation. Core message: "better models will keep shipping — the breakthrough is context."</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>A vendor pitch and an unrelated keynote independently reaching the same conclusion hours apart is a stronger signal of real consensus than either alone.</div>
+        <div class="insight"><span class="label-tag">Insight</span>When a vendor's growth pitch and a completely unrelated speaker's opening keynote independently reach the same architectural conclusion hours apart, that's a stronger signal of real market consensus than either claim alone. Both converged on the same point: the unlock isn't a bigger model, it's a persistent memory or context layer that follows a person across interactions. For a school, this argues against chasing the newest, biggest model for every feature, and instead prioritizing tools that remember a student's history across advising sessions, enrollments, or support tickets.</div>
       </div>
       <figure class="session-figure"><img src="images/genspark.jpg" alt="Slide showing Genspark growth statistics"><figcaption>Genspark's growth numbers, offered as evidence for its "context, not bigger models" argument.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>Two unrelated speakers reached the same conclusion: memory/context matters more than model size — a <b>Future Ready</b> principle for evaluating any AI tool.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>A persistent memory/context layer matters more than a bigger model — a <b>Future Ready</b> principle for evaluating any AI tool Benilde considers, whether it's a chatbot, an advising agent, or a faculty-facing assistant. Ask less about which model powers the tool and more about whether it retains useful context about a specific student or case over time.</div>
   </article>
 
   <article class="session">
@@ -407,14 +430,13 @@
           <li><b>Demo vs. real deployment (Tony Jang):</b> does using it require changing how things already work? Does a failure fit inside normal turnaround time? Is the retraining data clearly someone's job?</li>
           <li><b>Where should AI's freedom to act stop? (CTO Lee):</b> the line is whether the outcome is reversible, not how smart the AI seems.</li>
           <li>A described Tesla Optimus incident — misidentifying a coworker as a part — was cited as the real cost of trusting an unproven world model.</li>
-          <li><b>Testing under active interference:</b> in defense, the threat is deliberate jamming and deception, not accidental error.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>"Reversibility" is a more portable governance principle than most, because it's domain-agnostic and testable in advance — a literal checklist question for any AI feature, physical or digital.</div>
+        <div class="insight"><span class="label-tag">Insight</span>"Reversibility" is a more portable governance principle than most, because it's domain-agnostic and testable in advance — unlike vaguer guidance such as "align with our values," which is hard to apply consistently across departments. It can be applied as a literal checklist question to any proposed AI feature, physical or digital, which is why it echoed through later sessions well outside robotics and defense. For Benilde, it translates directly into a rule for the Mental Health Agent and Academic Advising Agent: AI can flag and suggest freely, but anything hard to undo — a probation recommendation, a safety escalation, a financial-aid decision — stays a human call.</div>
       </div>
       <figure class="session-figure"><img src="images/robots.jpg" alt="Humanoid and quadruped robots on display at the expo floor"><figcaption>Humanoid and quadruped robots on the expo floor — "Physical AI" made tangible one floor down.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>Use reversibility, not capability, as the line for how much AI decides — a <b>Future Ready</b> principle directly usable for Benilde's own Mental Health and Academic Advising AI agents.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Use reversibility, not capability, as the line for how much AI decides. This is a <b>Future Ready</b> principle directly usable for Benilde's Mental Health and Academic Advising agents: build the rule into each pilot's operating charter now, while both tools are still early in development, rather than discovering the boundary only after an incident forces the question.</div>
   </article>
 
   <article class="session">
@@ -427,12 +449,12 @@
           <li>"Instant capability isn't expertise" — the gap between fast AI output and knowing what's actually good is "slop."</li>
           <li>Ownership rule: 5 users, the builder owns it; 50, needs a named owner; 500, needs a full team.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>The 5/50/500 rule is really a proxy for blast radius, not raw usage — it works best paired with the Physical AI panel's reversibility test, not used alone.</div>
+        <div class="insight"><span class="label-tag">Insight</span>The 5/50/500 rule is really a proxy for blast radius, not raw usage — a tool with 5 users making low-stakes suggestions is a very different risk than 5 users making high-stakes calls, so it works best paired with the Physical AI panel's reversibility test. In a school, a faculty member's personal use of an AI grading assistant is low-risk; the moment that same tool is adopted department-wide for decisions affecting a student's standing, it needs a named owner and a documented process. This is exactly the quiet scope-creep that turns a helpful individual habit into an ungoverned institutional risk.</div>
       </div>
       <figure class="session-figure"><img src="images/publicis.jpg" alt="Slide titled Tokenmaxxing does not equal Transformation"><figcaption>Routing tasks to the "best" model is plumbing, not a strategy on its own.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Financial Growth</div>
-    <div class="takeaway"><span class="label">Takeaway</span>5 → the builder; 50 → a named owner; 500 → a full team — a <b>Future Ready</b> and <b>Financial Growth</b> check before any pilot becomes unmanageable.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>5 users, the builder still owns it; 50, it needs a named owner; 500, it needs a full team — a <b>Future Ready</b> and <b>Financial Growth</b> check Benilde should apply proactively at each threshold, rather than waiting for a pilot to become unmanageable before assigning it real ownership.</div>
   </article>
 </section>
 
@@ -440,13 +462,13 @@
   <div class="section-head"><span class="section-num">03</span><h2>Day 2 — Industry deployment &amp; governance</h2></div>
   <p class="section-intro">The second day shifted from "what is agentic AI" to "why doesn't it work yet at our scale."</p>
 
-  <article class="session compact">
+  <article class="session">
     <div class="session-top"><div><div class="session-time">Morning · Main Stage</div><h3 class="session-title">The Conditions for AX Success and a Truly AI-Native Enterprise</h3></div></div>
     <div class="chip-row"><span class="chip">Speaker name not captured on slide</span></div>
-    <div class="session-body compact"><div class="session-points">
+    <div class="session-body"><div class="session-points">
       <span class="label-tag" style="color:var(--green-700)">Highlights</span>
       <ul><li>Presented a 4-level scorecard for AI maturity — from occasional tool use to genuine, everyday agentic work.</li></ul>
-      <div class="insight"><span class="label-tag">Insight</span>That a maturity-model talk earned its own session suggests the market has matured past "should we adopt AI" into "how good are we at it yet."</div>
+      <div class="insight"><span class="label-tag">Insight</span>That a maturity-model talk earned its own dedicated session suggests the market conversation has matured past "should we adopt AI" into "how good are we at it yet" — a harder, more honest question. For Benilde, adopting a similar scorecard internally would let CET and the Digital Transformation Office track progress across departments in comparable terms, rather than each unit assessing its own readiness informally. It also gives Leadership a shared vocabulary for Board reporting that goes beyond "we have a chatbot now."</div>
     </div></div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
     <div class="session-note">Captured only in slide/photo form; caption detail wasn't fully recovered from the source images.</div>
@@ -463,12 +485,12 @@
           <li>Repeated the central statistic: roughly 80% of AI projects never reach full production — a systems problem.</li>
           <li><b>Four fixes:</b> solid verified data first, continuous domain re-checking, embedded (not bolted-on) workflows, real safety/oversight checks.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>Opening with the slowest-to-monetize, most credible work — not a flashy demo — is itself a rhetorical strategy: positioning rigor as the differentiator in a market saturated with unverified demos.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Opening with the slowest-to-monetize, most credible work — protein folding, not a flashy chatbot demo — is itself a rhetorical strategy: positioning rigor as the differentiator in a market saturated with unverified demos. For a school evaluating any AI vendor's claims, ask what its most rigorously validated, least glamorous work looks like, not just its flashiest showcase feature. DeepMind's free academic-tier access to tools like AlphaFold is also a concrete example of the kind of low-cost research partnership Benilde's science and health-adjacent programs could explore directly.</div>
       </div>
       <figure class="session-figure"><img src="images/deepmind.jpg" alt="Slide showing AI Transformation is a Systems-Level Exercise"><figcaption>DeepMind's framing: AI transformation succeeds or fails as a systems-level exercise.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Global Partnership Engagement</div>
-    <div class="takeaway"><span class="label">Takeaway</span>The summit's most-repeated number — 80% don't reach production — traces to data readiness, a <b>Future Ready</b> lesson, and a <b>Global Partnership Engagement</b> opening given DeepMind's free academic-tier tools.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>The summit's most-repeated number — 80% don't reach production — traces to data readiness, a <b>Future Ready</b> lesson directly applicable to Benilde's Phase 2 pilots. It's also a <b>Global Partnership Engagement</b> opening: DeepMind's free-tier academic tools are a concrete, low-cost starting point for any program wanting hands-on exposure to applied AI research rather than just consumer-facing chat tools.</div>
   </article>
 
   <article class="session">
@@ -478,21 +500,21 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>Mapped four competitor types racing into AI payments: AI platforms, existing wallets, retailers, card networks. Introduced Shinhan's "Agent Pay" pilot.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>When four structurally different competitor types move into the same space at once, the opportunity is real but the eventual standard is genuinely unsettled — worth watching, not urgently acting on.</div>
+        <div class="insight"><span class="label-tag">Insight</span>When four structurally different competitor types move into the same space at once, the opportunity is real but the eventual standard is genuinely unsettled. For a school's finance and student-accounts operations, this is a preview rather than an urgent call to action: tuition payment and financial-aid disbursement will eventually be touched by similar AI-agent-driven tools, but the vendor landscape is too unsettled to commit early. It's worth Benilde's Finance office tracking this over the next one to two years rather than evaluating vendors today.</div>
       </div>
       <figure class="session-figure"><img src="images/shinhan.jpg" alt="Table comparing key player movements in AI payments"><figcaption>Shinhan Card's map of AI entering payments from four directions at once.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Financial Growth · Global Partnership Engagement</div>
-    <div class="takeaway"><span class="label">Takeaway</span>Payments previews what's coming to every trust-sensitive process — a <b>Financial Growth</b> and <b>Global Partnership Engagement</b> signal worth watching.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Payments previews what's coming to every trust-sensitive process — a <b>Financial Growth</b> and <b>Global Partnership Engagement</b> signal worth Benilde's Finance and IT offices monitoring, particularly as it may eventually touch how tuition and financial aid are processed.</div>
   </article>
 
-  <article class="session compact">
+  <article class="session">
     <div class="session-top"><div><div class="session-time">Midday · Main Stage</div><h3 class="session-title">Decisions vs. Tasks: What Agentic AI Actually Means in Operations</h3></div></div>
     <div class="chip-row"><span class="chip">Prent Mishra</span></div>
-    <div class="session-body compact"><div class="session-points">
+    <div class="session-body"><div class="session-points">
       <span class="label-tag" style="color:var(--green-700)">Highlights</span>
       <ul><li>Captured via stage/slide photos only; the full argument wasn't recovered.</li></ul>
-      <div class="insight"><span class="label-tag">Insight</span>Even from a thin record, the framing itself matters: "automating a task" vs. "delegating a decision" is exactly the vocabulary the Physical AI panel's reversibility principle needs to be applied inside a real workflow.</div>
+      <div class="insight"><span class="label-tag">Insight</span>Even from a thin record, the framing itself matters: distinguishing "automating a task" from "delegating an actual decision" is the exact vocabulary the Physical AI panel's reversibility principle needs to be applied inside a real workflow. For Benilde, automating the task of drafting a first-pass email reply is very different from delegating the decision of whether a student's appeal should be approved, even if both look like "AI helping with student services" from the outside. Every pilot proposal should state which category it falls into before it's approved.</div>
     </div></div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
     <div class="session-note">Worth following up on if a fuller recording turns up.</div>
@@ -501,7 +523,7 @@
   <article class="session">
     <div class="session-top"><div><div class="session-time">Afternoon · Track D</div><h3 class="session-title">Panel: Hidden Bottlenecks in Enterprise AI — Data Quality, Governance, and Reality</h3></div></div>
     <div class="chip-row">
-      <span class="chip">Moderator: <span class="mono">name unconfirmed</span> ("Seunghyun"/"Seunghwan" Lee), VP, Samil PwC</span>
+      <span class="chip">Moderator: <em>name unconfirmed</em> ("Seunghyun"/"Seunghwan" Lee), VP, Samil PwC</span>
       <span class="chip">Yongmin Choi — Head of AI Strategy Center, Woori Financial Group</span>
       <span class="chip">Yoonhee Hwang — Senior VP, Data Intelligence, LG Electronics</span>
     </div>
@@ -513,11 +535,11 @@
           <li>A gold-rush comparison: the money went to infrastructure sellers, not most people trying to use it.</li>
           <li>LG described a common trap: a "plain-English database search" tool that broke down once scaled to thousands of real tables.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>The "who presses the button" problem and LG's technical failure likely compound each other: a shaky pilot makes leadership less willing to approve scaling, delaying the fix that would stabilize it.</div>
+        <div class="insight"><span class="label-tag">Insight</span>The "who presses the button" problem and LG's technical failure likely compound each other: a shaky pilot makes leadership less willing to approve scaling, and that hesitation delays the data-engineering fix that would have stabilized it. Schools are just as susceptible to this cycle, since most institutions run on a patchwork of legacy student-information and finance systems never designed with AI-agent access in mind. Breaking the cycle starts with treating the technical fix and the leadership sign-off as two parallel workstreams, not sequential ones.</div>
       </div>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Financial Growth</div>
-    <div class="takeaway"><span class="label">Takeaway</span>Executive hesitation — not data or model quality — was the biggest bottleneck named here. A <b>Future Ready</b> and <b>Financial Growth</b> governance problem the Digital Transformation Office should own explicitly (see §05).</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Executive hesitation — not data or model quality — was the biggest bottleneck named here. It's a <b>Future Ready</b> and <b>Financial Growth</b> governance problem the Digital Transformation Office should own explicitly by naming a decision-maker for every pilot before it's built, not after it's ready to scale (see §06).</div>
   </article>
 
   <article class="session">
@@ -527,11 +549,11 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>Named the core difficulty as turning knowledge that lives only in experienced staff's heads into shared, written data.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>"Turning tacit knowledge into data" is functionally the same problem manufacturers have always had with retiring experienced staff. AI didn't create it — it just raised the cost of not solving it.</div>
+        <div class="insight"><span class="label-tag">Insight</span>"Turning tacit knowledge into data" is functionally the same problem manufacturers have always had with retiring experienced staff — AI didn't create it, it just raised the cost of not solving it. Schools face a close parallel: a veteran registrar or advisor's judgment about edge cases often lives entirely in that person's head, undocumented, until they retire or move on. Any AI tool meant to assist with these judgment calls will only be as good as the documentation effort that precedes it, which means the real first project is often a knowledge-capture exercise, not a software purchase.</div>
       </div>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillar</b>Future Ready</div>
-    <div class="takeaway"><span class="label">Takeaway</span>Writing down tacit, expert-only knowledge is the unglamorous but unavoidable first step — a <b>Future Ready</b> lesson for any department piloting AI on undocumented know-how.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Writing down tacit, expert-only knowledge is the unglamorous but unavoidable first step before any AI tool can be trusted with it — a <b>Future Ready</b> lesson for Benilde's registrar, advising, and financial-aid offices specifically, where institutional judgment calls are often concentrated in a small number of long-tenured staff.</div>
   </article>
 
   <article class="session">
@@ -541,12 +563,12 @@
       <div class="session-points">
         <span class="label-tag" style="color:var(--green-700)">Highlights</span>
         <ul><li>One shared data pipeline feeds AI training, compliance, security monitoring, incident response, and AI agents from a single source.</li></ul>
-        <div class="insight"><span class="label-tag">Insight</span>Routing security and AI through the same pipeline is efficient, but a security incident and an AI-agent failure will increasingly surface in the same monitoring system — worth deciding who owns that in advance.</div>
+        <div class="insight"><span class="label-tag">Insight</span>Routing security and AI through the same pipeline is efficient, but it also means a security incident and an AI-agent failure will increasingly surface in the same monitoring system. For a school with limited IT staffing, this efficiency argument is compelling: one well-governed data foundation can support cybersecurity monitoring, compliance reporting, and AI-agent operations at once, instead of three separate systems each requiring its own maintenance. The tradeoff is that IT and the Digital Transformation Office need a clear, pre-agreed answer for who responds when an incident could plausibly be either a breach or an AI malfunction.</div>
       </div>
       <figure class="session-figure"><img src="images/cisco.jpg" alt="Diagram of Cisco Data Fabric architecture"><figcaption>One shared data foundation feeding security, compliance, and AI agents alike.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Future Ready · Enhanced Reputation and Branding</div>
-    <div class="takeaway"><span class="label">Takeaway</span>Cybersecurity and AI-agent readiness are converging on the same requirement — a <b>Future Ready</b> foundation that also protects Benilde's <b>Reputation and Branding</b>.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>Cybersecurity and AI-agent readiness are converging on the same requirement — a <b>Future Ready</b> foundation that also protects Benilde's <b>Reputation and Branding</b> as a trustworthy institution, since one well-governed pipeline is both cheaper to maintain and less likely to produce the kind of visible failure that damages public trust.</div>
   </article>
 
   <article class="session">
@@ -560,12 +582,12 @@
           <li>Formula for a real AI win: time saved × how much better the outcome is. Most companies stop at "time saved."</li>
           <li>Top reps talk ~46% of the time vs. 68% for average reps, and wait later in the call to discuss price.</li>
         </ul>
-        <div class="insight"><span class="label-tag">Insight</span>The formula is easy to state, hard to measure: "effectiveness" requires agreeing what outcome you're optimizing for — a conversation most organizations skip before buying the tool.</div>
+        <div class="insight"><span class="label-tag">Insight</span>The formula is easy to state, hard to measure: "effectiveness" requires agreeing on what outcome you're optimizing for, and most organizations — schools included — haven't had that conversation before adopting the tool, which is exactly how an institution ends up only measuring the efficiency half. For Benilde's Recruitment Chatbot and Advising Agent, efficiency is easy to track (response time, hours saved), but effectiveness requires agreeing in advance on the outcome that matters — conversion to enrollment, or improved retention — and building that measurement in from day one, not retrofitting it later.</div>
       </div>
       <figure class="session-figure"><img src="images/gong.jpg" alt="Slide with Gong company statistics"><figcaption>Gong's closing credibility slide — company stats and industry-analyst rankings.</figcaption></figure>
     </div>
     <div class="pillar-tag"><b>Vision 2030 pillars</b>Enrollment Growth · Financial Growth</div>
-    <div class="takeaway"><span class="label">Takeaway</span>"Time saved × outcome improved" applies directly to Benilde's <b>Enrollment Growth</b> funnel (Recruitment Chatbot, Advising Agent) and is a <b>Financial Growth</b> discipline for reporting any AI tool's real value.</div>
+    <div class="takeaway"><span class="label-tag">Takeaway</span>"Time saved × outcome improved" applies directly to Benilde's <b>Enrollment Growth</b> funnel — the Recruitment Chatbot and Advising Agent both need this two-part measurement built in from the start. It's also a <b>Financial Growth</b> discipline for reporting any AI tool's real value to the Board in terms the Board can act on, not just adoption statistics.</div>
   </article>
 
   <article class="session">

@@ -733,7 +733,7 @@
   <div class="rec-block">
     <div class="rec-head"><h3>1 · Enrollment Growth</h3></div>
     <p class="rec-why">Give the Recruitment Chatbot persistent context across a prospect's full journey. Apply the reversibility test to the Academic Advising Agent now, while it's still in development.</p>
-    <div class="responsible"><b>Responsible</b> — Center of Educational Technology (CET), with Admissions; Academic Council for advising-agent guardrails.</div>
+    <div class="responsible"><b>Responsible</b> — Admissions for the Recruitment Chatbot; CET with Academic Council for the Advising Agent's guardrails.</div>
     <div class="roi-kpi">
       <span class="rk-label">Potential ROI</span>
       <ul><li>Lower cost per enrolled student — a chatbot that keeps context across the funnel should convert more inquiries without more staff.</li><li>Retained tuition revenue from students the Advising Agent flags early enough to keep enrolled.</li></ul>
@@ -755,7 +755,7 @@
   <div class="rec-block">
     <div class="rec-head"><h3>3 · Future Ready</h3></div>
     <p class="rec-why">Add the three-question go/no-go gate to every Phase 2 pilot before it's proposed for scale-up. Confirm the data warehouse can handle agentic query load before the platform is selected.</p>
-    <div class="responsible"><b>Responsible</b> — CET and Academic Council for the gate; CET / IT infrastructure for the data warehouse review.</div>
+    <div class="responsible"><b>Responsible</b> — Digital Transformation Office for the go/no-go gate; IT for the data-warehouse review; Academic Council for anything touching grading or advising integrity.</div>
     <div class="roi-kpi">
       <span class="rk-label">Potential ROI</span>
       <ul><li>Avoided waste on pilots that were never going to reach production — the summit's own baseline says most institutions lose about 80% of AI spend to this.</li><li>Avoided cost of a governance incident by catching it before scale, not after.</li></ul>
@@ -766,7 +766,7 @@
   <div class="rec-block">
     <div class="rec-head"><h3>4 · Global Partnership Engagement</h3></div>
     <p class="rec-why">Require every shortlisted platform vendor to disclose what deployment support is bundled into their contract. Scope one applied-research partnership with a lab offering free academic-tier tools.</p>
-    <div class="responsible"><b>Responsible</b> — CET and Procurement for vendor terms; Office of the Chancellor and academic deans for research partnerships.</div>
+    <div class="responsible"><b>Responsible</b> — Procurement for vendor terms, with whichever domain office owns that pilot; Office of the Chancellor and academic deans for research partnerships.</div>
     <div class="roi-kpi">
       <span class="rk-label">Potential ROI</span>
       <ul><li>Lower net implementation cost if vendor-bundled setup support replaces work we'd otherwise pay a contractor for.</li><li>Free or discounted access to research-grade tools (like DeepMind's academic-tier offerings) instead of paying full commercial price.</li></ul>
@@ -777,7 +777,7 @@
   <div class="rec-block">
     <div class="rec-head"><h3>5 · Financial Growth</h3></div>
     <p class="rec-why">Report Phase 2 pilot results on both efficiency and effectiveness, not adoption alone. Release Phase 3 budget in gated tranches tied to Phase 2 evidence.</p>
-    <div class="responsible"><b>Responsible</b> — CET and Finance for reporting format; the Board / Leadership Team for gated budget release.</div>
+    <div class="responsible"><b>Responsible</b> — Digital Transformation Office and Finance for reporting format; the Board / Leadership Team for gated budget release.</div>
     <div class="roi-kpi">
       <span class="rk-label">Potential ROI</span>
       <ul><li>Staff hours saved that can be redirected instead of hired for.</li><li>Incremental tuition revenue from any measurable retention or enrollment lift.</li><li>Tighter budget discipline from releasing money in tranches instead of one lump sum.</li></ul>
@@ -892,10 +892,10 @@
   <div class="section-head"><span class="section-num">07</span><h2>AI Implementation: Roles &amp; Responsibilities</h2></div>
   <p class="section-intro">The summit's clearest lesson was that roles without a decision path just recreate the "ad hoc committee" problem. Below is a proposed model for who does what, and who ultimately decides.</p>
 
-  <div class="role-block"><h3>1. Digital Transformation Office (Program Lead)</h3><p class="tagline">The orchestrator, not the builder of everything.</p>
+  <div class="role-block"><h3>1. Digital Transformation Office (Program Lead)</h3><p class="tagline">The non-academic operating unit that embeds AI into the institution's digital roadmap — the orchestrator, not the builder of everything.</p>
     <ul>
-      <li>Owns the roadmap's cadence and the master pilot list — the one place that can see across IT, CET, and Academic Affairs at once.</li>
-      <li>Runs the three-question go/no-go gate on every pilot before it's proposed for scale-up.</li>
+      <li>Owns the roadmap's cadence and the master pilot list — the one place that can see across every office running an AI pilot at once, not just CET's.</li>
+      <li>Runs the three-question go/no-go gate on every pilot before it's proposed for scale-up, regardless of which office originated it.</li>
       <li>Prepares Board/BLT reporting on both efficiency and effectiveness, not adoption numbers alone.</li>
       <li>Escalates anything hitting the reversibility line to Leadership — does not decide it alone.</li>
     </ul></div>
@@ -903,15 +903,17 @@
   <div class="role-block"><h3>2. IT Team</h3><p class="tagline">The infrastructure and safety net.</p>
     <ul>
       <li>Owns the data-warehouse / agentic-query-capacity question before any platform is selected college-wide.</li>
-      <li>Runs security review on every AI vendor: data residency, access scope, breach exposure.</li>
-      <li>Owns uptime and support once a pilot graduates from CET's hands into daily operations.</li>
+      <li>Runs security review on every AI vendor: data residency, access scope, breach exposure — the same review whether the pilot came from CET, HR, or Finance.</li>
+      <li>Owns uptime and support once a pilot graduates into daily operations; also the domain owner for its own tools (e.g. the helpdesk agentic-resolution build).</li>
     </ul></div>
 
-  <div class="role-block"><h3>3. Innovation &amp; EdTech (Center of Educational Technology)</h3><p class="tagline">The pedagogical and use-case owner.</p>
+  <div class="role-block"><h3>3. Center of Educational Technology (CET)</h3><p class="tagline">The proponent for teaching, learning, and advising AI specifically — not AI institution-wide.</p>
     <ul>
+      <li>Already the institution's AI-policy author (the DLS-CSB AI Usage Policy carries CET's letterhead) — so it's the natural proponent for anything the policy's own purpose covers: teaching and learning.</li>
       <li>Vets tools against the EdTech AI Tools Guide rubric before anything reaches a classroom or advisor.</li>
-      <li>Runs the actual pilots (syllabus AI, Academic Advising Agent, Mental Health Agent) and reports results.</li>
+      <li>Runs the pilots inside its actual mandate: syllabus AI, the Academic Advising Agent, the Mental Health Agent.</li>
       <li>Owns faculty and student training under the AI Literacy Framework.</li>
+      <li><b>Out of scope for CET:</b> Bursar reconciliation, HR screening, Procurement, Alumni engagement, and similar — those belong to the offices that already own them (see Role 5).</li>
     </ul></div>
 
   <div class="role-block"><h3>4. Leadership (VP for Admin &amp; Innovation, Office of the Chancellor, BLT)</h3><p class="tagline">The risk owner and budget releaser — the "who presses the button" role the summit's most-repeated failure mode says usually goes unfilled.</p>
@@ -921,15 +923,22 @@
       <li>Sets the non-negotiable boundary: which decisions, per the reversibility test, never become AI's call.</li>
     </ul></div>
 
-  <div class="role-block"><h3>5. Other School Leaders (Academic Council, Deans/Program Chairs, Finance, Marketing &amp; Comms, Student Affairs)</h3><p class="tagline">The domain implementers — a pilot that works in CET's hands still needs a Dean or Program Chair to make it standard practice.</p>
+  <div class="role-block"><h3>5. Domain Offices (the actual proponent for anything outside teaching &amp; learning)</h3><p class="tagline">Each office runs its own pilot — CET is not the default owner of every AI initiative, just the education-specific ones.</p>
     <ul>
-      <li>Academic Council: policy guardrails for anything touching grading, advising, or academic integrity.</li>
-      <li>Finance: the efficiency-times-effectiveness reporting format, and sign-off on budget tranches.</li>
-      <li>Marketing &amp; Communications: the public "governance discipline" narrative.</li>
+      <li>IT: helpdesk agentic resolution.</li>
+      <li>HR: resume screening assist.</li>
+      <li>Finance/Bursar: invoice &amp; receipt reconciliation.</li>
+      <li>Registrar: document processing (with IT).</li>
+      <li>Library: research-assistant layer (with CET, since it touches learning support).</li>
+      <li>Procurement: RFP/bid summarization.</li>
+      <li>Marketing &amp; Communications: content first-drafts, and the public "governance discipline" narrative.</li>
+      <li>Alumni Relations/Advancement: donor engagement assistant (with Marcom).</li>
+      <li>Admissions &amp; Finance jointly: predictive enrollment/capacity planning.</li>
+      <li>Academic Council: policy guardrails for anything touching grading, advising, or academic integrity, regardless of which office built the tool.</li>
       <li>Student Affairs: co-owns the Mental Health Agent given its stakes.</li>
     </ul></div>
 
-  <div class="decision-path"><span class="label-tag">The decision path</span>CET pilots → Digital Transformation Office runs the go/no-go gate → IT signs off on infrastructure/security → Leadership approves scale + budget → the domain leader owns rollout. Any step that hits the reversibility line routes to Leadership regardless of how well the pilot tested.</div>
+  <div class="decision-path"><span class="label-tag">The decision path</span>The domain office that actually owns the process runs the pilot (CET for teaching/learning/advising tools; IT, HR, Finance, Registrar, Procurement, Marcom, Alumni Relations, or Admissions for their own operational tools) → Digital Transformation Office runs the go/no-go gate → IT signs off on infrastructure/security → Leadership approves scale + budget → the domain office owns rollout. Any step that hits the reversibility line routes to Leadership regardless of how well the pilot tested.</div>
 </section>
 
 <section id="benchmarks">
